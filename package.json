@@ -6,6 +6,9 @@
   "author": "Brendan, David, Jake, Smita",
   "license": "MIT",
   "scripts": {
+    "commit": "yarn commit:check && git commit",
+    "commit:check": "yarn lint && yarn test",
+    "test": "jest",
     "lint": "eslint test --ext .js",
     "start": "nodemon server/index.js"
   },
@@ -14,10 +17,15 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^21.2.1",
+    "react-test-renderer": "^16.2.0"
   }
 }
