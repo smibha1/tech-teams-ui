@@ -8,8 +8,8 @@
   "scripts": {
     "commit": "yarn commit:check && git commit",
     "commit:check": "yarn lint && yarn test",
-    "test": "jest",
-    "lint": "eslint test --ext .js",
+    "test": "jest --coverage",
+    "lint": "eslint src --ext .jsx; eslint src --ext .js",
     "start": "nodemon server/index.js"
   },
   "dependencies": {
