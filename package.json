@@ -6,7 +6,7 @@
   "author": "Brendan, David, Jake, Smita",
   "license": "MIT",
   "scripts": {
-    "test:lint": "recursive to do",
+    "lint": "eslint test --ext .js",
     "start": "nodemon server/index.js"
   },
   "dependencies": {
