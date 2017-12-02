@@ -4,6 +4,7 @@ import React from 'react';
 const Test = () => (
   <div>
     <h2>Testing for linter {1 + 1}</h2>
+    <h3>double checking for linter</h3>
   </div>
 );
 

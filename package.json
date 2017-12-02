@@ -6,7 +6,7 @@
   "author": "Brendan, David, Jake, Smita",
   "license": "MIT",
   "scripts": {
-    "commit": "yarn commit:check && git commit",
+    "precommit": "yarn commit:check",
     "commit:check": "yarn lint && yarn test",
     "test": "jest --coverage",
     "lint": "eslint src --ext .jsx; eslint src --ext .js",
@@ -25,6 +25,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
+    "husky": "^0.14.3",
     "jest": "^21.2.1",
     "react-test-renderer": "^16.2.0"
   }
