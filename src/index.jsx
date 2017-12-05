@@ -1,3 +1,5 @@
+// Staging ground to render onto HTML
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
