@@ -3,5 +3,5 @@ node_js: node
 install:
   - yarn
 script:
-  - yarn jest
   - yarn lint
+  - yarn jest
