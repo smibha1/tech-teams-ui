@@ -7,13 +7,5 @@ import ReactDOM from 'react-dom';
 // import allReducers from './reducers';
 import App from './components/App';
 
-// const store = createStore(allReducers);
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <App />
-//   </Provider>
-//   , document.getElementById('root'),
-// );
