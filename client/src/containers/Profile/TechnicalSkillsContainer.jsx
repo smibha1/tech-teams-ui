@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import TechnicalSkillsComponent from '../../components/Profile/TechnicalSkills';
-import saveNewSkill from '../../actions/Profile/saveNewSkillAction';
+import updateTechSkillAction from '../../actions/Profile/updateTechSkillAction';
 
 function mapStateToProps(state) {
   return {
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ saveNewSkill: saveNewSkill }, dispatch);
+  return bindActionCreators({ updateTechSkill: updateTechSkillAction }, dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(TechnicalSkillsComponent);

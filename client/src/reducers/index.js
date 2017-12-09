@@ -5,7 +5,7 @@
 //
 
 import { combineReducers } from 'redux';
-import saveNewSkillReducer from './Profile/saveNewSkillReducer';
+import saveNewSkillReducer from './Profile/updateTechSkill';
 
 const allReducers = combineReducers({
   techSkills: saveNewSkillReducer,
