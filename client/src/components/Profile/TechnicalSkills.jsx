@@ -27,12 +27,15 @@ class TechnicalSkills extends React.Component {
   saveNewSkill() {
     this.props.techSkills.push(this.state.addSkill);
     this.setState({ addSkill: '' });
-    this.props.saveNewSkill(this.props.techSkills);
+    this.props.updateTechSkill(this.props.techSkills);
   }
 
-  // deleteSkill() {
-  //   console.log('WILL LIKELY USE SPLICE');
-  // }
+  deleteSkill(element) {
+    let selected = document.getElementById(`prof-techSkill-${element}`).getAttribute('index');
+    let propsCopy = this.props.techSkills.slice();
+    propsCopy.splice(selected, 1);
+    this.props.updateTechSkill(propsCopy);
+  }
 
   render() {
     return (
@@ -54,9 +57,9 @@ class TechnicalSkills extends React.Component {
 
         {this.props.techSkills.map( (element, index) => {
           return (
-            <span key={index}>
+            <span key={index} id={`prof-techSkill-${element}`} index={index}>
               {element}
-              {this.state.editMode ? <button onClick={this.deleteSkill}> X </button> : null}
+              {this.state.editMode ? <button onClick={()=> this.deleteSkill(element)}> X </button> : null}
             </span>
 
           );
