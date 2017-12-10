@@ -1,0 +1,152 @@
+.navbar {
+  background: rgb(207, 202, 240);
+}
+
+.icon-size {
+    font-size: 87px;
+}
+
+.inset {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(202, 171, 237, 0.6), 
+    0 1px 1px rgba(0,0,0,0.1);
+  background-color: transparent !important;
+  z-index: 999;
+}
+
+.inset img {
+  border-radius: inherit;
+  width: inherit;
+  height: inherit;
+  display: block;
+  position: relative;
+  z-index: 998;
+}
+
+.fa-bell-o{
+  /* vertical-align: -15px; */
+  font-size: 30px;
+  color: rgb(24, 0, 36);
+}
+.fa-search{
+  color: rgb(24, 0, 36);
+}
+
+.fa-plus{
+  color:rgb(24, 0, 36);
+
+}
+
+.btn-outline-success{
+  color: rgb(24, 0, 36);
+  background:transparent;
+  border-color:grey;
+}
+.btn-outline-success:hover {
+  background-color: #cca6e2;
+  border-color:rgb(204, 166, 226); 
+
+}
+
+.navbar-nav {
+  padding-top:10px;
+}
+
+.nav-link {
+  color: black;
+}
+
+.logo {
+  font-family: 'Audiowide';
+  color: hsl(0, 0%, 0%);
+  font-size: 35px;
+  padding-right: 35px;
+}
+
+.submissionfield { 
+  width: 130px; 
+  height: 45px; 
+  border: 1px solid #999999; 
+  padding: 5px; 
+}
+
+input {
+  padding: 5px 5px 5px 7px;
+  width: 300px;
+}
+
+#companyWebsite, #slack, #github {
+  width: 350px;
+}
+
+#alerts {
+ width: 350px;
+
+}
+
+#alert {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    box-sizing: border-box;
+    height: 60px;
+    border-radius: 5px;
+    margin: auto;
+    background-color: white;
+    width: 100%; 
+    margin-top: 10px;  
+}
+
+#projName{
+  font:Arial;
+  font-size: 12px;
+  margin-top: 2px;
+  padding: 0px 0px 5px 5px;
+}
+
+#projLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow:
+    projLogo 0 0 0 2px rgba(202, 171, 237, 0.6), 
+    0 1px 1px rgba(0,0,0,0.1);
+  background-color: transparent !important;
+  z-index: 999;
+  position: relative;
+  z-index: 998;
+}
+
+.dropdown-menu {
+  background-color: #F2E4FB;
+
+}
+
+#accept {
+  border-color: rgb(0, 121, 55);
+  width: 40px;
+  height: 30px;
+  float: right;
+  margin: 5px;
+}
+
+#reject {
+  border-color: rgba(255, 0, 0, 0.563);
+  width: 40px;
+  height: 30px;
+  float: right;
+  margin: 5px;
+}
+
+.projName {
+  border: none;
+  margin: none;
+  line-height: none;
+}
+
+@media(max-width: 992px){
+  
+}

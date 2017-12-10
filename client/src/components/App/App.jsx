@@ -16,6 +16,7 @@ class App extends React.Component {
           <Route path="/" render={() => <LandingPage />} />
           <Route path="/login" render={() => <Login />} />
           <Route path="/signup" render={() => <Signup />} />
+          <Route path="/" render={() => <NavBar />} />
         </div>
       </Router>
     );
