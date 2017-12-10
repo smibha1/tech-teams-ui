@@ -148,6 +148,16 @@ input {
   padding: none;
 }
 
+#createProj-container  {
+  margin-left: auto;
+}
+
+#navbarIcons {
+  width:100%;
+}
+
 @media(max-width: 992px){
-  
+  #createProj-container  {
+    margin-left: 0;
+  }
 }
