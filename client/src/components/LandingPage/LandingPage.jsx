@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
 class LandingPage extends React.Component {
@@ -21,10 +22,14 @@ class LandingPage extends React.Component {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul id="navbarNavDropdown" className="navbar-nav">
               <li id="login-container" className="nav-link ml-auto" href="www.google.com">
-                <button id="login">Login</button>
+                <Link to="/login" href="/login">
+                  <button id="login">Login</button>
+                </Link>
               </li>
               <li id="signup-container" className="nav-link" href="www.google.com">
-                <button id="signup">Sign Up</button>
+                <Link to="/signup" href="/signup">
+                  <button id="signup">Sign Up</button>
+                </Link>
               </li>
             </ul>
           </div>
