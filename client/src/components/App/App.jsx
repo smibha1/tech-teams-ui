@@ -6,12 +6,13 @@ import LandingPage from '../LandingPage/LandingPage';
 import Login from '../Auth/Login';
 import Signup from '../Auth/Signup';
 import MainProfile from '../Profile/Profile'
+import NavBar from '../NavBar/NavBar'
 
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="testing">
+        <div>
           <Route path="/" render={() => <MainProfile />} /> 
           <Route path="/" render={() => <LandingPage />} />
           <Route path="/login" render={() => <Login />} />

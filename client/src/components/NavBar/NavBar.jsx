@@ -119,19 +119,19 @@ class NavBar extends React.Component {
           + '</form>',
         focusConfirm: false,
         preConfirm: () => [
-          $('name1').val(),
-          $('name2').val(),
-          $('name3').val(),
-          $('position1').val(),
-          $('position2').val(),
-          $('position3').val(),
+          $('#name1').val(),
+          $('#name2').val(),
+          $('#name3').val(),
+          $('#position1').val(),
+          $('#position2').val(),
+          $('#position3').val(),
         ],
       },
     ];
 
     swal.queue(steps).then((result) => {
       swal.resetDefaults();
-
+      console.log('result', result);
       if (result.value) {
         swal({
           title: 'All done!',
@@ -160,29 +160,27 @@ class NavBar extends React.Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="logo">TechTeams</div>
-          <div className="collapse navbar-collapse mr-left" id="navbarSupportedContent">
-            <form className="form-inline my-2 my-lg-0">
-              <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                <span className="fa fa-search" aria-hidden="true" />
-              </button>
-            </form>
-          </div>
-
           <div
-            className="collapse navbar-collapse mr-right"
+            className="collapse navbar-collapse"
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav mr-auto mt-0 mt-lg-0" />
-            <ul className="navbar-nav mr-right mt-0 mt-lg-0 pt-0">
-              <li className="nav-link toggle mt-0 mt-lg-2" href="www.google.com">
+            <ul id="navbarIcons" className="navbar-nav">
+              <form className="form-inline mr-left mt-2 my-lg-0">
+                <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+                  <span className="fa fa-search" aria-hidden="true" />
+                </button>
+              </form>
+              <li id="createProj-container" 
+                className="nav-link toggle mt-0 mt-lg-2" 
+                href="www.google.com">
                 <i
                   className="fa fa-plus fa-2x mt-0 mt-lg-0"
                   aria-hidden="true"
                   onClick={() => this.handleCreateProjectClick()}
                 />
               </li>
-              <li className="nav-item dropdown">
+              <li id="alerts-container" className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-menu-right mt-4 mt-lg-0"
                   href="www.google.com"
@@ -252,7 +250,7 @@ class NavBar extends React.Component {
                   </div>
                 </div>
               </li>
-              <li className="nav-item dropdown">
+              <li id="profile-container" className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-menu-right mt-4 mt-lg-0"
                   href="www.google.com"
@@ -281,7 +279,6 @@ class NavBar extends React.Component {
             </ul>
           </div>
         </nav>
-
       </div>
     );
   }
