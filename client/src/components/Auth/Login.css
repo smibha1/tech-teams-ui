@@ -1,0 +1,25 @@
+.Login {
+  width: 300px;
+  padding-top: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #d9d5d5b0;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#login-form {
+  text-align: center;
+}
+
+.form-group {
+  padding: 4px 0px 4px 0px;
+  text-align: center;
+  margin: auto;
+  width: 250px;
+}
+
+#loginsubmit {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
