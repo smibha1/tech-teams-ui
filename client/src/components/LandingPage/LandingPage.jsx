@@ -1,18 +1,29 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './LandingPage.css';
-
+import swal from 'sweetalert2';
 
 class LandingPage extends React.Component {
-  handleLogout() {
-    if(localStorage.getItem('user') === 'null') {
-      alert('NOT SIGNED IN!');
-      console.log('NOT SIGNED IN',localStorage.getItem('user'));
-    } else {
-      localStorage.setItem('user', null);
-      alert('SUCCESSFULLY SIGNED OUT');
-      console.log('LOGGED OUT!',localStorage.getItem('user'));
+  constructor() {
+    super();
+    this.state = {
+      number: 1
     }
+  }
+
+  handleLogout() {
+    localStorage.setItem('user', null);
+    swal({
+      title: 'Logged out!',
+      type: 'success',
+      timer: 1000,
+      showConfirmButton: false
+    }).then(() => {
+      this.setState({
+        number: 0
+      })
+    })
+    console.log('LOGGED OUT!', localStorage.getItem('user'));
   }
 
   render() {
@@ -23,21 +34,26 @@ class LandingPage extends React.Component {
         </button>
         <div id="hiddentitle" className="navbar-brand"/>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul id="navbarNavDropdown" className="navbar-nav">
-            <li id="login-container" className="nav-link ml-auto" href="www.google.com">
-              <Link to="/login" href="/login">
-                <button id="login">Login</button>
-              </Link>
-            </li>
-            <li id="signup-container" className="nav-link" href="www.google.com">
-              <Link to="/signup" href="/signup">
-                <button id="signup">Sign Up</button>
-              </Link>
-            </li>
-            <li className="nav-link" href="www.google.com">
-              <button id="logout" onClick={this.handleLogout.bind(this)}>Logout</button>
-            </li>
-          </ul>
+          {
+            localStorage.getItem('user') === 'null'
+              ? <ul id="navbarNavDropdown" className="navbar-nav">
+                  <li id="login-container" className="nav-link ml-auto" href="www.google.com">
+                    <Link to="/login" href="/login">
+                      <button id="login">Login</button>
+                    </Link>
+                  </li>
+                  <li id="signup-container" className="nav-link" href="www.google.com">
+                    <Link to="/signup" href="/signup">
+                      <button id="signup">Sign Up</button>
+                    </Link>
+                  </li>
+                </ul>
+              : <ul>
+                  <li className="nav-link" href="www.google.com">
+                    <button id="logout" onClick={this.handleLogout.bind(this)}>Logout</button>
+                  </li>
+                </ul>
+          }
         </div>
       </nav>
       <h1 id="title">

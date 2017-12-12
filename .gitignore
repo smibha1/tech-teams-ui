@@ -57,5 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Bundle
+client/dist/bundle.js
+
 #Firebase Credentials
 firebase.config.js
