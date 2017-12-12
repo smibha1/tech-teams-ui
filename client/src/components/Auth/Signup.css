@@ -13,6 +13,12 @@
 }
 
 .form-group {
+  padding: 4px 0px 4px 0px;
   text-align: center;
+  margin: auto;
   width: 250px;
+}
+
+#signupsubmit {
+  margin-bottom: 5px;
 }

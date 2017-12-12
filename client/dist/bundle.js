@@ -26371,6 +26371,24 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+__webpack_require__(134);
+
+var _jquery = __webpack_require__(131);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _firebaseConfig = __webpack_require__(239);
+
+var _firebaseConfig2 = _interopRequireDefault(_firebaseConfig);
+
+var _axios = __webpack_require__(143);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _sweetalert = __webpack_require__(130);
+
+var _sweetalert2 = _interopRequireDefault(_sweetalert);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26389,15 +26407,58 @@ var Login = function (_React$Component) {
   }
 
   _createClass(Login, [{
-    key: "render",
+    key: 'handleSignUpSubmit',
+    value: function handleSignUpSubmit() {
+      _firebaseConfig2.default.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          console.log("LOGGING USER", user.email, user.uid);
+          // User is signed in.
+        } else {
+          console.log('no user');
+          // No user is signed in.
+        }
+      });
+
+      var name = (0, _jquery2.default)('#InputName').val();
+      var email = (0, _jquery2.default)('#InputEmail').val();
+      var password = (0, _jquery2.default)('#InputPassword').val();
+      _firebaseConfig.auth.signInWithEmailAndPassword(email, password).then(function (result) {
+
+        (0, _sweetalert2.default)({ title: 'Signed Up', type: 'success', timer: 1000 });
+
+        // alert(result);
+
+        console.log(result);
+        // axios with name and email;
+      }, function (error) {
+        console.log(error);
+        (0, _sweetalert2.default)({ title: "Error", type: 'error', text: error, showConfirmButton: true });
+      });
+    }
+  }, {
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "testing" },
+        'div',
+        { className: 'Login' },
         _react2.default.createElement(
-          "h1",
-          null,
-          "Login"
+          'form',
+          { id: 'login-form' },
+          _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement('input', { type: 'email', className: 'form-control', id: 'InputEmail', 'aria-describedby': 'emailHelp', placeholder: 'rudd@aol.com' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'InputPassword', placeholder: 'Password' })
+          ),
+          _react2.default.createElement(
+            'button',
+            { type: 'submit', className: 'btn btn-primary', onClick: this.handleSignUpSubmit.bind(this) },
+            'Login'
+          )
         )
       );
     }
@@ -26466,14 +26527,7 @@ var Signup = function (_React$Component) {
       var name = (0, _jquery2.default)('#InputName').val();
       var email = (0, _jquery2.default)('#InputEmail').val();
       var password = (0, _jquery2.default)('#InputPassword').val();
-
-      _firebaseConfig.auth.createUserWithEmailAndPassword(email, password)
-      // .catch(function(error) {
-      // var errorCode = error.code;
-      // var errorMessage = error.message;
-      // // swal({title: errorCode, text: errorMessage, type: 'error', showConfirmButton: false, timer: 1000})
-      // console.log('Sign Up Error!', errorCode, errorMessage);
-      .then(function (result) {
+      _firebaseConfig.auth.createUserWithEmailAndPassword(email, password).then(function (result) {
         console.log(result);
         // alert(result);
         (0, _sweetalert2.default)({
@@ -26481,6 +26535,7 @@ var Signup = function (_React$Component) {
           type: 'success',
           timer: 1000
         });
+
         // axios with name and email;
       }, function (error) {
         console.log(error);
@@ -26491,15 +26546,6 @@ var Signup = function (_React$Component) {
           showConfirmButton: true
         });
       });
-
-      //   => {
-      //   //   if()
-      //   //   // swal({title: 'Signed Up',text: result, type: 'success', showConfirmButton: false, timer: 1000})
-      //   // });
-      // } else {
-      //   // swal({title: 'Incomplete', text:'Please check all fields', type: 'error', showConfirmButton: false, timer: 1000})
-      //   console.log("Incorrect form", name, email, password);
-      // }
     }
   }, {
     key: 'render',
@@ -26513,37 +26559,22 @@ var Signup = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'form-group' },
-            _react2.default.createElement(
-              'label',
-              null,
-              'Name'
-            ),
             _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'InputName', 'aria-describedby': 'emailHelp', placeholder: 'Paul Rudd' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'form-group' },
-            _react2.default.createElement(
-              'label',
-              null,
-              'Email address'
-            ),
             _react2.default.createElement('input', { type: 'email', className: 'form-control', id: 'InputEmail', 'aria-describedby': 'emailHelp', placeholder: 'rudd@aol.com' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'form-group' },
-            _react2.default.createElement(
-              'label',
-              null,
-              'Password'
-            ),
             _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'InputPassword', placeholder: 'Password' })
           ),
           _react2.default.createElement(
             'button',
-            { type: 'submit', className: 'btn btn-primary', onClick: this.handleSignUpSubmit.bind(this) },
-            'Login'
+            { id: 'signupsubmit', type: 'submit', className: 'btn btn-primary', onClick: this.handleSignUpSubmit.bind(this) },
+            'Sign Up'
           )
         )
       );
@@ -39349,7 +39380,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".SignUp {\n  width: 300px;\n  padding-top: 15px;\n  margin: 0 auto;\n  max-width: 600px;\n  background-color: #d9d5d5b0;\n  border-radius: 15px;\n  text-align: center;\n}\n\n#signingup {\n  text-align: center;\n}\n\n.form-group {\n  text-align: center;\n  width: 250px;\n}\n", ""]);
+exports.push([module.i, ".SignUp {\n  width: 300px;\n  padding-top: 15px;\n  margin: 0 auto;\n  max-width: 600px;\n  background-color: #d9d5d5b0;\n  border-radius: 15px;\n  text-align: center;\n}\n\n#signingup {\n  text-align: center;\n}\n\n.form-group {\n  padding: 4px 0px 4px 0px;\n  text-align: center;\n  margin: auto;\n  width: 250px;\n}\n\n#signupsubmit {\n  margin-bottom: 5px;\n}\n", ""]);
 
 // exports
 
