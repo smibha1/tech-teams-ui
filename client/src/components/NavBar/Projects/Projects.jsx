@@ -8,7 +8,7 @@ const Projects = props => (
   <div className="dropdown-item">
 
     {props.projects.map((element, index) => (
-      <span key={element.isRequired} id="proj-container" index={index}>
+      <span key={element.id} id="proj-container" index={index}>
         <img
           id="projLogo-dropdown"
           src={element.image}
