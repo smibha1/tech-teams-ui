@@ -6,9 +6,11 @@
 
 import { combineReducers } from 'redux';
 import saveNewSkillReducer from './Profile/updateTechSkill';
+import updateDevInfoReducer from './Profile/updateDevInfo';
 
 const allReducers = combineReducers({
   techSkills: saveNewSkillReducer,
+  devInfo: updateDevInfoReducer,
 });
 
 export default allReducers;
