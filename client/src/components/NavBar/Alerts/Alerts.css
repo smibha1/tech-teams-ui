@@ -1,0 +1,21 @@
+#dropdownBell {
+  margin-right:15px;
+  box-sizing:5px;
+}
+
+#alerts {
+  width: 350px;
+ }
+ 
+#alert {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  box-sizing: border-box;
+  height: 60px;
+  border-radius: 5px;
+  margin: auto;
+  background-color: white;
+  width: 100%; 
+  margin-top: 10px;  
+}

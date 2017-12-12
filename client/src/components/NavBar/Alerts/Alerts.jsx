@@ -37,7 +37,6 @@ class Alerts extends React.Component {
 
             <i id="dropdownBell" className="fa fa-bell-o fa-sm" aria-hidden="true" />
         Alerts
-        {console.log('hi', this.props)}
           </p>
         </a>
 
@@ -46,13 +45,15 @@ class Alerts extends React.Component {
           className="dropdown-menu dropdown-menu-right mr-0 mt-lg-0"
           aria-labelledby="navbarDropdownMenuLink"
         >
-        
+
           {this.props.alerts.map((element, index) => (
-            <div id="alert" 
-              className="dropdown-item pt-2 px-2" 
-              href="www.google.com" 
-              key={element.isRequired} 
-              index={index}>
+            <div
+              id="alert"
+              className="dropdown-item pt-2 px-2"
+              href="www.google.com"
+              key={element.isRequired}
+              index={index}
+            >
               <img
                 id="projLogo"
                 src={element.image}
