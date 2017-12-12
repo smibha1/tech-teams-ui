@@ -11,6 +11,7 @@ import updateDevInfoReducer from './Profile/updateDevInfo';
 const allReducers = combineReducers({
   techSkills: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,
+  projects: saveNewProjectsReducer,
 });
 
 export default allReducers;

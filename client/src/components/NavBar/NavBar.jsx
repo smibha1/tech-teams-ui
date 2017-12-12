@@ -2,6 +2,7 @@ import React from 'react';
 import swal from 'sweetalert2';
 import $ from 'jquery';
 import './NavBar.css';
+import Projects from '../../containers/Projects/ProjectsContainer';
 
 
 class NavBar extends React.Component {
@@ -13,9 +14,6 @@ class NavBar extends React.Component {
     console.log('reject click', this.props);
   }
 
-  handleProjectNameClick() {
-    console.log('click on project name', this.props);
-  }
 
   handleCreateProjectClick() {
     console.log('click on createProject', this.props);
@@ -201,7 +199,11 @@ class NavBar extends React.Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i id="big-bell-navbar" className="fa fa-bell-o fa-2x mt-2 mx-2" aria-hidden="true" />
+                  <i
+                    id="big-bell-navbar"
+                    className="fa fa-bell-o fa-2x mt-2 mx-2"
+                    aria-hidden="true"
+                  />
                   <p className="navbar-text visible-xs-inline-block">
 
                     <i id="dropdownBell" className="fa fa-bell-o fa-sm" aria-hidden="true" />
@@ -292,14 +294,9 @@ class NavBar extends React.Component {
                     <i className="fa fa-folder-open" aria-hidden="true" />
                     My Projects
                   </h6>
-                  <a className="dropdown-item" href="www.google.com">
-                    <img
-                      id="projLogo-dropdown"
-                      src="https://logos.textgiraffe.com/logos/logo-name/Dev-designstyle-love-heart-m.png"
-                      alt="Project Logo"
-                    /> &nbsp;
-                    Dev Dates
-                  </a>
+
+                  <Projects />
+
                   <div className="dropdown-divider" />
                   <a className="dropdown-item" href="www.google.com">
                     <i className="fa fa-sign-out" aria-hidden="true" />
