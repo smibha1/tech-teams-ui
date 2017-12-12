@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const DevInfoDisplay = props => (
   <div>
@@ -12,3 +13,9 @@ const DevInfoDisplay = props => (
 );
 
 export default DevInfoDisplay;
+
+DevInfoDisplay.propTypes = {
+  info: PropTypes.oneOfType([
+    PropTypes.object,
+  ]).isRequired,
+};

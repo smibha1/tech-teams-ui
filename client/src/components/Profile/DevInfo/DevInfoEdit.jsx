@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class DevInfoEdit extends React.Component {
   constructor(props) {
@@ -71,3 +72,9 @@ class DevInfoEdit extends React.Component {
 }
 
 export default DevInfoEdit;
+
+DevInfoEdit.propTypes = {
+  info: PropTypes.oneOfType([
+    PropTypes.object,
+  ]).isRequired,
+};
