@@ -51,7 +51,7 @@ class Alerts extends React.Component {
               id="alert"
               className="dropdown-item pt-2 px-2"
               href="www.google.com"
-              key={element.isRequired}
+              key={element.id}
               index={index}
             >
               <img
