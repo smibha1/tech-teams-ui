@@ -164,21 +164,33 @@ class NavBar extends React.Component {
             className="collapse navbar-collapse"
             id="navbarSupportedContent"
           >
-            <ul id="navbarIcons" className="navbar-nav">
+            <ul id="navbarIcons" className="navbar-nav pt-0">
               <form className="form-inline mr-left mt-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="text" placeholder="Search" />
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
                   <span className="fa fa-search" aria-hidden="true" />
                 </button>
               </form>
-              <li id="createProj-container" 
-                className="nav-link toggle mt-0 mt-lg-2" 
-                href="www.google.com">
+              <li
+                id="createProj-container"
+                className="nav-link toggle ml-auto"
+                href="www.google.com"
+              >
                 <i
-                  className="fa fa-plus fa-2x mt-0 mt-lg-0"
+                  id="big-bell-navbar"
+                  className="fa fa-plus fa-2x pt-2 mt-lg-0"
                   aria-hidden="true"
                   onClick={() => this.handleCreateProjectClick()}
                 />
+              </li>
+              <li className="navbar-text visible-xs-inline-block">
+                <i
+                  id="dropdownPlus"
+                  className="fa fa-plus pt-2 mt-lg-0"
+                  aria-hidden="true"
+                  onClick={() => this.handleCreateProjectClick()}
+                />
+                Create Project
               </li>
               <li id="alerts-container" className="nav-item dropdown">
                 <a
@@ -189,8 +201,14 @@ class NavBar extends React.Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i className="fa fa-bell-o fa-2x mt-2 mx-2" aria-hidden="true" />
+                  <i id="big-bell-navbar" className="fa fa-bell-o fa-2x mt-2 mx-2" aria-hidden="true" />
+                  <p className="navbar-text visible-xs-inline-block">
+
+                    <i id="dropdownBell" className="fa fa-bell-o fa-sm" aria-hidden="true" />
+                  Alerts
+                  </p>
                 </a>
+
                 <div
                   id="alerts"
                   className="dropdown-menu dropdown-menu-right mr-0 mt-lg-0"
@@ -270,11 +288,33 @@ class NavBar extends React.Component {
                   className="dropdown-menu dropdown-menu-right mt-4 mt-lg-0"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
-                  <h6 className="dropdown-header">My Projects</h6>
-                  <a className="dropdown-item" href="www.google.com">Dev Dates</a>
+                  <h6 className="dropdown-header">
+                    <i className="fa fa-folder-open" aria-hidden="true" />
+                    My Projects
+                  </h6>
+                  <a className="dropdown-item" href="www.google.com">
+                    <img
+                      id="projLogo-dropdown"
+                      src="https://logos.textgiraffe.com/logos/logo-name/Dev-designstyle-love-heart-m.png"
+                      alt="Project Logo"
+                    /> &nbsp;
+                    Dev Dates
+                  </a>
                   <div className="dropdown-divider" />
-                  <a className="dropdown-item" href="www.google.com">Log Out</a>
+                  <a className="dropdown-item" href="www.google.com">
+                    <i className="fa fa-sign-out" aria-hidden="true" />
+                    Log Out
+                  </a>
                 </div>
+              </li>
+              <li className="navbar-text visible-xs-inline-block">
+                <i className="fa fa-folder-open" aria-hidden="true" />
+                My Projects
+              </li>
+              <br />
+              <li className="navbar-text visible-xs-inline-block">
+                <i className="fa fa-sign-out" aria-hidden="true" />
+                Log Out
               </li>
             </ul>
           </div>
