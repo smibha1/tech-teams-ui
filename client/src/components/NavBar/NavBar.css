@@ -83,7 +83,6 @@ input {
 
 #alerts {
  width: 350px;
-
 }
 
 #alert {
@@ -173,19 +172,12 @@ input {
 }
 
 @media(max-width: 992px){
-  #createProj-container  {
-    margin-left: 0;
-    margin:0;
-  }
+
   
   .navbar-text {
     display:block;
     margin-left:auto;
     margin:0;
-  }
-  
-  #createProj-container{
-    width:100%;
   }
   
   #profile-container{
@@ -197,7 +189,6 @@ input {
     }
   
   #navbarDropdownMenuLink {
-    /* display:none; */
     margin-top:0;
   }
 

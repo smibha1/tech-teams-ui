@@ -3,6 +3,7 @@ import './NavBar.css';
 import Projects from '../../containers/Projects/ProjectsContainer';
 import Alerts from '../../containers/Alerts/AlertsContainer';
 import CreateProject from '../NavBar/CreateProject/CreateProject';
+import Search from '../NavBar/Search/Search';
 
 class NavBar extends React.Component {
   render() {
@@ -26,13 +27,8 @@ class NavBar extends React.Component {
             id="navbarSupportedContent"
           >
             <ul id="navbarIcons" className="navbar-nav pt-0">
-              <form className="form-inline mr-left mt-2 my-lg-0">
-                <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                  <span className="fa fa-search" aria-hidden="true" />
-                </button>
-              </form>
 
+              <Search />
               <CreateProject />
               <Alerts />
 
@@ -72,7 +68,7 @@ class NavBar extends React.Component {
               </li>
               <li className="navbar-text visible-xs-inline-block">
                 <i className="fa fa-folder-open" aria-hidden="true" />
-                My Projects
+                <Projects />
               </li>
               <br />
               <li className="navbar-text visible-xs-inline-block">
