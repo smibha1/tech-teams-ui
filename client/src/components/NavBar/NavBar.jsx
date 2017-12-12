@@ -1,18 +1,10 @@
 import React from 'react';
 import './NavBar.css';
 import Projects from '../../containers/Projects/ProjectsContainer';
+import Alerts from '../../containers/Alerts/AlertsContainer';
 import CreateProject from '../NavBar/CreateProject/CreateProject';
 
 class NavBar extends React.Component {
-  handleAcceptClick() {
-    console.log('accept click', this.props);
-  }
-
-  handleRejectClick() {
-    console.log('reject click', this.props);
-  }
-
-
   render() {
     return (
       <div>
@@ -42,86 +34,8 @@ class NavBar extends React.Component {
               </form>
 
               <CreateProject />
-              <li id="alerts-container" className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-menu-right mt-4 mt-lg-0"
-                  href="www.google.com"
-                  id="navbarDropdownMenuLink"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i
-                    id="big-bell-navbar"
-                    className="fa fa-bell-o fa-2x mt-2 mx-2"
-                    aria-hidden="true"
-                  />
-                  <p className="navbar-text visible-xs-inline-block">
+              <Alerts />
 
-                    <i id="dropdownBell" className="fa fa-bell-o fa-sm" aria-hidden="true" />
-                  Alerts
-                  </p>
-                </a>
-
-                <div
-                  id="alerts"
-                  className="dropdown-menu dropdown-menu-right mr-0 mt-lg-0"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <div id="alert" className="dropdown-item pt-2 px-2" href="www.google.com">
-                    <img
-                      id="projLogo"
-                      src="https://logos.textgiraffe.com/logos/logo-name/Dev-designstyle-love-heart-m.png"
-                      alt="Project Logo"
-                    /> &nbsp;
-                    <button
-                      id="projName"
-                      onClick={() => this.handleProjectNameClick()}
-                      onKeyDown={() => this.handleProjectNameClick()}
-                    >
-                      Interview for Dev Dates
-                    </button> &nbsp;
-                    <button
-                      id="accept"
-                      className="fa fa-check"
-                      aria-hidden="true"
-                      onClick={() => this.handleAcceptClick()}
-                    />&nbsp;
-                    <button
-                      id="reject"
-                      className="fa fa-times"
-                      aria-hidden="true"
-                      onClick={() => this.handleRejectClick()}
-                    />
-                  </div>
-                  <div id="alert" className="dropdown-item pt-2 px-2" href="www.google.com">
-                    <img
-                      id="projLogo"
-                      src="https://logos.textgiraffe.com/logos/logo-name/Dev-designstyle-love-heart-m.png"
-                      alt="Project Logo"
-                    /> &nbsp;
-                    <button
-                      id="projName"
-                      onClick={() => this.handleProjectNameClick()}
-                      onKeyDown={() => this.handleProjectNameClick()}
-                    >
-                      Join Dev Dates
-                    </button> &nbsp;
-                    <button
-                      id="accept"
-                      className="fa fa-check"
-                      aria-hidden="true"
-                      onClick={() => this.handleAcceptClick()}
-                    />&nbsp;
-                    <button
-                      id="reject"
-                      className="fa fa-times"
-                      aria-hidden="true"
-                      onClick={() => this.handleRejectClick()}
-                    />
-                  </div>
-                </div>
-              </li>
               <li id="profile-container" className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-menu-right mt-4 mt-lg-0"
