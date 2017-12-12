@@ -5,6 +5,8 @@ import firebase, {auth} from '../../../../firebase.config.js';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import './Login.css';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import LandingPage from '../LandingPage/LandingPage';
 
 class Login extends React.Component {
 
@@ -16,8 +18,12 @@ class Login extends React.Component {
       swal({title: 'Already Signed In!', text: localStorage.getItem('user'), type: 'info'})
     } else {
       auth.signInWithEmailAndPassword(email, password).then(user => {
-        swal({title: 'Signed In', type: 'success', timer: 1000})
-        // console.log(user.email, user.uid);
+        swal({title: 'Signed In', type: 'success', showConfirmButton: false, timer: 1000}).then(() => {
+          // Redirect in here
+          <LandingPage />
+          console.log('after logged in');
+        })
+
         localStorage.setItem('user', user.email);
         // axios with name and email;
       }, error => {
