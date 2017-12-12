@@ -11,27 +11,18 @@ class Signup extends React.Component {
     let name = $('#InputName').val();
     let email = $('#InputEmail').val();
     let password = $('#InputPassword').val();
-      auth.createUserWithEmailAndPassword(email, password)
-      .then( result => {
-        console.log(result);
-        // alert(result);
-        swal({
-          title: 'Signed Up',
-          type: 'success',
-          timer: 1000
-        })
-
-        // axios with name and email;
-      }, error => {
-        console.log(error);
-        swal({
-          title: "Error",
-          type: 'error',
-          text: error,
-          showConfirmButton: true,
-        });
-      });
-
+    // shouldn't need to check localStorage because wouldn't
+    // be signing up if logged in
+    auth.createUserWithEmailAndPassword(email, password).then(user => {
+      console.log(user);
+      // alert(result);
+      localStorage.setItem('user', user.email);
+      swal({title: 'Signed Up', type: 'success', timer: 1000})
+      // axios with name and email;
+    }, error => {
+      console.log(error);
+      swal({title: "Error", type: 'error', text: error, showConfirmButton: true});
+    });
   }
 
   render() {

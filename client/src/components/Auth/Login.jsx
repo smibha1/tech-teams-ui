@@ -4,36 +4,28 @@ import $ from 'jquery';
 import firebase, {auth} from '../../../../firebase.config.js';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import './Login.css';
 
 class Login extends React.Component {
 
-  handleSignUpSubmit() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log("LOGGING USER", user.email, user.uid);
-        // User is signed in.
-      } else {
-        console.log('no user');
-        // No user is signed in.
-      }
-    });
-
-    let name = $('#InputName').val();
+  handleLoginSubmit() {
     let email = $('#InputEmail').val();
     let password = $('#InputPassword').val();
-    auth.signInWithEmailAndPassword(email, password).then(result => {
-
-      swal({title: 'Signed Up', type: 'success', timer: 1000})
-
-      // alert(result);
-
-      console.log(result);
-      // axios with name and email;
-    }, error => {
-      console.log(error);
-      swal({title: "Error", type: 'error', text: error, showConfirmButton: true});
-    });
-
+    if (localStorage.getItem('user') !== 'null') {
+      console.log('User already signed in!');
+      swal({title: 'Already Signed In!', text: localStorage.getItem('user'), type: 'info'})
+    } else {
+      auth.signInWithEmailAndPassword(email, password).then(user => {
+        swal({title: 'Signed In', type: 'success', timer: 1000})
+        // console.log(user.email, user.uid);
+        localStorage.setItem('user', user.email);
+        // axios with name and email;
+      }, error => {
+        console.log(error);
+        localStorage.setItem('user', null);
+        swal({title: "Error", type: 'error', text: error, showConfirmButton: true});
+      });
+    }
   }
 
   render() {
@@ -44,10 +36,10 @@ class Login extends React.Component {
         </div>
         <div className="form-group">
           <input type="password" className="form-control" id="InputPassword" placeholder="Password"></input>
+          <button id="loginsubmit" type="submit" className="btn btn-primary" onClick={this.handleLoginSubmit.bind(this)}>Login</button>
         </div>
-        <button type="submit" className="btn btn-primary" onClick={this.handleSignUpSubmit.bind(this)}>Login</button>
       </form>
-    </div>);
+    </div>)
   }
 }
 

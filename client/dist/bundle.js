@@ -26238,6 +26238,18 @@ var LandingPage = function (_React$Component) {
   }
 
   _createClass(LandingPage, [{
+    key: 'handleLogout',
+    value: function handleLogout() {
+      if (localStorage.getItem('user') === 'null') {
+        alert('NOT SIGNED IN!');
+        console.log('NOT SIGNED IN', localStorage.getItem('user'));
+      } else {
+        localStorage.setItem('user', null);
+        alert('SUCCESSFULLY SIGNED OUT');
+        console.log('LOGGED OUT!', localStorage.getItem('user'));
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -26248,15 +26260,7 @@ var LandingPage = function (_React$Component) {
           { id: 'navbar', className: 'navbar navbar-toggleable-md navbar-light bg-faded' },
           _react2.default.createElement(
             'button',
-            {
-              className: 'navbar-toggler navbar-toggler-right',
-              type: 'button',
-              'data-toggle': 'collapse',
-              'data-target': '#navbarNavDropdown',
-              'aria-controls': 'navbarNavDropdown',
-              'aria-expanded': 'false',
-              'aria-label': 'Toggle navigation'
-            },
+            { className: 'navbar-toggler navbar-toggler-right', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNavDropdown', 'aria-controls': 'navbarNavDropdown', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
             _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
           ),
           _react2.default.createElement('div', { id: 'hiddentitle', className: 'navbar-brand' }),
@@ -26291,6 +26295,15 @@ var LandingPage = function (_React$Component) {
                     'Sign Up'
                   )
                 )
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: 'nav-link', href: 'www.google.com' },
+                _react2.default.createElement(
+                  'button',
+                  { id: 'logout', onClick: this.handleLogout.bind(this) },
+                  'Logout'
+                )
               )
             )
           )
@@ -26298,7 +26311,7 @@ var LandingPage = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           { id: 'title' },
-          ' Tech Teams Landing Page '
+          'Tech Teams Landing Page'
         )
       );
     }
@@ -26349,7 +26362,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, "#login, #signup {\n  background-color: rgb(106, 76, 175); /* Green */\n  border: none;\n  color: white;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n  margin: 4px 2px;\n  cursor: pointer;\n  -webkit-transition-duration: 0.4s; /* Safari */\n  transition-duration: 0.4s;\n}\n#login:hover, #signup:hover {\n  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);\n}\n\n\n#navbarNavDropdown{\n  width:100%;\n  padding-top: 0;\n}\n\n#title {\n  text-align: center;\n}\n\n#hiddentitle{\n  height: 45px;\n}\n\n\n\n@media(max-width: 992px){\n  #signup {\n    margin-left: auto;\n  }\n\n  #login, #signup {\n    background-color: transparent;\n    border: none;\n    color: #653383;\n    padding: 0px;\n    text-align: left;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 18px;\n    font-weight: bold;\n    margin: 0px;\n    cursor: pointer;\n    -webkit-transition-duration: 0s; /* Safari */\n    transition-duration: 0s;\n  }\n  #login:hover, #signup:hover {\n    box-shadow: 0 0px 0px 0 rgba(0,0,0,0),0 17px 50px 0 rgba(0,0,0,0);\n  }\n  #signup-container{\n    margin-left:auto;\n  }\n}", ""]);
+exports.push([module.i, "#login, #signup, #logout {\n  background-color: rgb(106, 76, 175); /* Green */\n  border: none;\n  color: white;\n  padding: 15px 32px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n  margin: 4px 2px;\n  cursor: pointer;\n  -webkit-transition-duration: 0.4s; /* Safari */\n  transition-duration: 0.4s;\n}\n#login:hover, #signup:hover, #logout:hover {\n  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);\n}\n\n\n#navbarNavDropdown{\n  width:100%;\n  padding-top: 0;\n}\n\n#title {\n  text-align: center;\n}\n\n#hiddentitle{\n  height: 45px;\n}\n\n\n\n@media(max-width: 992px){\n  #signup {\n    margin-left: auto;\n  }\n\n  #login, #signup, #logout{\n    background-color: transparent;\n    border: none;\n    color: #653383;\n    padding: 0px;\n    text-align: left;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 18px;\n    font-weight: bold;\n    margin: 0px;\n    cursor: pointer;\n    -webkit-transition-duration: 0s; /* Safari */\n    transition-duration: 0s;\n  }\n  #login:hover, #signup:hover {\n    box-shadow: 0 0px 0px 0 rgba(0,0,0,0),0 17px 50px 0 rgba(0,0,0,0);\n  }\n  #signup-container{\n    margin-left:auto;\n  }\n}\n", ""]);
 
 // exports
 
@@ -26389,6 +26402,8 @@ var _sweetalert = __webpack_require__(130);
 
 var _sweetalert2 = _interopRequireDefault(_sweetalert);
 
+__webpack_require__(322);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26407,33 +26422,25 @@ var Login = function (_React$Component) {
   }
 
   _createClass(Login, [{
-    key: 'handleSignUpSubmit',
-    value: function handleSignUpSubmit() {
-      _firebaseConfig2.default.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          console.log("LOGGING USER", user.email, user.uid);
-          // User is signed in.
-        } else {
-          console.log('no user');
-          // No user is signed in.
-        }
-      });
-
-      var name = (0, _jquery2.default)('#InputName').val();
+    key: 'handleLoginSubmit',
+    value: function handleLoginSubmit() {
       var email = (0, _jquery2.default)('#InputEmail').val();
       var password = (0, _jquery2.default)('#InputPassword').val();
-      _firebaseConfig.auth.signInWithEmailAndPassword(email, password).then(function (result) {
-
-        (0, _sweetalert2.default)({ title: 'Signed Up', type: 'success', timer: 1000 });
-
-        // alert(result);
-
-        console.log(result);
-        // axios with name and email;
-      }, function (error) {
-        console.log(error);
-        (0, _sweetalert2.default)({ title: "Error", type: 'error', text: error, showConfirmButton: true });
-      });
+      if (localStorage.getItem('user') !== 'null') {
+        console.log('User already signed in!');
+        (0, _sweetalert2.default)({ title: 'Already Signed In!', text: localStorage.getItem('user'), type: 'info' });
+      } else {
+        _firebaseConfig.auth.signInWithEmailAndPassword(email, password).then(function (user) {
+          (0, _sweetalert2.default)({ title: 'Signed In', type: 'success', timer: 1000 });
+          // console.log(user.email, user.uid);
+          localStorage.setItem('user', user.email);
+          // axios with name and email;
+        }, function (error) {
+          console.log(error);
+          localStorage.setItem('user', null);
+          (0, _sweetalert2.default)({ title: "Error", type: 'error', text: error, showConfirmButton: true });
+        });
+      }
     }
   }, {
     key: 'render',
@@ -26452,12 +26459,12 @@ var Login = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'form-group' },
-            _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'InputPassword', placeholder: 'Password' })
-          ),
-          _react2.default.createElement(
-            'button',
-            { type: 'submit', className: 'btn btn-primary', onClick: this.handleSignUpSubmit.bind(this) },
-            'Login'
+            _react2.default.createElement('input', { type: 'password', className: 'form-control', id: 'InputPassword', placeholder: 'Password' }),
+            _react2.default.createElement(
+              'button',
+              { id: 'loginsubmit', type: 'submit', className: 'btn btn-primary', onClick: this.handleLoginSubmit.bind(this) },
+              'Login'
+            )
           )
         )
       );
@@ -26527,24 +26534,17 @@ var Signup = function (_React$Component) {
       var name = (0, _jquery2.default)('#InputName').val();
       var email = (0, _jquery2.default)('#InputEmail').val();
       var password = (0, _jquery2.default)('#InputPassword').val();
-      _firebaseConfig.auth.createUserWithEmailAndPassword(email, password).then(function (result) {
-        console.log(result);
+      // shouldn't need to check localStorage because wouldn't
+      // be signing up if logged in
+      _firebaseConfig.auth.createUserWithEmailAndPassword(email, password).then(function (user) {
+        console.log(user);
         // alert(result);
-        (0, _sweetalert2.default)({
-          title: 'Signed Up',
-          type: 'success',
-          timer: 1000
-        });
-
+        localStorage.setItem('user', user.email);
+        (0, _sweetalert2.default)({ title: 'Signed Up', type: 'success', timer: 1000 });
         // axios with name and email;
       }, function (error) {
         console.log(error);
-        (0, _sweetalert2.default)({
-          title: "Error",
-          type: 'error',
-          text: error,
-          showConfirmButton: true
-        });
+        (0, _sweetalert2.default)({ title: "Error", type: 'error', text: error, showConfirmButton: true });
       });
     }
   }, {
@@ -39380,7 +39380,7 @@ exports = module.exports = __webpack_require__(24)(undefined);
 
 
 // module
-exports.push([module.i, ".SignUp {\n  width: 300px;\n  padding-top: 15px;\n  margin: 0 auto;\n  max-width: 600px;\n  background-color: #d9d5d5b0;\n  border-radius: 15px;\n  text-align: center;\n}\n\n#signingup {\n  text-align: center;\n}\n\n.form-group {\n  padding: 4px 0px 4px 0px;\n  text-align: center;\n  margin: auto;\n  width: 250px;\n}\n\n#signupsubmit {\n  margin-bottom: 5px;\n}\n", ""]);
+exports.push([module.i, ".SignUp {\n  width: 300px;\n  padding-top: 15px;\n  margin: 0 auto;\n  max-width: 600px;\n  background-color: #d9d5d5b0;\n  border-radius: 15px;\n  text-align: center;\n}\n\n#signingup {\n  text-align: center;\n}\n\n.form-group {\n  padding: 4px 0px 4px 0px;\n  text-align: center;\n  margin: auto;\n  width: 250px;\n}\n\n#signupsubmit {\n  margin-bottom: 5px;\n  margin-top: 15px;\n}\n", ""]);
 
 // exports
 
@@ -66935,6 +66935,51 @@ function stop(id) {
 }
 
 //# sourceMappingURL=backoff.js.map
+
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(323);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(25)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!./Login.css", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!./Login.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(24)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".Login {\n  width: 300px;\n  padding-top: 15px;\n  margin: 0 auto;\n  max-width: 600px;\n  background-color: #d9d5d5b0;\n  border-radius: 15px;\n  text-align: center;\n}\n\n#login-form {\n  text-align: center;\n}\n\n.form-group {\n  padding: 4px 0px 4px 0px;\n  text-align: center;\n  margin: auto;\n  width: 250px;\n}\n\n#loginsubmit {\n  margin-bottom: 5px;\n  margin-top: 15px;\n}\n", ""]);
+
+// exports
 
 
 /***/ })
