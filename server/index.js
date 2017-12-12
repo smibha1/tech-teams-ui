@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cors);
 
-
 const port = 3001;
 app.listen(port, function () {
   console.log(`Server Starts on ${port}`);

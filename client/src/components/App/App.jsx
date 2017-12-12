@@ -1,6 +1,6 @@
 // This is the main component to hold all over components
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import Login from '../Auth/Login';
@@ -9,18 +9,24 @@ import MainProfile from '../Profile/Profile'
 import NavBar from '../NavBar/NavBar'
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      user: null
+    }
+  }
+
   render() {
-    return (
-      <Router>
+    return (<Router>
+      <Switch>
         <div>
-          <Route path="/" render={() => <MainProfile />} /> 
-          <Route path="/" render={() => <LandingPage />} />
-          <Route path="/login" render={() => <Login />} />
-          <Route path="/signup" render={() => <Signup />} />
-          <Route path="/" render={() => <NavBar />} />
+          <Route path="/profile" render={() => <MainProfile/>}/>
+          <Route exact path="/" render={() => <LandingPage/>}/>
+          <Route path="/login" render={() => <Login/>}/>
+          <Route path="/signup" render={() => <Signup/>}/>
         </div>
-      </Router>
-    );
+      </Switch>
+    </Router>);
   }
 }
 
