@@ -1,29 +1,8 @@
-<<<<<<< HEAD
-// import React from 'react';
-// import DevInfoContainer from '../../containers/Profile/DevInfoContainer';
-// import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsContainer';
-// import CurrentProjectsContainer from '../../containers/Profile/CurrentProjectsContainer';
-// import CompletedProjectsContainer from '../../containers/Profile/CompletedProjectsContainer';
-//
-// const Profile = () => (
-//   <div>
-//     <DevInfoContainer />
-//     <br />
-//     <TechnicalSkillsContainer />
-//     <br />
-//     <CurrentProjectsContainer />
-//     <br />
-//     <CompletedProjectsContainer />
-//   </div>
-// );
-//
-// export default Profile;
-=======
 import React from 'react';
 import DevInfoContainer from '../../containers/Profile/DevInfoContainer';
 import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsContainer';
-// import CurrentProjectsContainer from '../../containers/Profile/CurrentProjectsContainer';
-// import CompletedProjectsContainer from '../../containers/Profile/CompletedProjectsContainer';
+import CurrentProjectsContainer from '../../containers/Profile/CurrentProjectsContainer';
+import CompletedProjectsContainer from '../../containers/Profile/CompletedProjectsContainer';
 
 const Profile = () => (
   <div>
@@ -31,11 +10,10 @@ const Profile = () => (
     <br />
     <TechnicalSkillsContainer />
     <br />
-    {/* <CurrentProjectsContainer />
+    <CurrentProjectsContainer />
     <br />
-    <CompletedProjectsContainer /> */}
+    <CompletedProjectsContainer />
   </div>
 );
 
 export default Profile;
->>>>>>> [fix]
