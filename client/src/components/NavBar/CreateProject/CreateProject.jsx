@@ -21,23 +21,24 @@ class CreateProject extends React.Component {
         animation: false,
         html: '<form action="/action_page.php">'
           + 'Project Name: &nbsp;'
-          + '<input id:"projName" type="text" name="firstname" placeholder="DevDates"><br>'
+          + '<input id="projName" class="swal2-input" type="text" name="firstname" placeholder="DevDates"><br>'
           + '<br>'
           + 'Headquarters: &nbsp;'
-          + '<input id:"headquarters" type="text" name="lastname" placeholder="Los Angeles, CA"><br>'
+          + '<input id="headquarters" class="swal2-input" type="text" name="lastname" placeholder="Los Angeles, CA"><br>'
           + '<br>'
           + 'Company Logo: &nbsp;'
-          + '<input id:"logo" type="url" name="lastname" placeholder="http://i.telegraph.co.uk/logo.jpg"><br>'
+          + '<input id="logo" class="swal2-input" type="url" name="lastname" placeholder="http://i.telegraph.co.uk/logo.jpg"><br>'
           + '<br>'
           + 'Project Description: &nbsp;'
-          + '<input id:"projDesc" type="text" name="lastname" placeholder="Bringing Devs together"><br>'
+          + '<input id="projDesc" class="swal2-input" type="text" name="lastname" placeholder="Bringing Devs together"><br>'
           + '</form>',
         focusConfirm: false,
-        preConfirm: () => [
-          $('#projName').val(),
-          $('#logo').val(),
-          $('#headquarters').val(),
-          $('#projDesc').val(),
+        preConfirm: () => [{
+          ProjName: $('#projName').val(),
+          ProjLogo: $('#logo').val(),
+          HeadQuarters: $('#headquarters').val(),
+          ProjDesc: $('#projDesc').val(),
+        }
         ],
       },
       {
@@ -47,28 +48,28 @@ class CreateProject extends React.Component {
         animation: false,
         html: '<form action="/action_page.php">'
         + 'Your Project Website: &nbsp;'
-        + '<input id:"companyWebsite" type="url" name="firstname" placeholder="www.devdates.com"><br>'
+        + '<input id="companyWebsite" type="url" name="firstname" placeholder="www.devdates.com"><br>'
         + '<br>'
         + '<i class="fa fa-linkedin-square" aria-hidden="true"></i> &nbsp;'
-        + '<input id:"linkedin" type="url" name="lastname" placeholder="https://linkedin.com/tonystark"><br>'
+        + '<input id="linkedin" type="url" name="lastname" placeholder="https://linkedin.com/tonystark"><br>'
         + '<br>'
         + '<i class="fa fa-slack" aria-hidden="true"></i> &nbsp;'
-        + '<input id:"slack" type="url" name="lastname" placeholder="https://hrla-students.slack.com/messages"><br>'
+        + '<input id="slack" type="url" name="lastname" placeholder="https://hrla-students.slack.com/messages"><br>'
         + '<br>'
         + '<i class="fa fa-github" aria-hidden="true"></i> &nbsp;'
-        + '<input id:"github" type="url" name="lastname" placeholder="https://github.com/tonystark"><br>'
+        + '<input id="github" type="url" name="lastname" placeholder="https://github.com/tonystark"><br>'
         + '<br>'
         + '<i class="fa fa-trello" aria-hidden="true"></i> &nbsp;'
-        + '<input id:"trello" type="url" name="lastname" placeholder="https://trello.com/b/0NYefHQ3/devdates"><br>'
+        + '<input id="trello" type="url" name="lastname" placeholder="https://trello.com/b/0NYefHQ3/devdates"><br>'
         + '</form>',
         focusConfirm: false,
-        preConfirm: () => [
-          $('#companyWebsite').val(),
-          $('#linkedin').val(),
-          $('#slack').val(),
-          $('#github').val(),
-          $('#trello').val(),
-        ],
+        preConfirm: () => ({
+          companyWebsite: $('#companyWebsite').val(),
+          linkedin: $('#linkedin').val(),
+          slack: $('#slack').val(),
+          github: $('#github').val(),
+          trello: $('#trello').val(),
+        }),
       },
       {
         title: 'Tech Stack',
@@ -76,12 +77,12 @@ class CreateProject extends React.Component {
         padding: 100,
         animation: false,
         html: '<form action="/action_page.php">'
-          + '<input id:"techStack" class="submissionfield" type="text" name="firstname" placeholder="React, Node, MongoDB"><br>'
+          + '<input id="techStack" class="submissionfield" type="text" name="firstname" placeholder="React, Node, MongoDB"><br>'
           + '</form>',
         focusConfirm: false,
-        preConfirm: () => [
-          $('#techStack').val(),
-        ],
+        preConfirm: () => ({
+          techStack: $('#techStack').val(),
+        }),
       },
       {
         title: 'Add Team Members',
@@ -90,28 +91,34 @@ class CreateProject extends React.Component {
         animation: false,
         html: '<form action="/action_page.php">'
           + 'Name: &nbsp;'
-          + '<input id:"name1" type="text" name="firstname" placeholder="Tony Stark"> &nbsp;'
+          + '<input id="name1" type="text" name="firstname" placeholder="Tony Stark"> &nbsp;'
           + 'Position: &nbsp;'
-          + '<input id:"position1" type="text" name="firstname" placeholder="Product Owner"><br>'
+          + '<input id="position1" type="text" name="firstname" placeholder="Product Owner"><br>'
           + '<br>'
           + 'Name: &nbsp;'
-          + '<input id:"name2" type="text" name="firstname" placeholder="Tony Stark"> &nbsp;'
+          + '<input id="name2" type="text" name="firstname" placeholder="Tony Stark"> &nbsp;'
           + 'Position: &nbsp;'
-          + '<input id:"position2" type="text" name="firstname" placeholder="Developer"><br>'
+          + '<input id="position2" type="text" name="firstname" placeholder="Developer"><br>'
           + '<br>'
           + 'Name: &nbsp;'
-          + '<input id:"name3" type="text" name="firstname" placeholder="Pepper Potts"> &nbsp;'
+          + '<input id="name3" type="text" name="firstname" placeholder="Pepper Potts"> &nbsp;'
           + 'Position: &nbsp;'
-          + '<input id:"position3" type="text" name="firstname" placeholder="Scrum Master"><br>'
+          + '<input id="position3" type="text" name="firstname" placeholder="Scrum Master"><br>'
           + '</form>',
         focusConfirm: false,
         preConfirm: () => [
-          $('#name1').val(),
-          $('#name2').val(),
-          $('#name3').val(),
-          $('#position1').val(),
-          $('#position2').val(),
-          $('#position3').val(),
+          {
+            name: $('#name1').val(),
+            title: $('#position1').val(),
+          },
+          {
+            name: $('#name2').val(),
+            title: $('#position2').val(),
+          },
+          {
+            name: $('#name3').val(),
+            title: $('#position3').val(),
+          },
         ],
       },
     ];
