@@ -1,0 +1,22 @@
+.individualProject {
+  height: 125px;
+  width: 40%;
+  vertical-align: center;
+  border: solid;
+  border-width: thin;
+  margin: 5px;
+  padding: 5px;
+}
+
+.searchProject-projectImg {
+  float: left;
+  margin-right: 10px;
+}
+
+.searchProject-projectDesc {
+  float: left;
+}
+
+.btn-interview {
+  float: right;
+}
