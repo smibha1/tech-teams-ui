@@ -23,9 +23,12 @@ class App extends React.Component {
       <Switch>
         <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           {/* <Route path="/profile" render={() => <MainProfile/>}/>
 =======
 >>>>>>> [ops]
+=======
+>>>>>>> ffed24d8cc6cf096d3e96cb6e36616b892bae7e8
           <Route exact path="/" render={() => <LandingPage/>}/>
           <Route path="/profile" render={() => <MainProfile/>}/>
           <Route path="/login" render={() => <Login/>}/>
