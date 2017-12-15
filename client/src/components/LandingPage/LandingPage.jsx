@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './LandingPage.css';
 import swal from 'sweetalert2';
+import jwtDecode from 'jwt-decode';
 
 class LandingPage extends React.Component {
   constructor() {
@@ -12,18 +13,10 @@ class LandingPage extends React.Component {
   }
 
   handleLogout() {
-    localStorage.setItem('user', null);
-    swal({
-      title: 'Logged out!',
-      type: 'success',
-      timer: 1000,
-      showConfirmButton: false
-    }).then(() => {
-      this.setState({
-        number: 0
-      })
+    localStorage.setItem('token', null);
+    swal({title: 'Logged out!', type: 'success', timer: 1000, showConfirmButton: false}).then(() => {
+      this.setState({number: 0})
     })
-    console.log('LOGGED OUT!', localStorage.getItem('user'));
   }
 
   render() {
@@ -35,8 +28,13 @@ class LandingPage extends React.Component {
         <div id="hiddentitle" className="navbar-brand"/>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           {
-            localStorage.getItem('user') === 'null'
-              ? <ul id="navbarNavDropdown" className="navbar-nav">
+            localStorage.getItem('token') !== 'null' && jwtDecode(localStorage.token).email !== ''
+              ? <ul>
+                  <li className="nav-link" href="www.google.com">
+                    <button id="logout" onClick={this.handleLogout.bind(this)}>Logout</button>
+                  </li>
+                </ul>
+              : <ul id="navbarNavDropdown" className="navbar-nav">
                   <li id="login-container" className="nav-link ml-auto" href="www.google.com">
                     <Link to="/login" href="/login">
                       <button id="login">Login</button>
@@ -46,11 +44,6 @@ class LandingPage extends React.Component {
                     <Link to="/signup" href="/signup">
                       <button id="signup">Sign Up</button>
                     </Link>
-                  </li>
-                </ul>
-              : <ul>
-                  <li className="nav-link" href="www.google.com">
-                    <button id="logout" onClick={this.handleLogout.bind(this)}>Logout</button>
                   </li>
                 </ul>
           }
