@@ -17,7 +17,7 @@ class CurrentProjects extends React.Component {
     return (
       <div>
         Completed Projects <br />
-        -------------------------- <br />
+        <br />
         {
           this.props.currentProjects.currentProjs.map((element, index) => (
             <div
