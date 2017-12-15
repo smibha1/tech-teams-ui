@@ -6,19 +6,23 @@ import axios from 'axios';
 import swal from 'sweetalert2';
 
 class Signup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      // path: '/signup'
+    }
+  }
 
-  handleSignUpSubmit() {
+  async handleSignUpSubmit(e) {
+    e.preventDefault();
     let name = $('#InputName').val();
     let email = $('#InputEmail').val();
     let password = $('#InputPassword').val();
-    // shouldn't need to check localStorage because wouldn't
-    // be signing up if logged in
     auth.createUserWithEmailAndPassword(email, password).then(user => {
-      console.log(user);
-      // alert(result);
-      localStorage.setItem('user', user.email);
-      swal({title: 'Signed Up', type: 'success', timer: 1000})
-      // axios with name and email;
+      swal({title: 'Signed Up', type: 'success', timer: 1000}).then(() => {
+        // render different component
+        // this.setState({path: '/'})
+      })
     }, error => {
       console.log(error);
       swal({title: "Error", type: 'error', text: error, showConfirmButton: true});

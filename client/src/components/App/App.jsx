@@ -22,13 +22,13 @@ class App extends React.Component {
     return (<Router>
       <Switch>
         <div>
-          <Route path="/profile" render={() => <MainProfile/>}/>
           <Route exact path="/" render={() => <LandingPage/>}/>
+          <Route path="/profile" render={() => <MainProfile/>}/>
           <Route path="/login" render={() => <Login/>}/>
           <Route path="/signup" render={() => <Signup/>}/>
+          <Route path="/questions" render={() => <Questions />} />
           <Route path="/username" render={() => <NavBar />} />
           <Route path="/username/profile" render={() => <MainProfile />} />
-          <Route path="/signup/questions" render={() => <Questions />} />
         </div>
       </Switch>
     </Router>);
