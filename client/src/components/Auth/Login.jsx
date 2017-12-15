@@ -5,33 +5,43 @@ import firebase, {auth} from '../../../../firebase.config.js';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import './Login.css';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
+import jwtDecode from 'jwt-decode';
 
 class Login extends React.Component {
 
-  handleLoginSubmit() {
+  async handleLoginSubmit(e) {
+    e.preventDefault();
     let email = $('#InputEmail').val();
     let password = $('#InputPassword').val();
-    if (localStorage.getItem('user') !== 'null') {
-      console.log('User already signed in!');
-      swal({title: 'Already Signed In!', text: localStorage.getItem('user'), type: 'info'})
-    } else {
-      auth.signInWithEmailAndPassword(email, password).then(user => {
-        swal({title: 'Signed In', type: 'success', showConfirmButton: false, timer: 1000}).then(() => {
-          // Redirect in here
-          <LandingPage />
-          console.log('after logged in');
-        })
 
-        localStorage.setItem('user', user.email);
-        // axios with name and email;
-      }, error => {
-        console.log(error);
-        localStorage.setItem('user', null);
-        swal({title: "Error", type: 'error', text: error, showConfirmButton: true});
-      });
-    }
+    axios({
+      url: 'http://localhost:3000/login',
+      method: 'post',
+      data: {
+        email: email,
+        password: password
+      }
+    }).then(resp => {
+      if (resp.status === 204) {
+        swal({title: 'Error', text: 'Double check email and password', type: 'error', showConfirmButton: false, timer: 1000}).then(() => {
+          $('#InputEmail').val('');
+          $('#InputPassword').val('');
+        })
+      } else {
+        localStorage.setItem('token', resp.data.accessToken);
+        swal({title: 'Signing In', type: 'success', showConfirmButton: false, timer: 1000})
+        // Should reroute you!
+      }
+
+    }).catch(err => {
+      swal({title: 'Error', text: err, type: 'error', showConfirmButton: false, timer: 1000}).then(() => {
+        $('#InputEmail').val('');
+        $('#InputPassword').val('');
+      })
+    })
+
   }
 
   render() {

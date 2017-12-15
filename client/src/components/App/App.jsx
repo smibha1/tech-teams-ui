@@ -22,13 +22,25 @@ class App extends React.Component {
     return (<Router>
       <Switch>
         <div>
+<<<<<<< HEAD
+<<<<<<< HEAD
           {/* <Route path="/profile" render={() => <MainProfile/>}/>
+=======
+>>>>>>> [ops]
+=======
+>>>>>>> ffed24d8cc6cf096d3e96cb6e36616b892bae7e8
           <Route exact path="/" render={() => <LandingPage/>}/>
+          <Route path="/profile" render={() => <MainProfile/>}/>
           <Route path="/login" render={() => <Login/>}/>
+<<<<<<< HEAD
           <Route path="/signup" render={() => <Signup/>}/> */}
           <Route path="/" render={() => <NavBar />} />
+=======
+          <Route path="/signup" render={() => <Signup/>}/>
+          <Route path="/questions" render={() => <Questions />} />
+          <Route path="/username" render={() => <NavBar />} />
+>>>>>>> [ops]
           <Route path="/username/profile" render={() => <MainProfile />} />
-          <Route path="/signup/questions" render={() => <Questions />} />
         </div>
       </Switch>
     </Router>);
