@@ -3,9 +3,25 @@ import './NavBar.css';
 import Projects from '../../containers/Projects/ProjectsContainer';
 import Alerts from '../../containers/Alerts/AlertsContainer';
 import CreateProject from '../NavBar/CreateProject/CreateProject';
+import CreatePosition from '../../components/CreatePosition/CreatePosition';
 import Search from '../NavBar/Search/Search';
 
 class NavBar extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      number: 1
+    }
+  }
+
+  handleLogout() {
+    localStorage.setItem('token', null);
+    swal({title: 'Logged out!', type: 'success', timer: 1000, showConfirmButton: false}).then(() => {
+      this.setState({number: 0})
+    })
+  }
+
   render() {
     return (
       <div>
@@ -30,6 +46,7 @@ class NavBar extends React.Component {
 
               <Search />
               <CreateProject />
+              <CreatePosition />
               <Alerts />
 
               <li id="profile-container" className="nav-item dropdown">
@@ -60,7 +77,7 @@ class NavBar extends React.Component {
                   <Projects />
 
                   <div className="dropdown-divider" />
-                  <a className="dropdown-item" href="www.google.com">
+                  <a className="dropdown-item" href="www.google.com" onClick={this.handleLogout.bind(this)}>
                     <i className="fa fa-sign-out" aria-hidden="true" />
                     Log Out
                   </a>
@@ -72,7 +89,7 @@ class NavBar extends React.Component {
               </li>
               <br />
               <li className="navbar-text visible-xs-inline-block">
-                <i className="fa fa-sign-out" aria-hidden="true" />
+                <i className="fa fa-sign-out" aria-hidden="true" onClick={this.handleLogout.bind(this)}/>
                 Log Out
               </li>
             </ul>

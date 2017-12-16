@@ -5,12 +5,13 @@ import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsCo
 
 class Questions extends React.Component {
   handleTitle1Change(e) {
+    e.preventDefault();
     console.log('target value',e.target);
   }
 
   render() {
     return (
-      <div >
+      <div id="questions-container">
         <h1>Getting Started</h1>
         <form onSubmit={this.handleTitle1Change}>
           <fieldset className="legend-brdr-bttm" >
@@ -55,7 +56,7 @@ class Questions extends React.Component {
               </label>
             </div>
             <Link to = "/username/profile">
-            <button type="submit" className="btn btn-primary" onClick={this.handleTitle1Change}>Create Profile</button>
+            <button type="submit" className="btn btn-primary">Create Profile</button>
             </Link>
           </fieldset>
         </form>

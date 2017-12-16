@@ -1,6 +1,6 @@
 // This is the main component to hold all over components
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import Login from '../Auth/Login';
@@ -8,7 +8,6 @@ import Signup from '../Auth/Signup';
 import Questions from '../Questions/Questions';
 import MainProfile from '../Profile/Profile';
 import NavBar from '../NavBar/NavBar';
-
 
 class App extends React.Component {
   constructor() {
@@ -19,31 +18,18 @@ class App extends React.Component {
   }
 
   render() {
-    return (<Router>
-      <Switch>
-        <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          {/* <Route path="/profile" render={() => <MainProfile/>}/>
-=======
->>>>>>> [ops]
-=======
->>>>>>> ffed24d8cc6cf096d3e96cb6e36616b892bae7e8
-          <Route exact path="/" render={() => <LandingPage/>}/>
-          <Route path="/profile" render={() => <MainProfile/>}/>
-          <Route path="/login" render={() => <Login/>}/>
-<<<<<<< HEAD
-          <Route path="/signup" render={() => <Signup/>}/> */}
-          <Route path="/" render={() => <NavBar />} />
-=======
-          <Route path="/signup" render={() => <Signup/>}/>
-          <Route path="/questions" render={() => <Questions />} />
-          <Route path="/username" render={() => <NavBar />} />
->>>>>>> [ops]
-          <Route path="/username/profile" render={() => <MainProfile />} />
-        </div>
-      </Switch>
-    </Router>);
+    return (
+      <div>
+        <Switch>
+            <Route path="/username" component={NavBar} />
+            <Route path="/login" component={Login}/>
+            <Route path="/signup" component={Signup}/>
+            <Route exact path="/" component={LandingPage}/> 
+        </Switch>
+            <Route path="/questions" component={Questions } />
+          <Route path="/username/profile" component={MainProfile}/>
+      </div>
+    );
   }
 }
 

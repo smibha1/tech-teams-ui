@@ -1,0 +1,20 @@
+#questions-container {
+  text-align: center;
+  border: solid;
+  width: 80%;
+  background: lightgrey;
+  margin:auto;
+
+}
+
+.legend-brdr-bttm {
+  width: 100%
+}
+
+#Location {
+  float:left;
+}
+
+.available{
+  float: right;
+}
