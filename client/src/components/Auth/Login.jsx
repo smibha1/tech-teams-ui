@@ -1,11 +1,10 @@
 import React from 'react';
 import './Signup.css';
 import $ from 'jquery';
-import firebase, {auth} from '../../../../firebase.config.js';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import './Login.css';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import {Router as Router, Route, Redirect} from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import jwtDecode from 'jwt-decode';
 
@@ -15,6 +14,7 @@ class Login extends React.Component {
     e.preventDefault();
     let email = $('#InputEmail').val();
     let password = $('#InputPassword').val();
+    let self = this;
 
     axios({
       url: 'http://localhost:3000/login',
@@ -32,7 +32,10 @@ class Login extends React.Component {
       } else {
         localStorage.setItem('token', resp.data.accessToken);
         swal({title: 'Signing In', type: 'success', showConfirmButton: false, timer: 1000})
-        // Should reroute you!
+          .then( () => {
+        this.props.history.push('/username/profile');
+          }
+          )
       }
 
     }).catch(err => {

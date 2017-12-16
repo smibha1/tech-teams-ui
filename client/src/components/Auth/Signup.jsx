@@ -20,8 +20,7 @@ class Signup extends React.Component {
     let password = $('#InputPassword').val();
     auth.createUserWithEmailAndPassword(email, password).then(user => {
       swal({title: 'Signed Up', type: 'success', timer: 1000}).then(() => {
-        // render different component
-        // this.setState({path: '/'})
+        this.props.history.push('/questions')
       })
     }, error => {
       console.log(error);
