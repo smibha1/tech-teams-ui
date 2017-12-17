@@ -3,6 +3,7 @@ import $ from 'jquery';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import './Login.css';
+import {Link} from 'react-router-dom';
 import {Router as Router, Route, Redirect} from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import jwtDecode from 'jwt-decode';
@@ -61,7 +62,6 @@ class Login extends React.Component {
           id="InputEmail"
           hintText="rudd@aol.com"
           floatingLabelText="Email"
-          floatingTextStyle={{color: '#491f68'}}
           floatingLabelFocusStyle={{color: '#491f68'}}
           underlineFocusStyle={{borderColor: '#491f68'}}
           underlineStyle={{borderColor: '#491f68'}}
@@ -72,14 +72,19 @@ class Login extends React.Component {
             hintText="Password"
             floatingLabelText="Password"
             type="password"
-            floatingTextStyle={{color: '#491f68'}}
             floatingLabelFocusStyle={{color: '#491f68'}}
             underlineFocusStyle={{borderColor: '#491f68'}}
             underlineStyle={{borderColor: '#491f68'}}
           /><br />
           <div id="submitButton">
           <button id="loginsubmit" className="btn btn-primary" type="submit" onClick={this.handleLoginSubmit.bind(this)}>Login</button>
-          </div>      
+          </div>
+          <Divider />
+          <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Not a member? 
+            <Link to="/signup" href="/signup">
+              <span href="#" className="dividerSignUp blue-text ml-1"> Sign Up</span>
+            </Link>
+          </p>
        </form>
     </div>
 
