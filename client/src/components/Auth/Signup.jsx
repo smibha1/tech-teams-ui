@@ -2,10 +2,13 @@ import React, { PropTypes } from 'react'
 import $ from 'jquery';
 import firebase, {auth} from '../../../../firebase.config.js';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import swal from 'sweetalert2';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import Divider from 'material-ui/Divider';
 import './Signup.css';
+
 
 class Signup extends React.Component {
   constructor() {
@@ -41,7 +44,6 @@ class Signup extends React.Component {
           id="InputName"
           hintText="Paul Rudd"
           floatingLabelText="Name"
-          floatingTextStyle={{color: '#491f68'}}
           floatingLabelFocusStyle={{color: '#491f68'}}
           underlineFocusStyle={{borderColor: '#491f68'}}
           underlineStyle={{borderColor: '#491f68'}}
@@ -51,7 +53,6 @@ class Signup extends React.Component {
           id="InputEmail"
           hintText="rudd@aol.com"
           floatingLabelText="Email"
-          floatingTextStyle={{color: '#491f68'}}
           floatingLabelFocusStyle={{color: '#491f68'}}
           underlineFocusStyle={{borderColor: '#491f68'}}
           underlineStyle={{borderColor: '#491f68'}}
@@ -62,14 +63,19 @@ class Signup extends React.Component {
             hintText="Password"
             floatingLabelText="Password"
             type="password"
-            floatingTextStyle={{color: '#491f68'}}
             floatingLabelFocusStyle={{color: '#491f68'}}
             underlineFocusStyle={{borderColor: '#491f68'}}
             underlineStyle={{borderColor: '#491f68'}}
           /><br />
           <div id="submitButton">
-          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Login</button>
+          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up</button>
           </div>
+          <Divider />
+          <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Already a member? 
+            <Link to="/login" href="/login">
+              <span href="#" className="dividerSignUp blue-text ml-1">Login</span>
+            </Link>
+          </p>
        </form>
      </div>
     )
