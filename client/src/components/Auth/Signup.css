@@ -33,12 +33,7 @@ body{
   border-color: #62297f; 
 }
 
-#submitsignupsubmit {
-  background-color: #62297f;
-  border-color: #62297f; 
-}
-
-#submitsignupsubmit:hover {
+#signupsubmit:hover {
   background-color: #491f68;
   border-color: #491f68;
 }
