@@ -1,25 +1,58 @@
+body{
+  width:100%;
+  height:100%;
+  background: url("http://www.pptback.com/uploads/abstract-purple-backgrounds-powerpoint.jpg") no-repeat top right fixed;
+  align-content: center;
+}
+
 .SignUp {
-  width: 300px;
+  width: 20%;
+  height: 20%;
   padding-top: 15px;
   margin: 0 auto;
-  max-width: 600px;
-  background-color: #d9d5d5b0;
-  border-radius: 15px;
+  min-width: 400px;
   text-align: center;
 }
 
 #signingup {
+  border:solid;
+  border-radius: 30px;
+  border-color: rgba(250, 246, 252, 0.933);
+  box-shadow: 1px 2px 8px 2px  rgb(178, 158, 194);
   text-align: center;
-}
-
-.form-group {
-  padding: 4px 0px 4px 0px;
-  text-align: center;
-  margin: auto;
-  width: 250px;
+  min-width: 400px;
+  height: 380px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
 }
 
 #signupsubmit {
-  margin-bottom: 5px;
-  margin-top: 15px;
+  background-color: #62297f;
+  border-color: #62297f; 
 }
+
+#submitsignupsubmit {
+  background-color: #62297f;
+  border-color: #62297f; 
+}
+
+#submitsignupsubmit:hover {
+  background-color: #491f68;
+  border-color: #491f68;
+}
+
+#submitButton {
+  margin-top: 30px;
+}
+
+#signUpHeader {
+  margin-top: 20px;
+}
+
+.fa-envelope, .fa-lock, .fa-user {
+  margin-right: 15px;
+  color: rgb(60, 60, 60);
+}
+
