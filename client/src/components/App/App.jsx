@@ -8,6 +8,7 @@ import Signup from '../Auth/Signup';
 import Questions from '../Questions/Questions';
 import MainProfile from '../Profile/Profile';
 import NavBar from '../NavBar/NavBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends React.Component {
   constructor() {
@@ -20,14 +21,18 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Switch>
-            <Route path="/username" component={NavBar} />
-            <Route path="/login" component={Login}/>
-            <Route path="/signup" component={Signup}/>
-            <Route exact path="/" component={LandingPage}/> 
-        </Switch>
-            <Route path="/questions" component={Questions } />
-          <Route path="/username/profile" component={MainProfile}/>
+        <MuiThemeProvider>
+          <div>
+            <Switch>
+              <Route path="/username" component={NavBar} />
+              <Route path="/login" component={Login}/>
+              <Route path="/signup" component={Signup}/>
+              <Route exact path="/" component={LandingPage}/> 
+            </Switch>
+              <Route path="/questions" component={Questions } />
+              <Route path="/username" component={MainProfile}/>
+          </div>
+        </MuiThemeProvider>
       </div>
     );
   }
