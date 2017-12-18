@@ -5,6 +5,7 @@ import Alerts from '../../containers/Alerts/AlertsContainer';
 import CreateProject from '../NavBar/CreateProject/CreateProject';
 import CreatePosition from '../../components/CreatePosition/CreatePosition';
 import Search from '../NavBar/Search/Search';
+import logo from '../../../dist/images/Logomakr_5f3c6s.png';
 
 class NavBar extends React.Component {
 
@@ -37,7 +38,10 @@ class NavBar extends React.Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="logo">TechTeams</div>
+          <div>
+          <img id="imageLogo" width="40" src={logo}/>
+          </div>
+          <div className="logo">techteams</div>
           <div
             className="collapse navbar-collapse"
             id="navbarSupportedContent"
@@ -46,7 +50,6 @@ class NavBar extends React.Component {
 
               <Search />
               <CreateProject />
-              <CreatePosition />
               <Alerts />
 
               <li id="profile-container" className="nav-item dropdown">

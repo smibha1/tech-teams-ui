@@ -8,13 +8,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 import allReducers from './reducers';
 import App from './components/App/App';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const store = createStore(allReducers);
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+        <App />
     </Provider>
   </BrowserRouter>
   , document.getElementById('root'));

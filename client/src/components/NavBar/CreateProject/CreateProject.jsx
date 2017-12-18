@@ -138,7 +138,7 @@ class CreateProject extends React.Component {
   }
   render() {
     return (
-      <ul>
+      <ul id="createProjectsNav">
         <li
           id="createProj-container"
           className="nav-link toggle ml-auto"
@@ -146,7 +146,7 @@ class CreateProject extends React.Component {
         >
           <i
             id="big-bell-navbar"
-            className="fa fa-plus fa-2x pt-2 mt-lg-0"
+            className="fa fa-plus fa-2x pt-2 mt-lr-0"
             aria-hidden="true"
             onClick={() => this.handleCreateProjectClick()}
           />

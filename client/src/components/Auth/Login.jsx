@@ -1,12 +1,15 @@
 import React from 'react';
-import './Signup.css';
 import $ from 'jquery';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import './Login.css';
+import {Link} from 'react-router-dom';
 import {Router as Router, Route, Redirect} from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
 import jwtDecode from 'jwt-decode';
+import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider';
+import TextField from 'material-ui/TextField';
 
 class Login extends React.Component {
 
@@ -48,17 +51,46 @@ class Login extends React.Component {
   }
 
   render() {
-    return (<div className="Login">
-      <form id="login-form">
-        <div className="form-group">
-          <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="rudd@aol.com"></input>
-        </div>
-        <div className="form-group">
-          <input type="password" className="form-control" id="InputPassword" placeholder="Password"></input>
-          <button id="loginsubmit" type="submit" className="btn btn-primary" onClick={this.handleLoginSubmit.bind(this)}>Login</button>
-        </div>
-      </form>
-    </div>)
+    return (
+
+    <div className="overlayLogin">
+    
+       <form id="login-form">
+       <h2 id="loginHeader"> Login </h2>
+        <i className="fa fa-envelope fa-lg" aria-hidden="true"></i>&nbsp;
+        <TextField
+          id="InputEmail"
+          hintText="rudd@aol.com"
+          floatingLabelText="Email"
+          floatingLabelFocusStyle={{color: '#491f68'}}
+          underlineFocusStyle={{borderColor: '#491f68'}}
+          underlineStyle={{borderColor: '#491f68'}}
+        /><br />
+          <i className="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;
+         <TextField
+            id="InputPassword" 
+            hintText="Password"
+            floatingLabelText="Password"
+            type="password"
+            floatingLabelFocusStyle={{color: '#491f68'}}
+            underlineFocusStyle={{borderColor: '#491f68'}}
+            underlineStyle={{borderColor: '#491f68'}}
+          /><br />
+          <div id="submitButton">
+          <button id="loginsubmit" className="btn btn-primary" type="submit" onClick={this.handleLoginSubmit.bind(this)}>Login
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
+          </div>
+          <Divider />
+          <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Not a member? 
+            <Link to="/signup" href="/signup">
+              <span href="#" className="dividerSignUp blue-text ml-1"> Sign Up</span>
+            </Link>
+          </p>
+       </form>
+    </div>
+
+    )
   }
 }
 
