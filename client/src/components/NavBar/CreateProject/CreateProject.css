@@ -10,6 +10,6 @@
   width:100%;
 }
 
-createProj-container {
-  float:right;
+#createProjectsNav {
+  margin-left:auto;
 }
