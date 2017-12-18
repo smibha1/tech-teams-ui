@@ -53,7 +53,7 @@ class Login extends React.Component {
   render() {
     return (
 
-    <div className="Login">
+    <div className="overlayLogin">
     
        <form id="login-form">
        <h2 id="loginHeader"> Login </h2>
@@ -77,7 +77,9 @@ class Login extends React.Component {
             underlineStyle={{borderColor: '#491f68'}}
           /><br />
           <div id="submitButton">
-          <button id="loginsubmit" className="btn btn-primary" type="submit" onClick={this.handleLoginSubmit.bind(this)}>Login</button>
+          <button id="loginsubmit" className="btn btn-primary" type="submit" onClick={this.handleLoginSubmit.bind(this)}>Login
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
           </div>
           <Divider />
           <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Not a member? 
