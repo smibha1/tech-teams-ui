@@ -1,17 +1,13 @@
-body{
+
+
+.overlaySignUp{
+  position:fixed;
   width:100%;
   height:100%;
-  background: url("http://www.pptback.com/uploads/abstract-purple-backgrounds-powerpoint.jpg") no-repeat top right fixed;
-  align-content: center;
-}
-
-.SignUp {
-  width: 20%;
-  height: 20%;
-  padding-top: 15px;
-  margin: 0 auto;
-  min-width: 400px;
-  text-align: center;
+  top:0px;
+  left:0px;
+  z-index:1000;
+  background: url("../../../dist/images/AuthBackground.jpg") no-repeat top left fixed;
 }
 
 #signingup {
@@ -20,8 +16,9 @@ body{
   border-color: rgba(250, 246, 252, 0.933);
   box-shadow: 1px 2px 8px 2px  rgb(178, 158, 194);
   text-align: center;
-  min-width: 400px;
+  width: 400px;
   height: 460px;
+  margin:auto;
   margin-top: 60px;
   margin-bottom: 50px;
   padding: 10px 10px 10px 10px;
@@ -29,16 +26,9 @@ body{
 }
 
 #signupsubmit {
-  background-color: #62297f;
-  border-color: #62297f; 
   padding:10px;
   width: 80%;;
   border-radius:100px;
-}
-
-#signupsubmit:hover {
-  background-color: #491f68;
-  border-color: #491f68;
 }
 
 #submitButton {
@@ -53,6 +43,10 @@ body{
 .fa-envelope, .fa-lock, .fa-user {
   margin-right: 15px;
   color: rgb(60, 60, 60);
+}
+
+.fa-paper-plane {
+  margin-left: 10px;
 }
 
 .dividerSignUp {

@@ -36,7 +36,7 @@ class Signup extends React.Component {
   render() {
     return (
                   
-    <div className="SignUp">
+    <div className="overlaySignUp">
        <form id="signingup">
        <h2 id="signUpHeader"> Sign Up </h2>
         <i className="fa fa-user fa-lg" aria-hidden="true" ></i>&nbsp;
@@ -68,7 +68,9 @@ class Signup extends React.Component {
             underlineStyle={{borderColor: '#491f68'}}
           /><br />
           <div id="submitButton">
-          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up</button>
+          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up 
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
           </div>
           <Divider />
           <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Already a member? 
