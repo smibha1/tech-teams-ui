@@ -2,6 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Questions.css';
 import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsContainer';
+import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
+import TextField from 'material-ui/TextField';
+import Toggle from 'material-ui/Toggle';
 
 class Questions extends React.Component {
   handleTitle1Change(e) {
@@ -11,6 +22,7 @@ class Questions extends React.Component {
 
   render() {
     return (
+      <div id="overlayQuestions">
       <div id="questions-container">
         <h1>Getting Started</h1>
         <form onSubmit={this.handleTitle1Change}>
@@ -55,12 +67,20 @@ class Questions extends React.Component {
                 <input id="available" type="checkbox"/> Available to Join a Team
               </label>
             </div>
+            <label class="switch">
+
+  <input className="checkbox" type="checkbox"/>
+  
+  <span id="available" class="slider round">
+  
+  </span>
+</label>
             <Link to = "/username/profile">
             <button type="submit" className="btn btn-primary">Create Profile</button>
             </Link>
           </fieldset>
         </form>
-        
+        </div>
       </div>
     );
   }
