@@ -43,8 +43,8 @@ class TechnicalSkills extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-    return (<div className="profileContainer">
+    return (
+    <div className="technicalSkills-container">
       Technical Skills
       <br />
       <button onClick={this.toggleEdit}>
@@ -62,10 +62,18 @@ class TechnicalSkills extends React.Component {
             </div>
           : null
       }
+<<<<<<< HEAD
       <br /> {
         this.props.techSkills.map((element, index) => (<span key={index} id={`prof-techSkill-${element}`} index={index}>
           {element}
           {
+=======
+      <br/> {
+        this.props.techSkills.map((element, index) => {
+          return (<Chip key={index} id={`prof-techSkill-${element}`} index={index}>
+            {element}
+            {
+>>>>>>> [fix]
               this.state.editMode
                 ? <button onClick={(e) => {
                       e.preventDefault();
@@ -75,6 +83,7 @@ class TechnicalSkills extends React.Component {
                   </button>
                 : null
             }
+<<<<<<< HEAD
 =======
     return (
       <div id="technicalSkills-container">
@@ -85,24 +94,13 @@ class TechnicalSkills extends React.Component {
 >>>>>>> [style]
 
         </span>))
-      }
-
-<<<<<<< HEAD
-    </div>);
 =======
-        {this.props.techSkills.map( (element, index) => {
-          return (
-            <Chip key={index} id={`prof-techSkill-${element}`} index={index}>
-              {element}
-              {this.state.editMode ? <button onClick={()=> this.deleteSkill(element)}> X </button> : null}
-            </Chip>
-
-          );
-        })}
-
-      </div>
+          </Chip>);
+        })
+>>>>>>> [fix]
+      }
+    </div>
     );
->>>>>>> [style]
   }
 }
 
