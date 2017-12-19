@@ -43,8 +43,13 @@ class TechnicalSkills extends React.Component {
   }
 
   render() {
+<<<<<<< HEAD
     return (
     <div className="technicalSkills-container">
+=======
+<<<<<<< HEAD
+    return (<div className="profileContainer">
+>>>>>>> [style]
       Technical Skills
       <br />
       <button onClick={this.toggleEdit}>
@@ -84,6 +89,9 @@ class TechnicalSkills extends React.Component {
                 : null
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> [style]
 =======
     return (
       <div id="technicalSkills-container">
@@ -99,8 +107,28 @@ class TechnicalSkills extends React.Component {
         })
 >>>>>>> [fix]
       }
+<<<<<<< HEAD
     </div>
     );
+=======
+
+<<<<<<< HEAD
+    </div>);
+=======
+        {this.props.techSkills.map( (element, index) => {
+          return (
+            <Chip key={index} id={`prof-techSkill-${element}`} index={index}>
+              {element}
+              {this.state.editMode ? <button onClick={()=> this.deleteSkill(element)}> X </button> : null}
+            </Chip>
+
+          );
+        })}
+
+      </div>
+    );
+>>>>>>> [style]
+>>>>>>> [style]
   }
 }
 
