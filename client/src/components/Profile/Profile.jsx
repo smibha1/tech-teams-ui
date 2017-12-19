@@ -6,8 +6,8 @@ import CompletedProjectsContainer from '../../containers/Profile/CompletedProjec
 
 const Profile = () => (
   <div id="profilePage-container">
-  <div id="profilePage-background">
-  </div>
+  <div id="profilePage-background"></div>
+  <div id="profilePage-background1"></div>
     <DevInfoContainer />
     <br />
     <TechnicalSkillsContainer />
