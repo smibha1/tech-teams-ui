@@ -7,18 +7,7 @@ import CompletedProjectsContainer from '../../containers/Profile/CompletedProjec
 
 const Profile = () => (
   <div id="profilePage-container">
-<<<<<<< HEAD
-<<<<<<< HEAD
   <div id="profilePage-background"></div>
-  <div id="profilePage-background1"></div>
-=======
-  <div id="profilePage-background">
-  </div>
->>>>>>> [style]
-=======
-  <div id="profilePage-background"></div>
-  <div id="profilePage-background1"></div>
->>>>>>> [fix]
     <DevInfoContainer />
     <br />
     <TechnicalSkillsContainer />
