@@ -96,7 +96,11 @@ class Login extends React.Component {
         /><br />
         <div id="submitButton">
           <button id="loginsubmit" className="btn btn-primary" type="submit" onClick={this.handleLoginSubmit.bind(this)}>Login
+<<<<<<< HEAD
             <i className="fa fa-paper-plane" aria-hidden="true" />
+=======
+            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+>>>>>>> [style]
           </button>
         </div>
         <Divider />

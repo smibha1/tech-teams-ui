@@ -1,4 +1,5 @@
 import React from 'react';
+import Chip from 'material-ui/Chip';
 
 class TechnicalSkills extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class TechnicalSkills extends React.Component {
   }
 
   render() {
+<<<<<<< HEAD
     return (<div className="profileContainer">
       Technical Skills
       <br />
@@ -73,11 +75,34 @@ class TechnicalSkills extends React.Component {
                   </button>
                 : null
             }
+=======
+    return (
+      <div id="technicalSkills-container">
+        Technical Skills <br />
+        <button onClick={this.toggleEdit}>
+          <i className="fa fa-pencil" aria-hidden="true"></i>
+        </button> <br />
+>>>>>>> [style]
 
         </span>))
       }
 
+<<<<<<< HEAD
     </div>);
+=======
+        {this.props.techSkills.map( (element, index) => {
+          return (
+            <Chip key={index} id={`prof-techSkill-${element}`} index={index}>
+              {element}
+              {this.state.editMode ? <button onClick={()=> this.deleteSkill(element)}> X </button> : null}
+            </Chip>
+
+          );
+        })}
+
+      </div>
+    );
+>>>>>>> [style]
   }
 }
 

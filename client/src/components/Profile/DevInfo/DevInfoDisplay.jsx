@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const DevInfoDisplay = props => (
-  <div>
-    <img src={props.info.devPicture} alt={props.info.devName} height="200" /> <br />
-    {props.info.devName} <br />
+  <div id="profileInfo-container">
+    <img id="profileImg" src={props.info.devPicture} alt={props.info.devName} height="200" /> <br />
+    <div id="profileUsername"> {props.info.devName} </div> <br />
     {props.info.devPosition} || {props.info.devLocation} <br />
-    ------------------------- <br />
+    <div id="divider"> </div>
+
     {props.info.devDesc}
   </div>
 
