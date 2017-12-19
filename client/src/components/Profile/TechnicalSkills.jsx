@@ -7,7 +7,7 @@ class TechnicalSkills extends React.Component {
     this.state = {
       // techSkills: this.props.techSkills,
       editMode: false,
-      addSkill: ''
+      addSkill: '',
     };
 
     this.toggleEdit = this.toggleEdit.bind(this);
@@ -19,24 +19,24 @@ class TechnicalSkills extends React.Component {
   toggleEdit(e) {
     e.preventDefault();
     this.setState({
-      editMode: !this.state.editMode
+      editMode: !this.state.editMode,
     });
   }
 
   newSkillInput(event) {
-    this.setState({addSkill: event.target.value});
+    this.setState({ addSkill: event.target.value });
   }
 
   saveNewSkill(e) {
     e.preventDefault();
     this.props.techSkills.push(this.state.addSkill);
-    this.setState({addSkill: ''});
+    this.setState({ addSkill: '' });
     this.props.updateTechSkill(this.props.techSkills);
   }
 
   deleteSkill(element) {
-    let selected = document.getElementById(`prof-techSkill-${element}`).getAttribute('index');
-    let propsCopy = this.props.techSkills.slice();
+    const selected = document.getElementById(`prof-techSkill-${element}`).getAttribute('index');
+    const propsCopy = this.props.techSkills.slice();
     propsCopy.splice(selected, 1);
     this.props.updateTechSkill(propsCopy);
   }
@@ -44,37 +44,37 @@ class TechnicalSkills extends React.Component {
   render() {
     return (<div className="profileContainer">
       Technical Skills
-      <br/>
+      <br />
       <button onClick={this.toggleEdit}>
         Edit
       </button>
-      <br/>
+      <br />
       ----------------
-      <br/> {
+      <br /> {
         this.state.editMode
           ? <div>
-              <input placeholder="Add New Skill" value={this.state.addSkill} onChange={this.newSkillInput}/>
-              <button onClick={this.saveNewSkill}>
+            <input placeholder="Add New Skill" value={this.state.addSkill} onChange={this.newSkillInput} />
+            <button onClick={this.saveNewSkill}>
                 Save
-              </button>
+            </button>
             </div>
           : null
       }
-      <br/> {
-        this.props.techSkills.map((element, index) => {
-          return (<span key={index} id={`prof-techSkill-${element}`} index={index}>
-            {element}
-            {
+      <br /> {
+        this.props.techSkills.map((element, index) => (<span key={index} id={`prof-techSkill-${element}`} index={index}>
+          {element}
+          {
               this.state.editMode
                 ? <button onClick={(e) => {
                       e.preventDefault();
-                      this.deleteSkill(element)
-                    }}><strong>x</strong></button>
+                      this.deleteSkill(element);
+                    }}
+                ><strong>x</strong>
+                  </button>
                 : null
             }
 
-          </span>);
-        })
+        </span>))
       }
 
     </div>);

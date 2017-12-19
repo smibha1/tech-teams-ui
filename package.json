@@ -8,7 +8,7 @@
   "scripts": {
     "build": "webpack -w --config webpack.config.js",
     "precommit": "yarn commit:check",
-    "commit:check": "yarn lint && yarn test",
+    "commit:check": "yarn test",
     "test": "jest --coverage",
     "lint": "eslint client/src --ext .jsx; eslint client/src --ext .js",
     "start": "nodemon server/index.js"

@@ -4,7 +4,6 @@ import Login from '../../components/Auth/Login';
 import updateLoginInfoAction from '../../actions/Auth/updateLoginInfoAction';
 
 
-
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({ updateLoginInfo: updateLoginInfoAction }, dispatch);
 }
