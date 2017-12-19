@@ -4,8 +4,10 @@ import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsCo
 import CurrentProjectsContainer from '../../containers/Profile/CurrentProjectsContainer';
 import CompletedProjectsContainer from '../../containers/Profile/CompletedProjectsContainer';
 
+
 const Profile = () => (
-  <div>
+  <div id="profilePage-container">
+  <div id="profilePage-background"></div>
     <DevInfoContainer />
     <br />
     <TechnicalSkillsContainer />

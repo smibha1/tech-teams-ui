@@ -22,17 +22,7 @@ class Alerts extends React.Component {
   render() {
     return (
       <li id="alerts-container" className="nav-item dropdown">
-        {/*
-      <Badge
-      badgeContent={2}
-      secondary={true}
-      badgeStyle={{top: 12, right: 12}}
-      >
-                  <i id="dropdownBell" className="fa fa-bell-o fa-sm" aria-hidden="true" />
-
-      </Badge>       */}
-
-
+        <span className="badge1" data-badge="27"></span>
         <a
           className="nav-link dropdown-menu-right mt-4 mt-lg-0"
           href="www.google.com"
@@ -47,9 +37,8 @@ class Alerts extends React.Component {
             aria-hidden="true"
           />
           <p className="navbar-text visible-xs-inline-block">
-
             <i id="dropdownBell" className="fa fa-bell-o fa-sm" aria-hidden="true" />
-        Alerts
+          Alerts
           </p>
         </a>
 

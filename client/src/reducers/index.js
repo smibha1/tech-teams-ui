@@ -15,8 +15,9 @@ import viewAlertsReducer from './Alerts/updateAlerts';
 import updateSignup from './Auth/updateSignup';
 
 const allReducers = combineReducers({
+
   userInfo: updateSignup,
-  techSkills: saveNewSkillReducer,
+  techskills: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,
   completedProjects: updateCompletedProjectsReducer,

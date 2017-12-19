@@ -15,10 +15,10 @@ class CompletedProjects extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="completedProjects-container">
         {console.log(this.props)}
         Completed Projects <br />
-        -------------------------- <br />
+        <div id="newdivider"> </div>
         {
           this.props.completedProjects.completedProjs.map((element, index) => (
             <div

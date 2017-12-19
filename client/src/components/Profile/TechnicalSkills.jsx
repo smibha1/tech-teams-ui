@@ -1,84 +1,71 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
+import ChipInput from 'material-ui-chip-input'
 
 class TechnicalSkills extends React.Component {
-  constructor(props) {
-    super(props);
-
+  constructor (props) {
+    super(props)
     this.state = {
-      // techSkills: this.props.techSkills,
-      editMode: false,
-      addSkill: '',
-    };
-
+      editMode: true,
+    }
     this.toggleEdit = this.toggleEdit.bind(this);
-    this.newSkillInput = this.newSkillInput.bind(this);
-    this.saveNewSkill = this.saveNewSkill.bind(this);
-    // this.deleteSkill = this.deleteSkill.bind(this);
   }
 
   toggleEdit(e) {
     e.preventDefault();
     this.setState({
-      editMode: !this.state.editMode,
+      editMode: !this.state.editMode
     });
+    //This is where the post request gets added 
   }
 
-  newSkillInput(event) {
-    this.setState({ addSkill: event.target.value });
+  onBeforeRequestAdd (chip) {
+    return chip.length >= 3
   }
 
-  saveNewSkill(e) {
-    e.preventDefault();
-    this.props.techSkills.push(this.state.addSkill);
-    this.setState({ addSkill: '' });
-    this.props.updateTechSkill(this.props.techSkills);
+  handleRequestAdd (chip) {
+    console.log('hello', chip)
+    this.props.addtechskill(chip)
   }
 
-  deleteSkill(element) {
-    const selected = document.getElementById(`prof-techSkill-${element}`).getAttribute('index');
-    const propsCopy = this.props.techSkills.slice();
-    propsCopy.splice(selected, 1);
-    this.props.updateTechSkill(propsCopy);
+  handleRequestDelete (deletedChip) {
+    this.props.deletetechskill(deletedChip);
   }
 
-  render() {
-    return (<div className="profileContainer">
+  render () {
+    return (
+      <div id="technicalSkills-container">
       Technical Skills
-      <br />
+      <br/>
       <button onClick={this.toggleEdit}>
-        Edit
+        <i className="fa fa-pencil" aria-hidden="true"></i>
       </button>
-      <br />
-      ----------------
-      <br /> {
-        this.state.editMode
-          ? <div>
-            <input placeholder="Add New Skill" value={this.state.addSkill} onChange={this.newSkillInput} />
-            <button onClick={this.saveNewSkill}>
-                Save
-            </button>
-            </div>
-          : null
-      }
-      <br /> {
-        this.props.techSkills.map((element, index) => (<span key={index} id={`prof-techSkill-${element}`} index={index}>
-          {element}
-          {
-              this.state.editMode
-                ? <button onClick={(e) => {
-                      e.preventDefault();
-                      this.deleteSkill(element);
-                    }}
-                ><strong>x</strong>
-                  </button>
-                : null
-            }
-
-        </span>))
-      }
-
-    </div>);
+      <br/>
+      <div id="newdivider"></div>
+    <ChipInput
+      value={this.props.techskills}
+      onBeforeRequestAdd={(chip) => this.onBeforeRequestAdd(chip)}
+      onRequestAdd={(chip) => this.handleRequestAdd(chip)}
+      onRequestDelete={(deletedChip) => this.handleRequestDelete(deletedChip)}
+      onBlur={(event) => {
+        if (this.props.addOnBlur && event.target.value) {
+          this.handleRequestAdd(event.target.value)
+        }
+      }}
+      fullWidth
+      floatingLabelText='Technical Skills'
+      disabled ={this.state.editMode}
+    />
+    </div>
+    )
   }
 }
 
-export default TechnicalSkills;
+TechnicalSkills.propTypes = {
+  addOnBlur: PropTypes.bool,
+  techskills: PropTypes.oneOfType([
+    PropTypes.array,
+  ]),
+}
+
+export default TechnicalSkills
