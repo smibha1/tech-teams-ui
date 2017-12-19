@@ -14,7 +14,7 @@ class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
-      // path: '/signup'
+
     }
   }
 
@@ -24,7 +24,9 @@ class Signup extends React.Component {
     let email = $('#InputEmail').val();
     let password = $('#InputPassword').val();
     auth.createUserWithEmailAndPassword(email, password).then(user => {
+      // update store
       swal({title: 'Signed Up', type: 'success', timer: 1000}).then(() => {
+        
         this.props.history.push('/questions')
       })
     }, error => {

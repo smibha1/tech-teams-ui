@@ -1,6 +1,6 @@
-export default function (state = [], action) {
+export default function (state = {}, action) {
   switch (action.type) {
-    case 'UPDATE_PROF_TECH_SKILL':
+    case 'UPDATE_LOGIN_INFO':
       return action.payload;
     default:
       return state;
