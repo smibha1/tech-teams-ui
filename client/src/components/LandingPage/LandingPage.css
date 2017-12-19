@@ -20,6 +20,9 @@ b, strong{
 .navbar{
     min-height: 80px;
 }
+.login{
+    margin-right: 5px;
+}
 .navbar-nav .nav-item .nav-link{
     font-weight: 500;
 }
@@ -109,15 +112,15 @@ section{
     background: transparent radial-gradient(circle farthest-side at right bottom, #CCA6E2 5%, #CCA6E2 25%, #CCA6E2 80%, #CCA6E2 98%) repeat scroll 0% 0%;
 }
 .bg-texture-collage{
-    background:-webkit-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
-        linear-gradient(-45deg, #d81b60 67%, transparent 33%),
-        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
-    background:-moz-linear-gradient(-45deg, #ffb300 33%, transparent 0%),
-        linear-gradient(-45deg, #d81b60 67%, transparent 33%),
-        linear-gradient(-45deg, #ffb300 100%, transparent 67%);
-    background:linear-gradient(-45deg, #ec407a 33%, transparent 0%),
-        linear-gradient(-45deg, #e91e63 67%, transparent 33%),
-        linear-gradient(-45deg, #ec407a 100%, transparent 67%);
+    background:-webkit-linear-gradient(-45deg, #9866B6 33%, transparent 0%),
+        linear-gradient(-45deg, #653383 67%, transparent 33%),
+        linear-gradient(-45deg, #9866B6 100%, transparent 67%);
+    background:-moz-linear-gradient(-45deg, #9866B6 33%, transparent 0%),
+        linear-gradient(-45deg, #653383 67%, transparent 33%),
+        linear-gradient(-45deg, #9866B6 100%, transparent 67%);
+    background:linear-gradient(-45deg, #9866B6 33%, transparent 0%),
+        linear-gradient(-45deg, #653383 67%, transparent 33%),
+        linear-gradient(-45deg, #9866B6 100%, transparent 67%);
 }
 .bg-alt {
     background-color: #CCA6E2;
@@ -138,16 +141,16 @@ section{
     color: #FAFAFA;
 }
 .text-dark {
-    color: #37474F;
+    color: #653383;
 }
 .text-muted{
-    color: #999 !important;
+    color: #653383 !important;
 }
 .text-white {
     color: #FFFFFF;
 }
 .text-primary {
-    color: #d81b60 !important;
+    color: #653383 !important;
 }
 .text-primary-light{
     color: #9866B6;
@@ -183,7 +186,7 @@ section{
     box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.15);
 }
 .btn-white {
-    color: #ff4081 !important;
+    color: #653383 !important;
     background-color: #fff;
     border-color: #fff;
 }
@@ -226,22 +229,22 @@ section{
 * Social Icons
 ================================================*/
 .text-twitter-alt, .text-facebook-alt, .text-linkedin-alt, .text-google-alt, .text-github-alt{
-    color:#d81b60;
+    color:#653383;
 }
 .text-twitter, .text-twitter-alt:hover{
-    color:#00aced;
+    color:#653383;
 }
 .text-facebook, .text-facebook-alt:hover{
-    color: #3b5998;
+    color: #653383;
 }
 .text-google, .text-google-alt:hover{
-    color: #dd4b39;
+    color: #653383;
 }
 .text-linkedin, .text-linkedin-alt:hover{
-    color: #007bb6;
+    color: #653383;
 }
 .text-github, .text-github-alt:hover{
-    color: #000000;
+    color: #653383;
 }
 /*===============================================
 * Cards
@@ -252,7 +255,7 @@ section{
 }
 .card .card-block .icon-box{
     padding: 20px 0;
-    color: #d81b60;
+    color: #653383;
 }
 .card .card-block h6{
     padding-bottom: 15px;

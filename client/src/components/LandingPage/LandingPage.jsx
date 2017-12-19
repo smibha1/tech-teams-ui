@@ -56,7 +56,7 @@ class LandingPage extends React.Component {
                           Where devs meet dev teams.
                       </p>
                       <p className="mt-5">
-                          <Link to="/login" href="/login"><button className="btn btn-white mb-2 page-scroll">Login</button></Link>
+                          <Link to="/login" href="/login"><button className="login btn btn-white mb-2 page-scroll">Login</button></Link>
                           <Link to="/signup" href="/signup"><button className="btn btn-white mb-2 page-scroll">Sign Up</button></Link>
                       </p>
                   </div>
@@ -79,11 +79,11 @@ class LandingPage extends React.Component {
                       <div className="card">
                           <div className="card-block">
                               <div className="icon-box">
-                                  <em className="ion-ios-game-controller-b-outline icon-md"></em>
+                                  <em className="ion-aperture icon-md"></em>
                               </div>
                               <h6>Insane Collaboration</h6>
                               <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
                               </p>
                           </div>
                       </div>
@@ -96,7 +96,7 @@ class LandingPage extends React.Component {
                               </div>
                               <h6>HOLY FUCCC</h6>
                               <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                              bazinga
                               </p>
                           </div>
                       </div>
@@ -109,7 +109,7 @@ class LandingPage extends React.Component {
                               </div>
                               <h6>GOT DAM O SHITTTT</h6>
                               <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                              holla holla get dolla
                               </p>
                           </div>
                       </div>
@@ -158,7 +158,7 @@ class LandingPage extends React.Component {
               <div className="row d-md-flex text-white text-center wow fadeIn">
                   <div className="col-sm-4 p-5">
                       <p><em className="ion-ios-telephone-outline icon-md"></em></p>
-                      <p className="lead">+1 310 420 1337</p>
+                      <p className="lead">13104201337</p>
                   </div>
                   <div className="col-sm-4 p-5">
                       <p><em className="ion-ios-email-outline icon-md"></em></p>
