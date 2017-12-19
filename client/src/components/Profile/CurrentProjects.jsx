@@ -15,9 +15,9 @@ class CurrentProjects extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="currentProjects-container">
         Completed Projects <br />
-        <br />
+        <div id="newdivider"> </div>
         {
           this.props.currentProjects.currentProjs.map((element, index) => (
             <div

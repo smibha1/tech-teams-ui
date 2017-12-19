@@ -7,7 +7,9 @@
   top:0px;
   left:0px;
   z-index:1000;
-  background: url("../../../dist/images/AuthBackground.jpg") no-repeat top left fixed;
+  background: url("../../../dist/images/AuthBackground.jpg") top left fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #signingup {
