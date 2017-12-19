@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Questions.css';
+<<<<<<< HEAD
 import {
   Table,
   TableBody,
@@ -10,6 +11,9 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+=======
+import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsContainer';
+>>>>>>> [feat][style]
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 import swal from 'sweetalert2';

@@ -4,6 +4,7 @@ import TechnicalSkillsContainer from '../../containers/Profile/TechnicalSkillsCo
 import CurrentProjectsContainer from '../../containers/Profile/CurrentProjectsContainer';
 import CompletedProjectsContainer from '../../containers/Profile/CompletedProjectsContainer';
 
+
 const Profile = () => (
   <div id="profilePage-container">
 <<<<<<< HEAD

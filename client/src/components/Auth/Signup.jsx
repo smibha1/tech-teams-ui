@@ -88,9 +88,25 @@ class Signup extends React.Component {
             borderColor: '#491f68',
           }}
         /><br />
+<<<<<<< HEAD
         <div id="submitButton">
           <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up
             <i className="fa fa-paper-plane" aria-hidden="true" />
+=======
+          <i className="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;
+         <TextField
+            id="InputPassword" 
+            hintText="Password"
+            floatingLabelText="Password"
+            type="password"
+            floatingLabelFocusStyle={{color: '#491f68'}}
+            underlineFocusStyle={{borderColor: '#491f68'}}
+            underlineStyle={{borderColor: '#491f68'}}
+          /><br />
+          <div id="submitButton">
+          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up 
+            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+>>>>>>> [feat][style]
           </button>
         </div>
         <Divider />

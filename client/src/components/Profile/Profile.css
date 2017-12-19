@@ -1,29 +1,29 @@
 #profilePage-container {
-background: rgb(196, 138, 138);
+background: black;
 position:absolute;
 height:100%;
 width:100%;
 }
 
 #profilePage-background{
-  background: rgb(255, 229, 253);
+  background: url("../../../dist/images/ProfileBackground2.jpg") no-repeat top left fixed;
   width: 100%;
   height: 150px;
 }
 
 
-#profileUsername-container {
-  margin-top:-100px;
-}
 
 #profileUsername-container, #completedProjects-container, #currentProjects-container, #technicalSkills-container {
-
+  
   margin-left:center;
   text-align: center;
   width: 70%;
   margin: auto;
   background: white;
+}
 
+#profileUsername-container {
+  margin-top :-50px;
 }
 
 #profileUsername {
