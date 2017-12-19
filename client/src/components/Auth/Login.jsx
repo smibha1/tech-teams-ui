@@ -12,6 +12,9 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   async handleLoginSubmit(e) {
     e.preventDefault();
@@ -19,78 +22,76 @@ class Login extends React.Component {
     let password = $('#InputPassword').val();
     let self = this;
 
-    axios({
-      url: 'http://localhost:3000/login',
-      method: 'post',
-      data: {
-        email: email,
-        password: password
-      }
-    }).then(resp => {
-      if (resp.status === 204) {
-        swal({title: 'Error', text: 'Double check email and password', type: 'error', showConfirmButton: false, timer: 1000}).then(() => {
-          $('#InputEmail').val('');
-          $('#InputPassword').val('');
-        })
-      } else {
-        localStorage.setItem('token', resp.data.accessToken);
-        swal({title: 'Signing In', type: 'success', showConfirmButton: false, timer: 1000})
-          .then( () => {
-        this.props.history.push('/username/profile');
-          }
-          )
-      }
-
-    }).catch(err => {
-      swal({title: 'Error', text: err, type: 'error', showConfirmButton: false, timer: 1000}).then(() => {
-        $('#InputEmail').val('');
-        $('#InputPassword').val('');
-      })
-    })
+    console.log(this.props.userInfo);
+    // console.log(this.props.updateLoginInfo(password, email));
+    // axios({
+    //   url: 'http://localhost:3000/login',
+    //   method: 'post',
+    //   data: {
+    //     email: email,
+    //     password: password
+    //   }
+    // }).then(resp => {
+    //   if (resp.status === 204) {
+    //     swal({title: 'Error', text: 'Double check email and password', type: 'error', showConfirmButton: false, timer: 1000}).then(() => {
+    //       $('#InputEmail').val('');
+    //       $('#InputPassword').val('');
+    //     })
+    //   } else {
+    //     localStorage.setItem('token', resp.data.accessToken);
+    //     swal({title: 'Signing In', type: 'success', showConfirmButton: false, timer: 1000}).then(() => {
+    //
+    //       //set the user and email in store = this.props.user/this.props.email
+    //       this.props.history.push('/username/profile')
+    //     })
+    //   }
+    //
+    // }).catch(err => {
+    //   swal({title: 'Error', text: err, type: 'error', showConfirmButton: false, timer: 1000}).then(() => {
+    //     $('#InputEmail').val('');
+    //     $('#InputPassword').val('');
+    //   })
+    // })
 
   }
 
   render() {
-    return (
+    return (<div className="overlayLogin">
 
-    <div className="overlayLogin">
-    
-       <form id="login-form">
-       <h2 id="loginHeader"> Login </h2>
+      <form id="login-form">
+        <h2 id="loginHeader">
+          Login
+        </h2>
         <i className="fa fa-envelope fa-lg" aria-hidden="true"></i>&nbsp;
-        <TextField
-          id="InputEmail"
-          hintText="rudd@aol.com"
-          floatingLabelText="Email"
-          floatingLabelFocusStyle={{color: '#491f68'}}
-          underlineFocusStyle={{borderColor: '#491f68'}}
-          underlineStyle={{borderColor: '#491f68'}}
-        /><br />
-          <i className="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;
-         <TextField
-            id="InputPassword" 
-            hintText="Password"
-            floatingLabelText="Password"
-            type="password"
-            floatingLabelFocusStyle={{color: '#491f68'}}
-            underlineFocusStyle={{borderColor: '#491f68'}}
-            underlineStyle={{borderColor: '#491f68'}}
-          /><br />
-          <div id="submitButton">
+        <TextField id="InputEmail" hintText="rudd@aol.com" floatingLabelText="Email" floatingLabelFocusStyle={{
+            color: '#491f68'
+          }} underlineFocusStyle={{
+            borderColor: '#491f68'
+          }} underlineStyle={{
+            borderColor: '#491f68'
+          }}/><br/>
+        <i className="fa fa-lock fa-lg" aria-hidden="true"></i>&nbsp;
+        <TextField id="InputPassword" hintText="Password" floatingLabelText="Password" type="password" floatingLabelFocusStyle={{
+            color: '#491f68'
+          }} underlineFocusStyle={{
+            borderColor: '#491f68'
+          }} underlineStyle={{
+            borderColor: '#491f68'
+          }}/><br/>
+        <div id="submitButton">
           <button id="loginsubmit" className="btn btn-primary" type="submit" onClick={this.handleLoginSubmit.bind(this)}>Login
             <i className="fa fa-paper-plane" aria-hidden="true"></i>
           </button>
-          </div>
-          <Divider />
-          <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Not a member? 
-            <Link to="/signup" href="/signup">
-              <span href="#" className="dividerSignUp blue-text ml-1"> Sign Up</span>
-            </Link>
-          </p>
-       </form>
-    </div>
-
-    )
+        </div>
+        <Divider/>
+        <p className="dividerSignUp font-small grey-text d-flex justify-content-end mx-5 pt-1 mb-1">Not a member?
+          <Link to="/signup" href="/signup">
+            <span href="#" className="dividerSignUp blue-text ml-1">
+              Sign Up</span>
+          </Link>
+        </p>
+      </form>
+    </div>)
   }
 }
 
