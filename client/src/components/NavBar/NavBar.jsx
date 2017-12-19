@@ -8,19 +8,20 @@ import Search from '../NavBar/Search/Search';
 import logo from '../../../dist/images/Logomakr_5f3c6s.png';
 
 class NavBar extends React.Component {
-
   constructor() {
     super();
     this.state = {
-      number: 1
-    }
+      number: 1,
+    };
   }
 
   handleLogout() {
     localStorage.setItem('token', null);
-    swal({title: 'Logged out!', type: 'success', timer: 1000, showConfirmButton: false}).then(() => {
-      this.setState({number: 0})
-    })
+    swal({
+      title: 'Logged out!', type: 'success', timer: 1000, showConfirmButton: false,
+    }).then(() => {
+      this.setState({ number: 0 });
+    });
   }
 
   render() {
@@ -39,7 +40,7 @@ class NavBar extends React.Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div>
-          <img id="imageLogo" width="40" src={logo}/>
+            <img id="imageLogo" width="40" src={logo} />
           </div>
           <div className="logo">techteams</div>
           <div
@@ -92,7 +93,7 @@ class NavBar extends React.Component {
               </li>
               <br />
               <li className="navbar-text visible-xs-inline-block">
-                <i className="fa fa-sign-out" aria-hidden="true" onClick={this.handleLogout.bind(this)}/>
+                <i className="fa fa-sign-out" aria-hidden="true" onClick={this.handleLogout.bind(this)} />
                 Log Out
               </li>
             </ul>

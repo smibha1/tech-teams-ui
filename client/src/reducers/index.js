@@ -12,10 +12,10 @@ import updateCompletedProjectsReducer from '../reducers/Profile/updateCompletedP
 import updateSearchProjectsResultsReducer from '../reducers/SearchProjectsResults/updateProjectsResultsReducer';
 import saveNewProjectsReducer from './Projects/updateProjects';
 import viewAlertsReducer from './Alerts/updateAlerts';
-import updateLoginInfo from './Auth/updateLoginInfo';
+import updateSignup from './Auth/updateSignup';
 
 const allReducers = combineReducers({
-  userInfo: updateLoginInfo,
+  userInfo: updateSignup,
   techSkills: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,

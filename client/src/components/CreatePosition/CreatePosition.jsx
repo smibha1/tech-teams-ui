@@ -1,13 +1,12 @@
 import React from 'react';
-import { default as swal } from 'sweetalert2'
+import { default as swal } from 'sweetalert2';
 import $ from 'jquery';
 import './CreatePosition.css';
 
 
 class CreatePosition extends React.Component {
-  
   handleCreatePositionClick() {
-    const {value: formValues} = swal({
+    const { value: formValues } = swal({
       title: 'DevDates Position',
       input: 'checkbox',
       inputValue: 1,
@@ -15,14 +14,13 @@ class CreatePosition extends React.Component {
         'Open Position',
       confirmButtonText:
         'Continue <i class="fa fa-arrow-right></i>',
-      inputValidator: (result) => { 
+      inputValidator: (result) => {
         if (result === 1 && $('#teamMember').val() !== '') {
-          return '<div>Either add a Team Member or mark the position as Open</div>'
-        } else {
-          console.log('result', result, $('#teamMember').val())
+          return '<div>Either add a Team Member or mark the position as Open</div>';
         }
-        },
-  
+        console.log('result', result, $('#teamMember').val());
+      },
+
       html:
       '<form id="createPositionForm" action="/action_page.php">'
       + 'Position Name: &nbsp;'
@@ -40,22 +38,19 @@ class CreatePosition extends React.Component {
       + '</fieldset>'
       + '</form>'
       + '<br>',
-      
+
       focusConfirm: false,
       preConfirm: () => [{
-          PositionName: $('#positionName').val(),
-          Requirements: $('#positionRequirements').val(),
-          PositionDescription: $('#positionDescription').val(),
-          TeamMember: $('#teamMember').val(),
-        }] 
-      }).then((value) => {
-        console.log(value)
-      }
-    ).catch(
-      swal.noop)
+        PositionName: $('#positionName').val(),
+        Requirements: $('#positionRequirements').val(),
+        PositionDescription: $('#positionDescription').val(),
+        TeamMember: $('#teamMember').val(),
+      }],
+    }).then((value) => {
+      console.log(value);
+    }).catch(swal.noop);
+  }
 
-    }
-    
   render() {
     return (
       <ul>

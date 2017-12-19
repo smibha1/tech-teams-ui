@@ -38,7 +38,7 @@ class CreateProject extends React.Component {
           ProjLogo: $('#logo').val(),
           HeadQuarters: $('#headquarters').val(),
           ProjDesc: $('#projDesc').val(),
-        }
+        },
         ],
       },
       {
