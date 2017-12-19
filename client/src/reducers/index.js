@@ -16,6 +16,7 @@ import updateSignup from './Auth/updateSignup';
 
 const allReducers = combineReducers({
 <<<<<<< HEAD
+<<<<<<< HEAD
   userInfo: updateSignup,
 =======
 <<<<<<< Updated upstream
@@ -23,8 +24,10 @@ const allReducers = combineReducers({
 >>>>>>> [feat][style]
   techSkills: saveNewSkillReducer,
 =======
+=======
+  userInfo: updateLoginInfo,
+>>>>>>> [ops]
   techskills: saveNewSkillReducer,
->>>>>>> Stashed changes
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,
   completedProjects: updateCompletedProjectsReducer,
