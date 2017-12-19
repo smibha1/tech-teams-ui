@@ -15,18 +15,8 @@ import viewAlertsReducer from './Alerts/updateAlerts';
 import updateSignup from './Auth/updateSignup';
 
 const allReducers = combineReducers({
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   userInfo: updateSignup,
-=======
-<<<<<<< Updated upstream
-  userInfo: updateLoginInfo,
->>>>>>> [feat][style]
-  techSkills: saveNewSkillReducer,
-=======
-=======
-  userInfo: updateLoginInfo,
->>>>>>> [ops]
   techskills: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,

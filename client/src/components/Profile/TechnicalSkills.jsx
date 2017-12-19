@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import React from 'react'
 import PropTypes from 'prop-types'
 import ChipInput from 'material-ui-chip-input'
-=======
-import React from 'react';
-import Chip from 'material-ui/Chip';
->>>>>>> 63186a5acd2cec95a9aa9fa61f29a315c9c26196
 
 class TechnicalSkills extends React.Component {
   constructor (props) {
@@ -37,22 +32,15 @@ class TechnicalSkills extends React.Component {
     this.props.deletetechskill(deletedChip);
   }
 
-<<<<<<< HEAD
   render () {
     return (
       <div id="technicalSkills-container">
-=======
-  render() {
-    return (
-    <div className="technicalSkills-container">
->>>>>>> 63186a5acd2cec95a9aa9fa61f29a315c9c26196
       Technical Skills
       <br/>
       <button onClick={this.toggleEdit}>
         <i className="fa fa-pencil" aria-hidden="true"></i>
       </button>
       <br/>
-<<<<<<< HEAD
       <div id="newdivider"></div>
     <ChipInput
       value={this.props.techskills}
@@ -70,36 +58,6 @@ class TechnicalSkills extends React.Component {
     />
     </div>
     )
-=======
-      ----------------
-      <br/> {
-        this.state.editMode
-          ? <div>
-              <input placeholder="Add New Skill" value={this.state.addSkill} onChange={this.newSkillInput}/>
-              <button onClick={this.saveNewSkill}>
-                Save
-              </button>
-            </div>
-          : null
-      }
-      <br/> {
-        this.props.techSkills.map((element, index) => {
-          return (<Chip key={index} id={`prof-techSkill-${element}`} index={index}>
-            {element}
-            {
-              this.state.editMode
-                ? <button onClick={(e) => {
-                      e.preventDefault();
-                      this.deleteSkill(element)
-                    }}><strong>x</strong></button>
-                : null
-            }
-          </Chip>);
-        })
-      }
-    </div>
-    );
->>>>>>> 63186a5acd2cec95a9aa9fa61f29a315c9c26196
   }
 }
 
