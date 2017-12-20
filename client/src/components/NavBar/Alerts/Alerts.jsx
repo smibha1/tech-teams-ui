@@ -22,14 +22,14 @@ class Alerts extends React.Component {
   render() {
     return (
       <li id="alerts-container" className="nav-item dropdown">
-        <span className="badge1" data-badge="27"></span>
+        {/* <span className="badge1" data-badge="27"></span> */}
         <a
           className="nav-link dropdown-menu-right mt-4 mt-lg-0"
           href="www.google.com"
           id="navbarDropdownMenuLink"
           data-toggle="dropdown"
           aria-haspopup="true"
-          aria-expanded="false"
+          aria-expanded="true"
         >
           <i
             id="big-bell-navbar"
