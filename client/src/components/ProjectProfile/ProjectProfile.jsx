@@ -1,11 +1,11 @@
 import React from 'react';
 import ProjectInfo from '../../containers/ProjectProfile/ProjectInfoContainer';
+import ProjectLinks from '../../containers/ProjectProfile/ProjectLinksContainer';
 
 class ProjectProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      projectLinksEdit: false,
       projectTeamEdit: false,
     };
   }
@@ -13,8 +13,9 @@ class ProjectProfile extends React.Component {
   render() {
     return (
       <div>
-        <ProjectInfo />
-        {this.state.projectLinksEdit ? 'EDIT LINKS MODE' : 'DISPLAY LINKS MODE'} <br />
+        <ProjectInfo /> <br />
+        Check us out! <br />
+        <ProjectLinks /> <br />
         {this.state.projectTeamEdit ? 'EDIT TEAM MODE' : 'DISPLAY TEAM MODE'} <br />
       </div>
 
