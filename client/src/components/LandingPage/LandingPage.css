@@ -63,14 +63,14 @@ b, strong{
     font-weight: 700;
 }
 a {
-    color: #d81b60;
+    /* color: #d81b60; */
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
 }
 a:hover,
 a:focus {
-    color: #d81b60 !important;
+    /* color: #d81b60 !important; */
     outline: 0;
     text-decoration: none !important;
 }
@@ -193,13 +193,13 @@ section{
 .btn-white:hover{
     color: #ff4081;
 }
-.btn-primary{
+/* .btn-primary{
     background-color: #ff4081 !important;
     border-color: #ff4081 !important;
-}
-.btn-primary:hover, .btn-primary:focus{
+} */
+/* .btn-primary:hover, .btn-primary:focus{
     color: #fff !important;
-}
+} */
 .btn-radius{
     border-radius: 50px;
 }

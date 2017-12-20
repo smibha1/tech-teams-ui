@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import swal from 'sweetalert2';
 import jwtDecode from 'jwt-decode';
+import logo from './logo.png';
 
 class LandingPage extends React.Component {
   constructor() {
@@ -51,7 +52,7 @@ class LandingPage extends React.Component {
           <div className="container">
               <div className="row d-md-flex brand">
                   <div className="col-md-6 hidden-sm-down wow fadeIn">
-                      <img className="img-fluid mx-auto d-block" src={require('./logo.png')}/>
+                      <img className="img-fluid mx-auto d-block" src={logo}/>
                   </div>
                   <div className="col-md-6 col-sm-12 text-white wow fadeIn">
                       <h2 className="pt-4">Join a <b className="text-primary-light">team </b> With TechTeams</h2>
