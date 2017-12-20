@@ -5,7 +5,7 @@ export default function (state = [], action) {
       newState.push(action.payload)
       return newState;
     case 'DELETE_PROF_TECH_SKILL':
-      return this.state.filter((c) => c !== action.payload);
+      return state.filter((c) => c !== action.payload);
     default:
       return state;
   }

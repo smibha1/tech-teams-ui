@@ -29,6 +29,7 @@ class TechnicalSkills extends React.Component {
   }
 
   handleRequestDelete (deletedChip) {
+    console.log('delete', deletedChip)
     this.props.deletetechskill(deletedChip);
   }
 
