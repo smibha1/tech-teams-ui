@@ -11,8 +11,8 @@ import NavBar from '../NavBar/NavBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -27,7 +27,7 @@ class App extends React.Component {
               <Route exact path="/" component={LandingPage} />
             </Switch>
             <Route path="/signup/questions" component={Questions} />
-            <Route path="/username" component={MainProfile} />
+            <Route path='/username/profile' component={MainProfile} />
           </div>
         </MuiThemeProvider>
       </div>

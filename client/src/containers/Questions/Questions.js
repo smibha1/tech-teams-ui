@@ -7,6 +7,7 @@ function mapStateToProps(state) {
   return {
     username: state.userInfo.name,
     email: state.userInfo.email,
+    password: state.userInfo.password
   };
 }
 
