@@ -23,7 +23,6 @@ class LandingPage extends React.Component {
   }
 
   render() {
-    console.log('testing')
     return (<div>
       <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top sticky-navigation">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,9 +54,9 @@ class LandingPage extends React.Component {
                       <img className="img-fluid mx-auto d-block" src={logo}/>
                   </div>
                   <div className="col-md-6 col-sm-12 text-white wow fadeIn">
-                      <h2 className="pt-4">Join a <b className="text-primary-light">team </b> With TechTeams</h2>
+                      <h2 className="pt-4">Join a <b className="text-primary-light">Team </b> With TechTeams</h2>
                       <p className="mt-5">
-                          We're making the world a better place through constructing
+                        Help us help you make the world a better place.
                       </p>
                       <p className="mt-5">
                           <Link to="/login" href="/login"><button className="login btn btn-white mb-2 page-scroll">Login</button></Link>
@@ -110,7 +109,7 @@ class LandingPage extends React.Component {
                               </div>
                               <h6>SoMoLo</h6>
                               <p>
-                              We're Social<br/>Mobile<br/>Local<br/>
+                              We're Social<br/>Mobile<br/>Local.<br/>
                               </p>
                           </div>
                       </div>
@@ -133,22 +132,22 @@ class LandingPage extends React.Component {
                   <div className="team col-sm-3 mt-2 wow fadeInLeft">
                       <img src={require('./kai.jpeg')} className="img-team img-fluid rounded-circle"/>
                       <h5>David Lee</h5>
-                      <p>Chief Financial Officer</p>
+                      <p className="text-primary">David</p>
                   </div>
                   <div className="team col-sm-3 mt-2 wow fadeIn">
                       <img src={require('./brendan.jpeg')} className="img-team img-fluid rounded-circle"/>
                       <h5>Brendan Viloria</h5>
-                      <p>Chief Technology Officer</p>
+                      <p className="text-primary">Chief Technology Officer</p>
                   </div>
                   <div className="team col-sm-3 mt-2 wow fadeIn">
                       <img src={require('./jake.png')} className="img-team img-fluid rounded-circle"/>
                       <h5>Jacob Perez</h5>
-                      <p>Chief Executive Officer</p>
+                      <p className="text-primary">Chief Executive Officer</p>
                   </div>
                   <div className="team col-sm-3 mt-2 wow fadeInRight">
                       <img src={require('./smita.jpeg')} className="img-team img-fluid rounded-circle"/>
                       <h5>Smita Bhakta</h5>
-                      <p>Chief Operating Officer</p>
+                      <p className="text-primary">Chief Operating Officer</p>
                   </div>
               </div>
           </div>
