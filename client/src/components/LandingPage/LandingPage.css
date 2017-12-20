@@ -91,7 +91,7 @@ section{
     font-weight: 500;
 }
 .team p{
-    color: #FFFFFF;
+    color: #000000;
 }
 .card-outline-primary{
     border: solid 1px #d81b60;
@@ -106,24 +106,24 @@ section{
 * Background Colors
 ================================================*/
 .bg-texture{
-    background: transparent -webkit-radial-gradient(circle farthest-side at right bottom, #CCA6E2 5%, #CCA6E2 25%, #CCA6E2 80%, #CCA6E2 98%) repeat scroll 0% 0%;
-    background: transparent -o-radial-gradient(circle farthest-side at right bottom, #CCA6E2 5%, #CCA6E2 25%, #CCA6E2 80%, #CCA6E2 98%) repeat scroll 0% 0%;
-    background: transparent -moz-radial-gradient(circle farthest-side at right bottom, #CCA6E2 5%, #CCA6E2 25%, #CCA6E2 80%, #CCA6E2 98%) repeat scroll 0% 0%;
-    background: transparent radial-gradient(circle farthest-side at right bottom, #CCA6E2 5%, #CCA6E2 25%, #CCA6E2 80%, #CCA6E2 98%) repeat scroll 0% 0%;
+    background: transparent -webkit-radial-gradient(circle farthest-side at right bottom, #9866B6 5%, #9866B6 25%, #9866B6 80%, #9866B6 98%) repeat scroll 0% 0%;
+    background: transparent -o-radial-gradient(circle farthest-side at right bottom, #9866B6 5%, #9866B6 25%, #9866B6 80%, #9866B6 98%) repeat scroll 0% 0%;
+    background: transparent -moz-radial-gradient(circle farthest-side at right bottom, #9866B6 5%, #9866B6 25%, #9866B6 80%, #9866B6 98%) repeat scroll 0% 0%;
+    background: transparent radial-gradient(circle farthest-side at right bottom, #9866B6 5%, #9866B6 25%, #9866B6 80%, #9866B6 98%) repeat scroll 0% 0%;
 }
 .bg-texture-collage{
-    background:-webkit-linear-gradient(-45deg, #9866B6 33%, transparent 0%),
-        linear-gradient(-45deg, #653383 67%, transparent 33%),
-        linear-gradient(-45deg, #9866B6 100%, transparent 67%);
-    background:-moz-linear-gradient(-45deg, #9866B6 33%, transparent 0%),
-        linear-gradient(-45deg, #653383 67%, transparent 33%),
-        linear-gradient(-45deg, #9866B6 100%, transparent 67%);
-    background:linear-gradient(-45deg, #9866B6 33%, transparent 0%),
-        linear-gradient(-45deg, #653383 67%, transparent 33%),
-        linear-gradient(-45deg, #9866B6 100%, transparent 67%);
+    background:-webkit-linear-gradient(-60deg, #9866B6 33%, transparent 0%),
+        linear-gradient(-60deg, #653383 67%, transparent 33%),
+        linear-gradient(-60deg, #9866B6 100%, transparent 67%);
+    background:-moz-linear-gradient(-60deg, #9866B6 33%, transparent 0%),
+        linear-gradient(-60deg, #653383 67%, transparent 33%),
+        linear-gradient(-60deg, #9866B6 100%, transparent 67%);
+    background:linear-gradient(-60deg, #9866B6 33%, transparent 0%),
+        linear-gradient(-60deg, #653383 67%, transparent 33%),
+        linear-gradient(-60deg, #9866B6 100%, transparent 67%);
 }
 .bg-alt {
-    background-color: #CCA6E2;
+    background-color: #F2E4FB;
 }
 .bg-faded{
     background-color: #FAFAFA;
@@ -153,7 +153,7 @@ section{
     color: #653383 !important;
 }
 .text-primary-light{
-    color: #9866B6;
+    color: #F2E4FB;
 }
 
 /*===============================================
