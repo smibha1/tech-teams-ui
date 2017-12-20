@@ -30,7 +30,6 @@ class Questions extends React.Component {
     const available = $('#available:checked').val();
     const other = $('#otherText').val();
     let tech = JSON.stringify([]);
-    console.log('hi', $('#location').val(), aboutMe, available, other, tech);
 
     const newUser = {
       email: this.props.email,
@@ -56,14 +55,12 @@ class Questions extends React.Component {
         showConfirmButton: false,
       });
     } else {
-      console.log('sweet alert else', this.state.radioSelection)
       newUser.position = this.state.radioSelection;
       axios({
         method: 'post',
         url: 'http://localhost:3000/signup',
         data: newUser
       }).then(res => {
-        console.log('res= ', res);
         if (res.status === 200) {
           axios({
             url: 'http://localhost:3000/login',
@@ -77,7 +74,6 @@ class Questions extends React.Component {
               showConfirmButton: true,
             })
             .then(() => {
-
               localStorage.setItem('token', res.data.accessToken);
               this.props.history.push('/username/profile')
             })
@@ -90,7 +86,6 @@ class Questions extends React.Component {
       }).catch((err) => 
       {console.log('error', err)}
       )
-
     }
   }
 
@@ -120,6 +115,7 @@ class Questions extends React.Component {
               })
             } else {
               this.setState({
+                radioSelection: '',
                 otherSelected: false,
               });
             }
