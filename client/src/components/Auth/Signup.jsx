@@ -74,7 +74,7 @@ class Signup extends React.Component {
         /><br />
         <i className="fa fa-lock fa-lg" aria-hidden="true" />&nbsp;
          <TextField
-            id="InputPassword" 
+            id="InputPassword"
             hintText="Password"
             floatingLabelText="Password"
             type="password"
@@ -83,7 +83,7 @@ class Signup extends React.Component {
             underlineStyle={{borderColor: '#491f68'}}
           /><br />
           <div id="submitButton">
-          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up 
+          <button id="signupsubmit" className="btn btn-primary" type="submit" onClick={this.handleSignUpSubmit.bind(this)}>Sign Up
             <i className="fa fa-paper-plane" aria-hidden="true"></i>
           </button>
         </div>
