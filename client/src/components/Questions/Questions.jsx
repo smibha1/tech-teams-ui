@@ -7,27 +7,30 @@ import Toggle from 'material-ui/Toggle';
 import swal from 'sweetalert2';
 import $ from 'jquery';
 import axios from 'axios';
+import Divider from 'material-ui/Divider';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 class Questions extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      otherSelected: true,
+      radioSelection: 'scrumMaster',
+    }
   }
+
 
   handleQuestionsSubmit(e) {
     e.preventDefault();
-    const positionObj = {
-      0: 'Scrum Master',
-      1: 'Developer',
-      2: 'Project Owner',
-    };
-    const radioArray = [$('#scrumMaster:checked').val(), $('#developer:checked').val(), $('#projectOwner:checked').val(), $('#otherRadio:checked').val()];
-    const key = radioArray.indexOf('on');
+    console.log('hi', this.state.radioSelection);
+
     let position;
     const location = $('#location').val();
     const aboutMe = $('#aboutMe').val();
     const available = $('#available:checked').val();
-    const other = $('#other').val();
+    const other = $('#otherText').val();
     let tech = JSON.stringify([]);
+    console.log('hi', $('#location').val(), aboutMe, available, other, tech);
 
     const newUser = {
       email: this.props.email,
@@ -42,10 +45,9 @@ class Questions extends React.Component {
     let username = this.props.email.split('@')[0];
     let email = this.props.email;
     let password = this.props.password;
-    console.log(username, email, password);
 
 
-    if (!(location && aboutMe) || key === -1 || (key === 3 && !other)) {
+    if (!(location && aboutMe && this.state.radioSelection)) {
       swal({
         title: 'Oops!',
         text: 'Please fill everything out!',
@@ -54,13 +56,14 @@ class Questions extends React.Component {
         showConfirmButton: false,
       });
     } else {
-      newUser.position = positionObj[key] || other;
+      console.log('sweet alert else', this.state.radioSelection)
+      newUser.position = this.state.radioSelection;
       axios({
         method: 'post',
         url: 'http://localhost:3000/signup',
         data: newUser
       }).then(res => {
-        console.log(res);
+        console.log('res= ', res);
         if (res.status === 200) {
           axios({
             url: 'http://localhost:3000/login',
@@ -72,69 +75,160 @@ class Questions extends React.Component {
               type: 'success',
               text: `taking you to your profile now!`,
               showConfirmButton: true,
-            }).then(() => {
-              localStorage.setItem('token', res.data.accessToken);
-              this.props.history.push(`/username/profile`)
             })
+            .then(() => {
+
+              localStorage.setItem('token', res.data.accessToken);
+              this.props.history.push('/username/profile')
+            })
+            .catch((err) => { 
+              console.log('error', err)
+            })
+
           })
         }
-      })
+      }).catch((err) => 
+      {console.log('error', err)}
+      )
 
     }
   }
 
   render() {
-    return (<div id="questions-container">
-      <h1>Getting Started</h1>
-      <form onSubmit={this.handleQuestionsSubmit.bind(this)}>
-        <fieldset className="legend-brdr-bttm">
-          <div className="radio-inline">
-            <label className="custom-control custom-radio">
-              <input id="scrumMaster" name="radio" type="radio" className="custom-control-input" />
-              <span className="custom-control-indicator" />
-              <span className="custom-control-description">Scrum Master</span>
-            </label>
-            <label className="custom-control custom-radio">
-              <input id="developer" name="radio" type="radio" className="custom-control-input" />
-              <span className="custom-control-indicator" />
-              <span className="custom-control-description">Developer</span>
-            </label>
-            <label className="custom-control custom-radio">
-              <input id="projectOwner" name="radio" type="radio" className="custom-control-input" />
-              <span className="custom-control-indicator" />
-              <span className="custom-control-description">Project Owner</span>
-            </label>
-            <label className="custom-control custom-radio">
-              <input id="otherRadio" name="radio" type="radio" className="custom-control-input" />
-              <span className="custom-control-indicator" />
-              <span className="custom-control-description">Other</span>
-              <span className="form-group">
-                <label htmlFor="Other" />
-                <input type="text" id="other" className="form-control" placeholder="UI/UX" />
-              </span>
-            </label>
+    console.log('this.props.email= ', this.props.email)
+    return (
+      <div id="overlayQuestions" > 
+    <div id="questions-container">
+      <h2 id="questionsTitle" >Getting Started</h2>
+      <form id="innerQuestions-container" onSubmit={this.handleQuestionsSubmit.bind(this)}>
+          <div id="professionText-container">
+          <i id="professionIcon" className="fa fa-users fa-lg" aria-hidden="true"> </i>
+          <span id="professionText">Profession</span>
           </div>
-          <div className="form-group">
-            <label htmlFor="Location">Location</label>
-            <input type="text" id="location" className="form-control" placeholder="Los Angeles, CA" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="AboutMe">About Me</label>
-            <input type="text" id="aboutMe" className="form-control" placeholder="Tell us about yourself" />
-          </div>
-          <div className="checkbox">
-            <label className="switch">
+      <fieldset id="radioButtonGroup-container" className="legend-brdr-bttm">
+          <RadioButtonGroup 
+          id="radioButtonGroup"
+          name="Profession" 
+          defaultSelected="scrumMaster"
+          style={{maxWidth:200}}
+          onChange={(event, value) => {
+            if(value !== 'other'){ 
+              this.setState({
+                radioSelection: value,
+                otherSelected: true,
+                
+              })
+            } else {
+              this.setState({
+                otherSelected: false,
+              });
+            }
+          }}
+          >
+        <RadioButton
+          id="scrumMaster"
+          value="scrumMaster"
+          label="Scrum Master"
+          style={{marginBottom: 14}}
+        />
+          <RadioButton
+          id="developer" 
+          value="developer"
+          label="Developer"
+          style={{marginBottom: 14}}
+        />
+        <RadioButton
+          id="productOwner"
+          value="productOwner"
+          label="Product Owner"
+          style={{marginBottom: 14}}
+        />
+        <RadioButton
+          id="otherRadio"
+          value="other"
+          label="Other"
+          style={{maxWidth:10}}
+        />
+        </RadioButtonGroup>
+        </fieldset>
+        <div id="otherText-container">
+        <TextField
+        id="otherText"
+        hintText="UI/UX"
+        disabled={this.state.otherSelected}
+        style={{maxWidth:170}}
+        underlineFocusStyle={{
+          borderColor: '#491f68',
+        }}
+        underlineStyle={{
+          borderColor: '#491f68',
+        }}
+        onChange={(event,value) => {
+          this.setState({
+            radioSelection: value,
+          })
+          console.log('hat', value)
+        }
+        }
+        
+        />
+        </div>
+        <br />
+        <i className="fa fa-globe fa-2x" aria-hidden="true"></i>&nbsp;
+
+        <TextField
+          id="location"
+          hintText="Tell us about yourself"
+          floatingLabelText="Location"
+          floatingLabelFocusStyle={{
+            color: '#491f68',
+          }}
+          underlineFocusStyle={{
+            borderColor: '#491f68',
+          }}
+          underlineStyle={{
+            borderColor: '#491f68',
+          }}
+        
+        /><br />
+        <i className="fa fa-id-card-o fa-lg" aria-hidden="true"> </i>&nbsp;
+        <TextField
+          id="aboutMe"
+          hintText="Tell us about yourself"
+          floatingLabelText="A little about me"
+          floatingLabelFocusStyle={{
+            color: '#491f68',
+          }}
+          underlineFocusStyle={{
+            borderColor: '#491f68',
+          }}
+          underlineStyle={{
+            borderColor: '#491f68',
+          }}
+          style={{marginBottom: 40}}
+        /><br />
+        
+          <div id="availabilitySilder-container" className="checkbox">
+            <label id="availabilitySilder" className="switch">
+              <label id="availabilityText">
+                Available to Join a Team
+              </label>
               <input id="available" className="checkbox" type="checkbox" />
               <span className="slider round" />
             </label>
-            <label>
-              Available to Join a Team
-            </label>
           </div>
-            <button type="submit" className="btn btn-primary">Create Profile</button>
-        </fieldset>
+          {
+            // <Link to="/username/profile">
+            <button id="createProfileButton" type="submit" className="btn btn-primary">Create Profile
+            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+            // </Link>
+          }
+
       </form>
-    </div>);
+    </div>
+    </div>
+    );
   }
 }
 
