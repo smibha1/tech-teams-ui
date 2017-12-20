@@ -25,7 +25,7 @@ class Signup extends React.Component {
         type: 'success',
         timer: 1000,
       }).then(() => {
-        this.props.updateSingup(name, email);
+        this.props.updateSingup(name, email, password);
         this.props.history.push('/signup/questions');
       });
     }, (error) => {

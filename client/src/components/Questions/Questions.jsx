@@ -27,14 +27,24 @@ class Questions extends React.Component {
     const aboutMe = $('#aboutMe').val();
     const available = $('#available:checked').val();
     const other = $('#other').val();
+    let tech = JSON.stringify([]);
 
     const newUser = {
       email: this.props.email,
       name: this.props.username,
-      location,
-      aboutMe,
-      available: available === 'on',
+      location: location,
+      description: aboutMe,
+      available: JSON.stringify(available === 'on'),
+      imageurl: '',
+      tech: tech
     };
+
+    let username = this.props.email.split('@')[0];
+    let email = this.props.email;
+    let password = this.props.password;
+    console.log(username, email, password);
+
+
     if (!(location && aboutMe) || key === -1 || (key === 3 && !other)) {
       swal({
         title: 'Oops!',
@@ -45,21 +55,31 @@ class Questions extends React.Component {
       });
     } else {
       newUser.position = positionObj[key] || other;
-      // axios({
-      //   url: 'http://localhost:3000/login',
-      //   method: 'post',
-      //   data: newUser,
-      //
-      //
-      //
-      // })
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/signup',
+        data: newUser
+      }).then(res => {
+        console.log(res);
+        if (res.status === 200) {
+          axios({
+            url: 'http://localhost:3000/login',
+            method: 'post',
+            data: { email, password }
+          }).then(res => {
+            swal({
+              title: 'Creating Profile',
+              type: 'success',
+              text: `taking you to your profile now!`,
+              showConfirmButton: true,
+            }).then(() => {
+              localStorage.setItem('token', res.data.accessToken);
+              this.props.history.push(`/username/profile`)
+            })
+          })
+        }
+      })
 
-      swal({
-        title: 'Creating Profile',
-        type: 'success',
-        text: `Answers: ${JSON.stringify(newUser)}`,
-        showConfirmButton: true,
-      });
     }
   }
 
@@ -111,11 +131,7 @@ class Questions extends React.Component {
               Available to Join a Team
             </label>
           </div>
-          {
-            // <Link to="/username/profile">
             <button type="submit" className="btn btn-primary">Create Profile</button>
-            // </Link>
-          }
         </fieldset>
       </form>
     </div>);
