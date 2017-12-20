@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i, // Checks if file type is a picture
-        loader: "file-loader?name=images/[name].[ext]"} //Outputs any pictures into dist/images with name and extension
+        loader: "url-loader?name=images/[name].[ext]"} //Outputs any pictures into dist/images with name and extension
     ]
   },
   resolve: {extensions: ['.js','.jsx']},
