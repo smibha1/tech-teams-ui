@@ -39,6 +39,8 @@ class Login extends React.Component {
         });
       } else {
         localStorage.setItem('token', resp.data.accessToken);
+        axios.defaults.headers.common['Authorization'] = resp.data.accessToken;
+        console.log(axios.defaults.headers);
         swal({
           title: 'Signing In', type: 'success', showConfirmButton: false, timer: 1000,
         }).then(() => {
