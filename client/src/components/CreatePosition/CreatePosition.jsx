@@ -14,7 +14,7 @@ class CreatePosition extends React.Component {
       inputPlaceholder:
         '&nbsp Open Position',
       confirmButtonText:
-        'Continue <i class="fa fa-arrow-right></i>',
+        'Continue <i className="fa fa-arrow-right></i>',
       inputValidator: (result) => {
         if (result === 1 && $('#teamMember').val() !== '') {
           return '<div>Either add a Team Member or mark the position as Open</div>';
