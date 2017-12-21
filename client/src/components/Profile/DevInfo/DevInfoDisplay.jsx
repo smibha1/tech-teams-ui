@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 const DevInfoDisplay = props => {
   return (<div id="profileInfo-container">
