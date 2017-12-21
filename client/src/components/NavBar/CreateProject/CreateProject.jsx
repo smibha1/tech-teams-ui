@@ -34,10 +34,10 @@ class CreateProject extends React.Component {
           + '</form>',
         focusConfirm: false,
         preConfirm: () => [{
-          projName: $('#projectName').val(),
-          ProjLogo: $('#logo').val(),
-          HeadQuarters: $('#headquarters').val(),
-          ProjDesc: $('#projDesc').val(),
+          name: $('#projectName').val(),
+          imageurl: $('#logo').val(),
+          headquarters: $('#headquarters').val(),
+          description: $('#projDesc').val(),
         },
         ],
       },
@@ -63,13 +63,13 @@ class CreateProject extends React.Component {
         + '<input id="trello" type="url" class="swal2-input" placeholder="https://trello.com/b/0NYefHQ3/devdates"><br>'
         + '</form>',
         focusConfirm: false,
-        preConfirm: () => ({
+        preConfirm: () => ({websites : {
           companyWebsite: $('#companyWebsite').val(),
           linkedin: $('#linkedin').val(),
           slack: $('#slack').val(),
           github: $('#github').val(),
           trello: $('#trello').val(),
-        }),
+        }}),
       },
       {
         title: 'Tech Stack',
@@ -107,15 +107,15 @@ class CreateProject extends React.Component {
         preConfirm: () => [
           {
             name: $('#name1').val(),
-            title: $('#position1').val(),
+            position: $('#position1').val(),
           },
           {
             name: $('#name2').val(),
-            title: $('#position2').val(),
+            position: $('#position2').val(),
           },
           {
             name: $('#name3').val(),
-            title: $('#position3').val(),
+            position: $('#position3').val(),
           },
         ],
       },
