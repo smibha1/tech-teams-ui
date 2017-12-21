@@ -146,6 +146,7 @@ input:checked + .slider:before {
 }
 
 #availabilitySilder-container{
+  margin-left:120px;
   margin-bottom:35px;
 }
 
