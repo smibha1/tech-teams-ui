@@ -36,7 +36,7 @@ class Questions extends React.Component {
       name: this.props.username,
       location: location,
       description: aboutMe,
-      available: JSON.stringify(available),
+      availability: JSON.stringify(available),
       imageurl: '',
       tech: tech
     };
@@ -51,7 +51,6 @@ class Questions extends React.Component {
     if (!(location && aboutMe && this.state.radioSelection)) {
       swal({title: 'Oops!', text: 'Please fill everything out!', type: 'error', timer: 1000, showConfirmButton: false});
     } else {
-      console.log('sweet alert else', this.state.radioSelection)
       this.props.updateBasicProfile({
         username: username,
         email:email,
@@ -62,7 +61,7 @@ class Questions extends React.Component {
         userDescription: aboutMe,
         userAvailability: JSON.stringify(available),
       })
-      newUser.position = this.state.radioSelection;
+      newUser.title = this.state.radioSelection;
       axios({method: 'post', url: 'http://localhost:3000/signup', data: newUser}).then(res => {
         if (res.status === 200) {
           axios({
@@ -76,7 +75,6 @@ class Questions extends React.Component {
             swal({title: 'Creating Profile', type: 'success', text: `taking you to your profile now!`, showConfirmButton: true}).then(() => {
               localStorage.setItem('token', res.data.accessToken);
               axios.defaults.headers.common['Authorization'] = res.data.accessToken;
-              console.log('ACCESS TOKEN FROM CLIENT:', res.data.accessToken, ' HEADERS=', window.headers);
               this.props.history.push('/username/profile');
             }).catch((err) => {
               console.log('error', err)
@@ -110,13 +108,13 @@ class Questions extends React.Component {
                   this.setState({radioSelection: '', otherSelected: false});
                 }
               }}>
-              <RadioButton id="scrumMaster" value="scrumMaster" label="Scrum Master" style={{
+              <RadioButton id="scrumMaster" value="Scrum Master" label="Scrum Master" style={{
                   marginBottom: 14
                 }}/>
-              <RadioButton id="developer" value="developer" label="Developer" style={{
+              <RadioButton id="developer" value="Developer" label="Developer" style={{
                   marginBottom: 14
                 }}/>
-              <RadioButton id="productOwner" value="productOwner" label="Product Owner" style={{
+              <RadioButton id="productOwner" value="Product Owner" label="Product Owner" style={{
                   marginBottom: 14
                 }}/>
               <RadioButton id="otherRadio" value="other" label="Other" style={{
