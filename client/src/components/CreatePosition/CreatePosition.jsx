@@ -10,10 +10,11 @@ class CreatePosition extends React.Component {
       title: 'DevDates Position',
       input: 'checkbox',
       inputValue: 1,
+      width: 700,
       inputPlaceholder:
-        'Open Position',
+        '&nbsp Open Position',
       confirmButtonText:
-        'Continue <i class="fa fa-arrow-right></i>',
+        'Continue <i className="fa fa-arrow-right></i>',
       inputValidator: (result) => {
         if (result === 1 && $('#teamMember').val() !== '') {
           return '<div>Either add a Team Member or mark the position as Open</div>';
@@ -23,19 +24,27 @@ class CreatePosition extends React.Component {
 
       html:
       '<form id="createPositionForm" action="/action_page.php">'
-      + 'Position Name: &nbsp;'
+      + '<div id="positionForm">'
+      + '<label id="labelPosition" >Position Name </label>&nbsp;'
       + '<input id="positionName" class="swal2-input" type="text" name="lastname" placeholder="Los Angeles, CA"><br>'
       + '<br>'
-      + 'Requirements: &nbsp;'
+      + '<label id="labelPosition"> Requirements </label> &nbsp;'
       + '<input id="positionRequirements" class="swal2-input" type="url" name="lastname" placeholder="http://i.telegraph.co.uk/logo.jpg"><br>'
       + '<br>'
-      + 'Position Description: &nbsp;'
-      + '<input id="positionDescription" class="swal2-input" type="text" name="lastname" placeholder="Bringing Devs together"><br>'
-      + '<fieldset>'
+      + '<div id="positionDesctiption-container">'
+      + '<label id="positionDescriptionText"> Position Description</label>'
+      + '<textarea id="positionDescription"  class="swal2-input"  type="textarea" name="lastname" placeholder="Bringing Devs together"cols="40" rows="5"> </textarea><br>'
+      + '</div>'
+      + '</div>'
+      + '<br>'
+      + '<hr id="dividerline">'
+      + '<div id="addTeamMember-container>'
+      + '<fieldset id="addTeamMember-container">'
       + '<legend>Add Team Member</legend>'
-      + 'Team Member: &nbsp;'
-      + '<input id="teamMember" type="text" name="firstname" placeholder="Product Owner"><br>'
+      + '<label id="labelPosition">Team Member</label> &nbsp;'
+      + '<input id="teamMember" class="swal2-input"  type="text" name="firstname" placeholder="Product Owner"><br>'
       + '</fieldset>'
+      + '<div>'
       + '</form>'
       + '<br>',
 

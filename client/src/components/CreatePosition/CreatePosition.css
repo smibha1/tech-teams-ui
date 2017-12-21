@@ -1,3 +1,57 @@
 #createPositionForm{
   width: 100%;
 }
+
+#teamMember{
+  width: 300px;
+  margin-bottom:-10px;
+}
+
+#positionDescription, #positionRequirements, #positionName {
+  width: 400px;
+}
+
+#positionForm{
+  margin-top:50px;
+  width:700px;
+  text-align: right;
+  margin-left:-100px;
+}
+
+#positionDescription{
+  height:100px;
+  float:right;
+  padding: 10px;
+}
+
+#positionDescriptionText{
+  float:left;
+  margin-top:60px;
+  margin-left:115px;
+  font-weight: 600;
+  
+}
+
+#positionDesctiption-container{
+  vertical-align: middle;
+}
+
+#addTeamMember-container{
+  margin-top: -10px;
+}
+#dividerline{
+  margin-top:130px;
+}
+
+input[type='checkbox'] {
+  width:30px;
+  height:30px;
+  background:white;
+  border-radius:5px;
+  border:2px solid #555;
+}
+
+#teamMemberText{
+  margin-left:100px;
+}
+
