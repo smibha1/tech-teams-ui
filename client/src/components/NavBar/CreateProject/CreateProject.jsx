@@ -19,25 +19,25 @@ class CreateProject extends React.Component {
         width: 800,
         padding: 100,
         animation: false,
-        html: '<form action="/action_page.php">'
-          + 'Project Name: &nbsp;'
-          + '<input id="projName" class="swal2-input" type="text" name="firstname" placeholder="DevDates"><br>'
+        html: '<form class="createProjectForm" action="/action_page.php">'
+          + '<label class="label" >Project Name </label>  &nbsp;'
+          + '<input id="projectName" class="swal2-input" type="text" placeholder="DevDates"><br>'
           + '<br>'
-          + 'Headquarters: &nbsp;'
-          + '<input id="headquarters" class="swal2-input" type="text" name="lastname" placeholder="Los Angeles, CA"><br>'
+          + '<label class="label">Headquarters</label>  &nbsp;'
+          + '<input id="headquarters" class="swal2-input" type="text" placeholder="Los Angeles, CA"><br>'
           + '<br>'
-          + 'Company Logo: &nbsp;'
-          + '<input id="logo" class="swal2-input" type="url" name="lastname" placeholder="http://i.telegraph.co.uk/logo.jpg"><br>'
+          + '<label class="label">Company Logo </label> &nbsp;'
+          + '<input id="logo" class="swal2-input" type="url"  placeholder="http://i.telegraph.co.uk/logo.jpg"><br>'
           + '<br>'
-          + 'Project Description: &nbsp;'
-          + '<input id="projDesc" class="swal2-input" type="text" name="lastname" placeholder="Bringing Devs together"><br>'
+          + '<label class="label">Project Description</label>  &nbsp;'
+          + '<input id="projDesc" class="swal2-input" type="text" placeholder="Bringing Devs together"><br>'
           + '</form>',
         focusConfirm: false,
         preConfirm: () => [{
-          ProjName: $('#projName').val(),
-          ProjLogo: $('#logo').val(),
-          HeadQuarters: $('#headquarters').val(),
-          ProjDesc: $('#projDesc').val(),
+          name: $('#projectName').val(),
+          imageurl: $('#logo').val(),
+          headquarters: $('#headquarters').val(),
+          description: $('#projDesc').val(),
         },
         ],
       },
@@ -46,30 +46,30 @@ class CreateProject extends React.Component {
         width: 800,
         padding: 100,
         animation: false,
-        html: '<form action="/action_page.php">'
-        + 'Your Project Website: &nbsp;'
-        + '<input id="companyWebsite" type="url" name="firstname" placeholder="www.devdates.com"><br>'
+        html: '<form class="createProjectForm"  action="/action_page.php">'
+        + '<label class="label"> Your Website </label> &nbsp;'
+        + '<input id="companyWebsite" type="url" class="swal2-input" placeholder="www.devdates.com"><br>'
         + '<br>'
-        + '<i class="fa fa-linkedin-square" aria-hidden="true"></i> &nbsp;'
-        + '<input id="linkedin" type="url" name="lastname" placeholder="https://linkedin.com/tonystark"><br>'
+        + '<i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i> &nbsp;'
+        + '<input id="linkedin" type="url" class="swal2-input" placeholder="https://linkedin.com/richh"><br>'
         + '<br>'
-        + '<i class="fa fa-slack" aria-hidden="true"></i> &nbsp;'
-        + '<input id="slack" type="url" name="lastname" placeholder="https://hrla-students.slack.com/messages"><br>'
+        + '<i class="fa fa-slack fa-2x" aria-hidden="true"></i> &nbsp;'
+        + '<input id="slack" type="url" class="swal2-input" placeholder="https://dev-dates.slack.com/messages"><br>'
         + '<br>'
-        + '<i class="fa fa-github" aria-hidden="true"></i> &nbsp;'
-        + '<input id="github" type="url" name="lastname" placeholder="https://github.com/tonystark"><br>'
+        + '<i class="fa fa-github fa-2x" aria-hidden="true"></i> &nbsp;'
+        + '<input id="github" type="url" class="swal2-input" placeholder="https://github.com/richh"><br>'
         + '<br>'
-        + '<i class="fa fa-trello" aria-hidden="true"></i> &nbsp;'
-        + '<input id="trello" type="url" name="lastname" placeholder="https://trello.com/b/0NYefHQ3/devdates"><br>'
+        + '<i class="fa fa-trello fa-2x" aria-hidden="true"></i> &nbsp;'
+        + '<input id="trello" type="url" class="swal2-input" placeholder="https://trello.com/b/0NYefHQ3/devdates"><br>'
         + '</form>',
         focusConfirm: false,
-        preConfirm: () => ({
+        preConfirm: () => ({websites : {
           companyWebsite: $('#companyWebsite').val(),
           linkedin: $('#linkedin').val(),
           slack: $('#slack').val(),
           github: $('#github').val(),
           trello: $('#trello').val(),
-        }),
+        }}),
       },
       {
         title: 'Tech Stack',
@@ -77,7 +77,8 @@ class CreateProject extends React.Component {
         padding: 100,
         animation: false,
         html: '<form action="/action_page.php">'
-          + '<input id="techStack" class="submissionfield" type="text" name="firstname" placeholder="React, Node, MongoDB"><br>'
+          + '<input id="techStack" type="text" class="swal2-input" placeholder="React, Node, MongoDB"><br>'
+          + '<script> <TechnicalSkills /> </script>'
           + '</form>',
         focusConfirm: false,
         preConfirm: () => ({
@@ -89,35 +90,32 @@ class CreateProject extends React.Component {
         width: 800,
         padding: 100,
         animation: false,
-        html: '<form action="/action_page.php">'
-          + 'Name: &nbsp;'
-          + '<input id="name1" type="text" name="firstname" placeholder="Tony Stark"> &nbsp;'
-          + 'Position: &nbsp;'
-          + '<input id="position1" type="text" name="firstname" placeholder="Product Owner"><br>'
+        html: '<form id="addTeamMemberForm" action="/action_page.php">'
+          + '<label id="labelName" >Name</label>  &nbsp;'
+          + '<label id="labelPosition" >Position</label>  &nbsp;'
           + '<br>'
-          + 'Name: &nbsp;'
-          + '<input id="name2" type="text" name="firstname" placeholder="Tony Stark"> &nbsp;'
-          + 'Position: &nbsp;'
-          + '<input id="position2" type="text" name="firstname" placeholder="Developer"><br>'
+          + '<input id="name1" type="text" class="swal2-input"  placeholder="Richard Hendriks"> &nbsp;'
+          + '<input id="position1" type="text" class="swal2-input"  placeholder="Product Owner"><br>'
           + '<br>'
-          + 'Name: &nbsp;'
-          + '<input id="name3" type="text" name="firstname" placeholder="Pepper Potts"> &nbsp;'
-          + 'Position: &nbsp;'
-          + '<input id="position3" type="text" name="firstname" placeholder="Scrum Master"><br>'
+          + '<input id="name2" type="text" class="swal2-input"  placeholder="Gilfoyle"> &nbsp;'
+          + '<input id="position2" type="text" class="swal2-input"  placeholder="Developer"><br>'
+          + '<br>'
+          + '<input id="name3" type="text" class="swal2-input"  placeholder="Jared Dunn"> &nbsp;'
+          + '<input id="position3" type="text" class="swal2-input"  placeholder="Scrum Master"><br>'
           + '</form>',
         focusConfirm: false,
         preConfirm: () => [
           {
             name: $('#name1').val(),
-            title: $('#position1').val(),
+            position: $('#position1').val(),
           },
           {
             name: $('#name2').val(),
-            title: $('#position2').val(),
+            position: $('#position2').val(),
           },
           {
             name: $('#name3').val(),
-            title: $('#position3').val(),
+            position: $('#position3').val(),
           },
         ],
       },
@@ -136,6 +134,7 @@ class CreateProject extends React.Component {
       }
     });
   }
+
   render() {
     return (
       <ul id="createProjectsNav">

@@ -13,3 +13,84 @@
 #createProjectsNav {
   margin-left:auto;
 }
+
+#projectName, #headquarters, #logo{
+  width:330px;
+  margin-bottom:-50px;
+}
+
+#projDesc{
+  width:330px;
+}
+
+#techStack{
+  width: 500px;
+}
+
+#name1,#name2 {
+  width:200px;
+  margin-bottom:-50px;
+}
+#name3{
+  width:200px;
+}
+
+#position1,#position2,#position3  {
+  width:300px;
+  margin-bottom:-50px;
+}
+
+#position3 {
+  width:300px;
+}
+
+.createProjectForm{
+  text-align:right;
+  margin-right: 60px;
+}
+
+.label {
+  font-weight: 600;
+  margin-left:10px;
+}
+
+#companyWebsite, #linkedin, #slack, #github {
+  width:400px;
+  margin-bottom:-50px;
+}  
+
+#trello {
+  width:400px;
+}
+
+#addTeamMemberForm{
+  width:750px;
+  margin-left:-60px;
+}
+
+
+.swal2-title{
+  margin-bottom:40px;
+}
+
+
+#labelName{
+  margin-right: 150px;
+  margin-left:-40px;
+  font-weight: 600;
+  margin-top:30px;
+}
+
+#labelPosition{
+  margin-left:50px;
+  font-weight: 600;
+}
+
+#projectName, #companyWebsite, #techStack {
+margin-top:30px;
+}
+
+.swal2-input {
+  /* margin:auto; */
+  margin-bottom:-600px;
+}
