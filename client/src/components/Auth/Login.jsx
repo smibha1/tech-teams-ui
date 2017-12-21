@@ -29,8 +29,8 @@ class Login extends React.Component {
         email,
         password,
       },
-    }).then((resp) => {
-      if (resp.status === 204) {
+    }).then((res) => {
+      if (res.status === 204) {
         swal({
           title: 'Error', text: 'Double check email and password', type: 'error', showConfirmButton: false, timer: 1000,
         }).then(() => {
@@ -38,13 +38,12 @@ class Login extends React.Component {
           $('#InputPassword').val('');
         });
       } else {
-        localStorage.setItem('token', resp.data.accessToken);
-        axios.defaults.headers.common['Authorization'] = resp.data.accessToken;
+        localStorage.setItem('token', res.data.accessToken);
+        axios.defaults.headers.common['Authorization'] = res.data.accessToken;
         console.log(axios.defaults.headers);
         swal({
           title: 'Signing In', type: 'success', showConfirmButton: false, timer: 1000,
         }).then(() => {
-          // set the user and email in store = this.props.user/this.props.email
           this.props.history.push('/username/profile');
         });
       }
