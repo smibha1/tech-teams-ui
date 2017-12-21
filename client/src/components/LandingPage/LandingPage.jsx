@@ -28,7 +28,7 @@ class LandingPage extends React.Component {
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="ion-grid icon-sm"></span>
             </button>
-            <a className="navbar-brand hero-heading" href="#">TechTeams</a>
+            <a className="navbar-brand hero-heading techlogo" href="#">techteams</a>
             <div className="collapse navbar-collapse" id="navbarCollapse">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item mr-3">
@@ -54,7 +54,7 @@ class LandingPage extends React.Component {
                       <img className="img-fluid mx-auto d-block" src={logo}/>
                   </div>
                   <div className="col-md-6 col-sm-12 text-white wow fadeIn">
-                      <h2 className="pt-4">Join a <b className="text-primary-light">Team </b> With TechTeams</h2>
+                      <h2 className="pt-4">Join a <b className="text-primary-light">Team </b> With <b className="techlogo">techteams</b></h2>
                       <p className="mt-5">
                         Help us help you make the world a better place.
                       </p>
