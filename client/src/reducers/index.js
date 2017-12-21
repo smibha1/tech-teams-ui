@@ -23,6 +23,8 @@ import addUserLocationReducer from './Profile/addUserLocation';
 import addUserImageurlReducer from './Profile/addUserImageurl';
 import addUserAvailabilityReducer from './Profile/addUserAvailability';
 import addUserTitleReducer from './Profile/addUserTitle';
+import updateBasicProfileReducer from './Questions/updateBasicProfile';
+import updateProjectProfilePageReducer from './Profile/updateProjectProfilePage';
 
 const allReducers = combineReducers({
 
@@ -42,8 +44,8 @@ const allReducers = combineReducers({
   projects: saveNewProjectsReducer,
   alerts: viewAlertsReducer,
   links: updateLinksReducer,
-  projectName: 'FILL_THIS_IN_WHEN_AXIOS_WORKS',
-  projectImage: 'FILL_THIS_IN_WHEN_AXIOS_WORKS',
+  projectName: updateProjectProfilePageReducer,
+  projectImage: 'http://bit.ly/2BLcR1n',
   projectBlurb: updateProjectBlurbReducer,
   projectLocation: updateAllOthersReducer,
   projectDescription: updateAllOthersReducer,

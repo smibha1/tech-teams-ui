@@ -9,14 +9,15 @@ class CompletedProjects extends React.Component {
   }
 
   selectProject(element) {
-    const grabDiv = document.getElementById(`prof-completed-${element.projName}`).getAttribute('index');
-    console.log('CLICKED ON COMPLETED PROJECTS NO.', grabDiv);
+    // PROB DON'T NEED THE BELOW VARIABLE FOR THIS, BUT KEEP JUST IN CASE
+    // const grabDiv = document.getElementById(`prof-completed-${element.projName}`).getAttribute('index');
+    this.props.updateProjectProfilePage(element.projName);
+    this.props.history.push(`/project/${element.projName}`)
   }
 
   render() {
     return (
       <div id="completedProjects-container">
-        {console.log(this.props)}
         Completed Projects <br />
         <div id="accordion" role="tablist" aria-multiselectable="true">
   <div className="card">

@@ -75,9 +75,9 @@ class Profile extends React.Component {
       <br/>
       <TechnicalSkillsContainer/>
       <br/>
-      <CurrentProjectsContainer/>
+      <CurrentProjectsContainer history={this.props.history} />
       <br/>
-      <CompletedProjectsContainer/>
+      <CompletedProjectsContainer history={this.props.history}/>
     </div>)
   }
 }
