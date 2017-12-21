@@ -24,6 +24,7 @@ class LandingPage extends React.Component {
 
   render() {
     return (<div>
+      <script src="/scripts/LandingPageScripts.js"></script>
       <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top sticky-navigation">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="ion-grid icon-sm"></span>
@@ -56,7 +57,7 @@ class LandingPage extends React.Component {
                   <div className="col-md-6 col-sm-12 text-white wow fadeIn">
                       <h2 className="pt-4">Join a <b className="text-primary-light">Team </b> With <b className="techlogo">techteams</b></h2>
                       <p className="mt-5">
-                        Help us help you make the world a better place.
+                        `Help us help you make the world a better place.`
                       </p>
                       <p className="mt-5">
                           <Link to="/login" href="/login"><button className="login btn btn-white mb-2 page-scroll">Login</button></Link>
@@ -83,7 +84,7 @@ class LandingPage extends React.Component {
                               </div>
                               <h6>Integration</h6>
                               <p>
-                              We've got 7 words for you. We love TechTeams' integrated multi platform functionality!
+                              `We've got 7 words for you. We love TechTeams' integrated multi platform functionality!`
                               </p>
                           </div>
                       </div>
@@ -96,7 +97,7 @@ class LandingPage extends React.Component {
                               </div>
                               <h6>Extensibility</h6>
                               <p>
-                              We're making the world a better place through constructing elegant hierarchies for maximum code reuse and extensibility.
+                              `We're making the world a better place through constructing elegant hierarchies for maximum code reuse and extensibility.`
                               </p>
                           </div>
                       </div>
