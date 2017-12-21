@@ -32,10 +32,20 @@ class ProjectInfo extends React.Component {
   }
 
   toggleBlurbEdit() {
+    if (!this.state.blurbEditOff) {
+      // CALL ACTION HERE
+      this.props.updateProjectBlurb(this.state.projectBlurb);
+      console.log('SENDING ACTION FOR BLURB EDIT');
+    }
     this.setState({ blurbEditOff: !this.state.blurbEditOff });
   }
 
   toggleAllOtherEdit() {
+    if (!this.state.editModeOff) {
+      // CALL ANOTHER ACTION HERE
+      this.props.updateAllOthers({ headquarters: this.state.location, description: this.state.description });
+      console.log('SENDING ACTION FOR ALL OTHER EDITS');
+    }
     this.setState({ editModeOff: !this.state.editModeOff });
   }
 
@@ -58,7 +68,9 @@ class ProjectInfo extends React.Component {
           propName="blurb"
           isDisabled={this.state.blurbEditOff}
         />
-        <button onClick={this.toggleBlurbEdit}> Edit </button>
+        <button onClick={this.toggleBlurbEdit}>
+          {this.state.blurbEditOff ? 'Edit' : 'Save'}
+        </button>
         <br />
         <button onClick={this.toggleAllOtherEdit}> Edit </button> <br />
         Headquarters:

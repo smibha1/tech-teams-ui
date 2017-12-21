@@ -4,10 +4,10 @@ class ProjectLinks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      linkedin: this.props.linkedin,
-      slack: this.props.slack,
-      github: this.props.github,
-      trello: this.props.trello,
+      linkedin: this.props.links.linkedin,
+      slack: this.props.links.slack,
+      github: this.props.links.github,
+      trello: this.props.links.trello,
     };
 
     this.redirectLinkedIn = this.redirectLinkedIn.bind(this);
