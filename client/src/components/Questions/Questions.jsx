@@ -16,6 +16,7 @@ class Questions extends React.Component {
     this.state = {
       otherSelected: true,
       radioSelection: 'scrumMaster',
+      isAvailable:true,
     }
   }
 
@@ -27,16 +28,17 @@ class Questions extends React.Component {
     let position;
     const location = $('#location').val();
     const aboutMe = $('#aboutMe').val();
-    const available = $('#available:checked').val();
+    const available = this.state.isAvailable;
     const other = $('#otherText').val();
     let tech = JSON.stringify([]);
+    console.log('hi', $('#location').val(), aboutMe, available, other, tech);
 
     const newUser = {
       email: this.props.email,
       name: this.props.username,
       location: location,
       description: aboutMe,
-      available: JSON.stringify(available === 'on'),
+      available: JSON.stringify(available),
       imageurl: '',
       tech: tech
     };
@@ -55,18 +57,21 @@ class Questions extends React.Component {
         showConfirmButton: false,
       });
     } else {
+      console.log('sweet alert else', this.state.radioSelection)
       newUser.position = this.state.radioSelection;
       axios({
         method: 'post',
         url: 'http://localhost:3000/signup',
         data: newUser
       }).then(res => {
+        console.log('*****res= ', res);
         if (res.status === 200) {
           axios({
             url: 'http://localhost:3000/login',
             method: 'post',
             data: { email, password }
           }).then(res => {
+            console.log('userfromDB', res.data)
             swal({
               title: 'Creating Profile',
               type: 'success',
@@ -74,6 +79,7 @@ class Questions extends React.Component {
               showConfirmButton: true,
             })
             .then(() => {
+
               localStorage.setItem('token', res.data.accessToken);
               this.props.history.push('/username/profile')
             })
@@ -154,10 +160,10 @@ class Questions extends React.Component {
         disabled={this.state.otherSelected}
         style={{maxWidth:170}}
         underlineFocusStyle={{
-          borderColor: '#491f68',
+          borderColor: '#55bed5',
         }}
         underlineStyle={{
-          borderColor: '#491f68',
+          borderColor: '#55bed5',
         }}
         onChange={(event,value) => {
           this.setState({
@@ -174,16 +180,16 @@ class Questions extends React.Component {
 
         <TextField
           id="location"
-          hintText="Tell us about yourself"
+          hintText="Los Angeles, CA"
           floatingLabelText="Location"
           floatingLabelFocusStyle={{
-            color: '#491f68',
+            color: '#55bed5',
           }}
           underlineFocusStyle={{
-            borderColor: '#491f68',
+            borderColor: '#55bed5',
           }}
           underlineStyle={{
-            borderColor: '#491f68',
+            borderColor: '#55bed5',
           }}
         
         /><br />
@@ -193,25 +199,30 @@ class Questions extends React.Component {
           hintText="Tell us about yourself"
           floatingLabelText="A little about me"
           floatingLabelFocusStyle={{
-            color: '#491f68',
+            color: '#55bed5',
           }}
           underlineFocusStyle={{
-            borderColor: '#491f68',
+            borderColor: '#55bed5',
           }}
           underlineStyle={{
-            borderColor: '#491f68',
+            borderColor: '#55bed5',
           }}
           style={{marginBottom: 40}}
         /><br />
         
           <div id="availabilitySilder-container" className="checkbox">
-            <label id="availabilitySilder" className="switch">
-              <label id="availabilityText">
-                Available to Join a Team
-              </label>
-              <input id="available" className="checkbox" type="checkbox" />
-              <span className="slider round" />
-            </label>
+          <Toggle
+            id="availabilitySilder"
+            label="Available to Join a Team"
+            defaultToggled={true}
+            style={{maxWidth:300}}
+            onToggle = {(value, isInputChecked) => {
+              this.setState({
+                isAvailable: isInputChecked,
+              })
+            }
+            }
+          />
           </div>
           {
             // <Link to="/username/profile">
