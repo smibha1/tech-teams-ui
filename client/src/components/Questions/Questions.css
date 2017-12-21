@@ -1,21 +1,36 @@
-.overlayQuestions{
+#overlayQuestions{
   position:fixed;
   width:100%;
   height:100%;
   top:0px;
   left:0px;
   z-index:1000;
-  background: url("../../../dist/images/AuthBackground.jpg") no-repeat top left fixed;
+  background: url("../../../dist/images/AuthBackground.jpg") top left fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 
 #questions-container {
+  border:solid;
+  border-radius: 30px;
+  border-color: rgba(250, 246, 252, 0.933);
+  box-shadow: 1px 2px 8px 2px  rgb(178, 158, 194);
   text-align: center;
-  border: solid;
-  width: 80%;
-  background: lightgrey;
+  min-width: 600px;
+  max-width: 600px;
+  min-height: 750px;
   margin:auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
 }
+
+/* #innerQuestions-container{
+  width: 50%;
+  margin: center;
+} */
 
 .legend-brdr-bttm {
   width: 100%
@@ -83,4 +98,63 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#availabilityText{
+  margin-left:-250px;
+  margin-top:5px;
+}
+
+#questionsTitle{
+  margin-top:20px;
+}
+
+#createProfileButton{
+  padding:10px;
+  width: 80%;;
+  border-radius:100px;
+}
+
+#otherText-container {
+  margin-top:-48px;
+  margin-left:130px;
+}
+
+#radioButtonGroup{
+  padding-left:10px;
+}
+
+#radioButtonGroup-container{
+  text-align: left;
+  margin-left:175px;
+}
+
+#professionIcon{
+  margin-left:-170px;
+  margin-bottom: 16px;
+  
+}
+
+#professionText{
+  font-size: 18px;
+  font-style:bold;
+  margin-left:5px;
+}
+
+#professionText-container{
+  margin-top:40px;
+}
+
+#availabilitySilder-container{
+  margin-bottom:35px;
+}
+
+#availabilitySilder{
+  margin-left:175px;
+}
+
+
+.fa-id-card-o, .fa-globe, .fa-users{
+  margin-right: 15px;
+  color: rgb(60, 60, 60);
 }
