@@ -37,7 +37,8 @@ function matchDispatchToProps(dispatch) {
     addusertitle: addUserTitleAction,
     adduserdescription: addUserDescriptionAction,
     adduseravailability: addUserAvailabilityAction,
-    updateCurrentProjects: updateCurrentProjectsAction
+    updateCurrentProjects: updateCurrentProjectsAction,
+    updateTechSkill: addTechSkillAction,
   }, dispatch);
 }
 

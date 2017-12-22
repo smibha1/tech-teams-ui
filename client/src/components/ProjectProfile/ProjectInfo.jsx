@@ -26,6 +26,13 @@ class ProjectInfo extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     console.log('this is the nextProps in project info. nextProps= ', nextProps)
+    const { projectBlurb, projectDescription, projectImage, projectLocation } = nextProps;
+    this.setState({
+      projectImage,
+      projectBlurb,
+      location: projectLocation,
+      description: projectDescription,
+    })
   }
 
   updateBlurb(event) {
@@ -36,7 +43,7 @@ class ProjectInfo extends React.Component {
     if (!this.state.blurbEditOff) {
       // CALL ACTION HERE
       this.props.updateProjectBlurb(this.state.projectBlurb);
-      console.log('SENDING ACTION FOR BLURB EDIT');
+      // console.log('SENDING ACTION FOR BLURB EDIT');
     }
     this.setState({ blurbEditOff: !this.state.blurbEditOff });
   }
@@ -49,7 +56,7 @@ class ProjectInfo extends React.Component {
         description: this.state.description,
         projectImage: this.state.projectImage,
       });
-      console.log('SENDING ACTION FOR ALL OTHER EDITS');
+      // console.log('SENDING ACTION FOR ALL OTHER EDITS');
     }
     this.setState({ editModeOff: !this.state.editModeOff });
   }
@@ -85,13 +92,13 @@ class ProjectInfo extends React.Component {
           propName="location"
           isDisabled={this.state.editModeOff}
         /> <br />
-        Description:
-        <RIETextArea
+        {/* Description: LOOKS LIKE WE DON'T RENDER THIS IN DB */}
+        {/* <RIETextArea
           value={this.state.description}
           change={this.updateDescription}
           propName="description"
           isDisabled={this.state.editModeOff}
-        />
+        /> */}
 
       </div>
     );

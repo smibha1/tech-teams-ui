@@ -38,7 +38,6 @@ class DevInfoEdit extends React.Component {
 
   updateDevInfo() {
     this.props.update(this.state);
-    console.log(this.state);
   }
 
   render() {

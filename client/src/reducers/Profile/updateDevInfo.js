@@ -1,6 +1,6 @@
 export default function (state = {
   name: 'Shaniqua Anastasia',
-  imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
+  imageurl: 'http://bit.ly/2BZ5lT6',
   title: 'Developer',
   location: 'Los Angeles, CA',
   description: 'I love Agile and stuff!',

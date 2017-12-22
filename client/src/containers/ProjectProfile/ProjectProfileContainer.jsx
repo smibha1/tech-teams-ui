@@ -4,6 +4,7 @@ import ProjectProfile from '../../components/ProjectProfile/ProjectProfile';
 import updateProjectBlurbAction from '../../actions/ProjectProfile/updateProjectBlurb';
 import updateLinksAction from '../../actions/ProjectProfile/updateLinksAction';
 import updateAllOtherEditsAction from '../../actions/ProjectProfile/updateAllOtherEdits';
+import updateProjectTeamAction from '../../actions/ProjectProfile/updateProjectTeam'
 
 function mapStateToProps(state) {
   return {
@@ -16,6 +17,7 @@ function matchDispatchToProps(dispatch) {
     updateProjectBlurb: updateProjectBlurbAction,
     updateLinks: updateLinksAction,
     updateAllOthers: updateAllOtherEditsAction,
+    updateProjectTeam: updateProjectTeamAction,
   }, dispatch)
 }
 

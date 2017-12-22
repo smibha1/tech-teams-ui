@@ -6,12 +6,16 @@ class ProjectTeam extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      placeholder: '',
+      projectTeam: this.props.projectTeam,
     };
   }
   
-  componentDidMount() {
-    console.log('when do iget hit?? the last component')
+  componentWillReceiveProps(nextProps) {
+    console.log(this.props.projectTeam)
+    console.log('DISPLAY DISPLAY DISPLAY ', nextProps.projectTeam.projectTeam);
+    this.setState({
+      projectTeam: nextProps.projectTeam.projectTeam
+    })
   }
 
   addPos() {
@@ -23,14 +27,14 @@ class ProjectTeam extends React.Component {
       <div>
         Meet the Team: 
 
-        {this.props.teammembers.map(
+        {this.state.projectTeam.map(
           (element, index) => <ProjectTeamMember member={element} key={index} />)
         }
         <br />
         Open Position:
-        {this.props.openPositions.map(
+        {/* {this.props.openPositions.map(
           (element, index) => <OpenPositions element={element} key={index} />)
-        }
+        } */}
         <br />
         <div className="add-position" onClick={this.addPos}>
           <img src="http://bit.ly/2BbiNQk" alt="Add Position" height="75px" />

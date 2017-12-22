@@ -4,12 +4,10 @@ import _ from 'lodash';
 import ProjectLinks from '../../components/ProjectProfile/ProjectLinks';
 
 function mapStateToProps(state) {
-  console.log('state.links=  ', state.links)
   const linksObj = {};
   _.each(state.links, (value, key) => {
     linksObj[key] = value;
   });
-  console.log('linksObj=  ', linksObj)
 
   return {
     // links: state.links,

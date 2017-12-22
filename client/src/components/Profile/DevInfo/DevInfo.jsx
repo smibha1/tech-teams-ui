@@ -19,7 +19,6 @@ class DevInfo extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('DEV INFO CWRP: ', nextProps);
     const { devName, devPicture, devPosition, devLocation, devDesc } = nextProps;
     this.setState({
       devName,
@@ -38,9 +37,9 @@ class DevInfo extends React.Component {
     return (
       <div id="profileUsername-container"  >
         {this.state.editMode ? <EditMode info={this.state} update={this.props.updateDevInfo}/> : <Display info={this.state} />}
-        <button onClick={this.toggleEditMode}> 
+        {/* <button onClick={this.toggleEditMode}> 
           <i className="fa fa-pencil" aria-hidden="true"></i>
-        </button>
+        </button> */}
         <div id="divider"></div>
         
       </div>
