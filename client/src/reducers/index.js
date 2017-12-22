@@ -5,7 +5,7 @@
 //
 
 import { combineReducers } from 'redux';
-import saveNewSkillReducer from './Profile/updateTechSkill';
+import updateSkillReducer from './Profile/updateTechSkill';
 import updateDevInfoReducer from './Profile/updateDevInfo';
 import updateCurrentProjectsReducer from '../reducers/Profile/updateCurrentProjects';
 import updateCompletedProjectsReducer from '../reducers/Profile/updateCompletedProjects';
@@ -25,6 +25,7 @@ import addUserAvailabilityReducer from './Profile/addUserAvailability';
 import addUserTitleReducer from './Profile/addUserTitle';
 // import updateBasicProfileReducer from './Questions/updateBasicProfile';
 import updateProjectProfilePageReducer from './Profile/updateProjectProfilePage';
+import updateProjectTeamReducer from './ProjectProfile/updateProjectTeam';
 
 const allReducers = combineReducers({
 
@@ -35,7 +36,7 @@ const allReducers = combineReducers({
   imageurl:addUserImageurlReducer,
   availability:addUserAvailabilityReducer ,
   title:addUserTitleReducer,
-  tech: saveNewSkillReducer,
+  tech: updateSkillReducer,
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,
   completedProjects: updateCompletedProjectsReducer,
@@ -49,6 +50,7 @@ const allReducers = combineReducers({
   projectBlurb: updateProjectBlurbReducer,
   projectLocation: updateAllOthersReducer,
   projectDescription: updateAllOthersReducer,
+  projectTeam: updateProjectTeamReducer,
 });
 
 export default allReducers;

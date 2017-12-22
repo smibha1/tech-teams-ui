@@ -6,7 +6,6 @@ import addTechSkillAction from '../../actions/Profile/addTechSkillAction';
 import deleteTechSkillAction from '../../actions/Profile/deleteTechSkillAction';
 
 function mapStateToProps(state) {
-  console.log('this is the state from the techskills container', state.tech)
   return {
     tech: state.tech,
   };

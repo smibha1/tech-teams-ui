@@ -1,5 +1,5 @@
 export default function (state = {
-  location: 'Los Angeles, CA',
+  location: 'No Man\'s Land, CA',
   description: 'this should disappear',
   projectImage: 'http://bit.ly/2BhFySR',
 }, action) {

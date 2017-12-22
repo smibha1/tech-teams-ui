@@ -16,14 +16,14 @@ class ProjectTeamMember extends React.Component {
   }
   
   removeMember(event) {
-    console.log(JSON.stringify(event.target.name));
+    // console.log(JSON.stringify(event.target.name));
   }
 
   render() {
     return (
       <div>
-        <img className="teammember" src={this.props.member.image} alt={this.props.member.name} />
-        <span> {this.props.member.name} </span>
+        <img className="teammember" src={this.props.member.image} alt={this.props.member.user} />
+        <span> {this.props.member.user} </span>
         {this.state.editMode ?
           <button
             onClick={this.removeMember}

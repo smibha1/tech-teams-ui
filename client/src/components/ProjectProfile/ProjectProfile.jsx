@@ -17,21 +17,15 @@ class ProjectProfile extends React.Component {
     this.exitEditMode = this.exitEditMode.bind(this);
   }
 
-  componentDidMount() {
-    console.log('am i first?')
-  }
-
   componentWillMount() {
-    console.log('hey CWM in projectprofile');
     axios({
       method: 'post',
       url: 'http://localhost:3000/getproject',
       data: {
-        name: 'A New Life',
+        name: this.props.projectName,
       }
     })
       .then((data) => {
-        console.log('AXIOS DATA: ', data.data.pinfo)
         this.props.updateProjectBlurb(data.data.pinfo.description);
         let websitesArr = JSON.parse(data.data.pinfo.websites);
         this.props.updateLinks({
@@ -40,13 +34,16 @@ class ProjectProfile extends React.Component {
           github: websitesArr[3],
           trello: websitesArr[4],
         });
+        console.log(data)
         this.props.updateAllOthers({
           location: data.data.pinfo.headquarters,
           description: 'WHAT IS DESCRIPTION?',
           projectImage: data.data.pinfo.imageurl, 
         });
-        console.log('are we in this last .then shit')
-        // this.setState({random: 1}, () => console.log(this.state));
+
+        this.props.updateProjectTeam({
+          projectTeam: data.data.positions,
+        })
       })
       .catch( err => console.log(err))
   // END AXIOS REQUEST
@@ -61,8 +58,6 @@ class ProjectProfile extends React.Component {
   }
 
   render() {
-    console.log('this.props= ', this.props)
-    console.log('this.state= ', this.state)
     return (
       <div>
         <ProjectInfo /> <br />

@@ -22,7 +22,7 @@ class Profile extends React.Component {
         let infoObj = data.data.info;
         this.props.updateDevInfo({
           name: infoObj.name,
-          imageurl: 'http://bit.ly/2BZ5lT6',
+          imageurl: infoObj.imageurl,
           title: infoObj.title,
           location: infoObj.location,
           description: infoObj.description,
@@ -51,7 +51,7 @@ class Profile extends React.Component {
       <br/>
       <CurrentProjectsContainer history={this.props.history} />
       <br/>
-      <CompletedProjectsContainer history={this.props.history}/>
+      {/* <CompletedProjectsContainer history={this.props.history}/> */}
     </div>)
   }
 }

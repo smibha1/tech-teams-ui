@@ -14,12 +14,7 @@ class CurrentProjects extends React.Component {
     this.selectProject = this.selectProject.bind(this);
   }
 
-  componentDidMount() {
-    console.log('CURRENT PROJ CDM: ', this.props)
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log('CURRENT PROJ CWRP: ', nextProps);
     const { currentProjects } = nextProps;
     this.setState({
       currentProjects,
@@ -36,7 +31,7 @@ class CurrentProjects extends React.Component {
   render() {
     return (
       <div id="currentProjects-container">
-        Current Projects <br />
+        Projects <br />
         <div id="newdivider"> </div>
         {
           this.state.currentProjects.map((element, index) => (
@@ -46,7 +41,8 @@ class CurrentProjects extends React.Component {
             index={index}
             onClick={() => this.selectProject(element)}
             >
-              {element.project} || {element.title} <br />
+            {/* {console.log('CURRENT PROJECT ELEMENT', element)} */}
+              {element.project} || {element.title || 'Product Owner'} <br />
               {element.projectdescription}
             </div>
           ))

@@ -19,11 +19,11 @@ class ProjectLinks extends React.Component {
   }
 
   componentWillMount() {
-    console.log('CWM in project links this.props= ', this.props);
+    // console.log('CWM in project links this.props= ', this.props);
   }
   
   componentWillReceiveProps(nextProps) {
-    console.log('CWRP in project links this.props= ', nextProps);
+    // console.log('CWRP in project links this.props= ', nextProps);
     const { linkedin, slack, github, trello } = nextProps.links;
     this.setState({
       linkedin,
@@ -53,7 +53,6 @@ class ProjectLinks extends React.Component {
 
 
   render() {
-    console.log('ProjectLinks this.props= ', this.props)
     return (
       <div>
         <span className="icon"> {this.state.linkedin ?
