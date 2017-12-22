@@ -23,7 +23,7 @@ class TechnicalSkills extends React.Component {
     console.log('when do i get hit')
   }
 
-  comp
+
 
   toggleEdit(e) {
     e.preventDefault();

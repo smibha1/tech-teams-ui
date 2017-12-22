@@ -13,9 +13,9 @@ class Profile extends React.Component {
 
   }
 
-  componentWillMount() {
+  // componentWillMount() {
 
-  }
+  // }
 
   componentDidMount() {
 
@@ -57,7 +57,7 @@ class Profile extends React.Component {
     this.props.adduseravailability(data.availability)
     this.props.addusertitle(data.title)
     this.props.addusertitle(data.title)
-    
+
     console.log('this.props.location from profile page', this.props.location)
     
     console.log('this.props', this.props)

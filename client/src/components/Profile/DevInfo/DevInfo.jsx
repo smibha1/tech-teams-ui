@@ -18,6 +18,7 @@ class DevInfo extends React.Component {
   }
 
   render() {
+    console.log('this is the probs in devinfp', this.props)
     return (
       <div id="profileUsername-container"  >
         <button onClick={this.toggleEditMode}> 
