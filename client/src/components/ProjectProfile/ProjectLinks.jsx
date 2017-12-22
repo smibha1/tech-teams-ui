@@ -55,24 +55,20 @@ class ProjectLinks extends React.Component {
   render() {
     return (
       <div>
-        <span className="icon"> {this.state.linkedin ?
-          <img onClick={this.redirectLinkedIn} src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="LinkedIn" height="50" /> :
-          null}
+        <span className="icon">
+          <img onClick={this.redirectLinkedIn} src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="LinkedIn" height="50" />
         </span>
 
-        <span className="icon"> {this.state.slack ?
-          <img onClick={this.redirectSlack} src="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" alt="LinkedIn" height="50" /> :
-          null}
+        <span className="icon">
+          <img onClick={this.redirectSlack} src="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" alt="LinkedIn" height="50" />
         </span>
 
-        <span className="icon"> {this.state.github ?
-          <img onClick={this.redirectGithub} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="LinkedIn" height="50" /> :
-          null}
+        <span className="icon">
+          <img onClick={this.redirectGithub} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="LinkedIn" height="50" />
         </span>
 
-        <span className="icon"> {this.state.trello ?
-          <img onClick={this.redirectTrello} src="https://cdn1.iconfinder.com/data/icons/designer-skills/128/trello-128.png" alt="LinkedIn" height="50" /> :
-          null}
+        <span className="icon">
+          <img onClick={this.redirectTrello} src="https://cdn1.iconfinder.com/data/icons/designer-skills/128/trello-128.png" alt="LinkedIn" height="50" />
         </span>
       </div>
     );
