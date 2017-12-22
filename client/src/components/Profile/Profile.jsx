@@ -9,11 +9,11 @@ import jwtDecode from 'jwt-decode';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-  
+
 
   }
-  
-  
+
+
   componentDidMount() {
     var data = {name: 'Shaniqua Anastasia',
     imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
@@ -36,7 +36,7 @@ class Profile extends React.Component {
       description: 'Making the world a better place',
       imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
       techstack: '['react', 'angular', 'mongodb']'
-    
+
     }
     ]`,
     tech: ['react', 'angular', 'mongodb', 'nodejs']}
@@ -52,16 +52,14 @@ class Profile extends React.Component {
     console.log('COMP DID MOUNT', jwtDecode(localStorage.getItem('token')).email);
     let email = jwtDecode(localStorage.getItem('token')).email;
     let context = this;
-    console.log(email, context);
+    // if somethings in store
+      // do nothing
+    // else
     axios({
       url: 'http://localhost:3000/profile',
       method: 'get'
     }).then(data => {
       console.log('IN AXIOS, data=', data);
-      context.setState({
-        loading: false
-      })
-      
     }).catch(err => {
       console.log('axios error=', err);
     })
