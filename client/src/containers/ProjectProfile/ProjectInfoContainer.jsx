@@ -7,7 +7,7 @@ import updateAllOthersAction from '../../actions/ProjectProfile/updateAllOtherEd
 function mapStateToProps(state) {
   return {
     projectName: state.projectName,
-    projectImage: 'http://bit.ly/2BLcR1n',
+    projectImage: state.projectImage.projectImage,
     projectBlurb: state.projectBlurb,
     projectLocation: state.projectLocation.location,
     projectDescription: state.projectDescription.description,

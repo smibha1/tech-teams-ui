@@ -45,7 +45,7 @@ const allReducers = combineReducers({
   alerts: viewAlertsReducer,
   links: updateLinksReducer,
   projectName: updateProjectProfilePageReducer,
-  projectImage: 'http://bit.ly/2BLcR1n',
+  projectImage: updateAllOthersReducer,
   projectBlurb: updateProjectBlurbReducer,
   projectLocation: updateAllOthersReducer,
   projectDescription: updateAllOthersReducer,

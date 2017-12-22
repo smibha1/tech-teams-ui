@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import Questions from '../../components/Questions/Questions';
 
 function mapStateToProps(state) {
-  console.log('this is the container state', state)
+  // console.log('this is the container state', state)
   return {
     username: state.userInfo.name,
     email: state.userInfo.email,
@@ -12,4 +12,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps,null)(Questions);
+export default connect(mapStateToProps)(Questions);

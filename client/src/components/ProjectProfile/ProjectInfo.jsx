@@ -1,6 +1,7 @@
 import React from 'react';
 import { RIEInput, RIETextArea } from 'riek';
 import _ from 'lodash';
+import axios from 'axios';
 
 class ProjectInfo extends React.Component {
   constructor(props) {
@@ -9,22 +10,22 @@ class ProjectInfo extends React.Component {
       blurbEditOff: true,
       editModeOff: true,
       locationEditOff: true,
+      projectImage: this.props.projectImage,
       projectBlurb: this.props.projectBlurb,
       location: this.props.projectLocation,
       description: this.props.projectDescription,
+      random: 0,
     };
-
-    // KEEPING TRACK OF POTENTIAL PROP NAMES HERE
-    // projectName
-    // projectImage
-    // projectBlurb
-    // projectLocation
 
     this.updateBlurb = this.updateBlurb.bind(this);
     this.toggleBlurbEdit = this.toggleBlurbEdit.bind(this);
     this.toggleAllOtherEdit = this.toggleAllOtherEdit.bind(this);
     this.updateLocation = this.updateLocation.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('this is the nextProps in project info. nextProps= ', nextProps)
   }
 
   updateBlurb(event) {
@@ -43,7 +44,11 @@ class ProjectInfo extends React.Component {
   toggleAllOtherEdit() {
     if (!this.state.editModeOff) {
       // CALL ANOTHER ACTION HERE
-      this.props.updateAllOthers({ headquarters: this.state.location, description: this.state.description });
+      this.props.updateAllOthers({
+        headquarters: this.state.location,
+        description: this.state.description,
+        projectImage: this.state.projectImage,
+      });
       console.log('SENDING ACTION FOR ALL OTHER EDITS');
     }
     this.setState({ editModeOff: !this.state.editModeOff });

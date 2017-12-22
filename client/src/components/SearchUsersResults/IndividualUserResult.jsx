@@ -33,7 +33,9 @@ class IndividualUserResult extends React.Component {
           <button className="btn-interview" onClick={this.toggleInterview}>
             {this.state.interview ? 'Interview Sent' : 'Interview'}
           </button> <br />
-          {this.props.element.userTechStack}
+          {this.props.element.userTechStack.map(
+            (element, index) => <span key={index}> {element} </span>
+          )}
         </div>
       </div>
     );
