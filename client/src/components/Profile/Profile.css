@@ -15,14 +15,16 @@ width:100%;
 #profileUsername-container, #completedProjects-container, #currentProjects-container, #technicalSkills-container {
   margin-left:center;
   text-align: center;
-  width: 70%;
   margin: auto;
   background: white;
-  border-radius: 8px;
-}
-
-button {
-  border-radius: 5px;
+  width:80%;
+  border:solid;
+  border-radius: 30px;
+  border-color: rgba(250, 246, 252, 0.933);
+  box-shadow: 1px 2px 8px 2px  rgb(178, 158, 194);
+  margin-top: 30px;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
 }
 
 #profileUsername-container {
