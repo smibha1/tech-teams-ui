@@ -17,11 +17,11 @@ import updateSignup from './Auth/updateSignup';
 import updateLinksReducer from './ProjectProfile/updateLinks';
 import updateProjectBlurbReducer from './ProjectProfile/updateProjectBlurb';
 import updateAllOthersReducer from './ProjectProfile/updateAllOthers';
-import updateBasicProfileReducer from './Questions/updateBasicProfile';
+import setUserProfileInformation from './Profile/setUserProfileInformation';
 
 const allReducers = combineReducers({
 
-  basicprofile: updateBasicProfileReducer,
+  alluserinfo: setUserProfileInformation,
   userInfo: updateSignup,
   techskills: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,

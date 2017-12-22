@@ -1,9 +1,10 @@
 export default function (state = {
-  devName: 'Shaniqua Anastasia',
-  devPicture: 'https://i.pinimg.com/736x/b1/88/31/b18831f96720e907c4769168687d7fd1--cat-lovers-adorable-animals.jpg',
-  devPosition: 'Developer',
-  devLocation: 'Los Angeles, CA',
-  devDesc: 'I love Agile and stuff!',
+  name: 'Shaniqua Anastasia',
+  imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
+  title: 'Developer',
+  location: 'Los Angeles, CA',
+  description: 'I love Agile and stuff!',
+  availability: 'true',
 }, action) {
   switch (action.type) {
     case 'UPDATE_PROF_DEV_INFO':

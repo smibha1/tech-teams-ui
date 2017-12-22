@@ -7,7 +7,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import Login from '../Auth/Login';
 import Signup from '../../containers/Auth/Signup';
 import Questions from '../../containers/Questions/Questions';
-import MainProfile from '../Profile/Profile';
+import MainProfile from '../../containers/Profile/ProfileContainer';
 import NavBar from '../NavBar/NavBar';
 import ProjectProfile from '../../containers/ProjectProfile/ProjectProfileContainer';
 import SearchUsersResults from '../../containers/SearchUsersResults/SearchUsersResults';
