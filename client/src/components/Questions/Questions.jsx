@@ -40,11 +40,6 @@ class Questions extends React.Component {
       tech: tech
     };
 
-<<<<<<< Updated upstream
-  
-    let username = this.props.email.split('@')[0];
-=======
->>>>>>> Stashed changes
     let email = this.props.email;
     let password = this.props.password;
 
