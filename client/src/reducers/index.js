@@ -23,7 +23,7 @@ const allReducers = combineReducers({
 
   alluserinfo: setUserProfileInformation,
   userInfo: updateSignup,
-  techskills: saveNewSkillReducer,
+  tech: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,
   completedProjects: updateCompletedProjectsReducer,

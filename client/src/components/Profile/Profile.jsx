@@ -9,11 +9,45 @@ import jwtDecode from 'jwt-decode';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-  }
+  
 
+  }
+  
+  
   componentDidMount() {
+    var data = {name: 'Shaniqua Anastasia',
+    imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
+    title: 'Developer',
+    location: 'Los Angeles, CA',
+    description: 'I love Agile and stuff!',
+    availability: 'true',
+    projects: `[ {
+      name: 'Cat Hoarders United',
+      position: 'Developer',
+      headquarters: 'Los Angeles',
+      description: 'Let\'s get all the cats together!',
+      imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
+      techstack: '['react', 'angular', 'mongodb']'
+    },
+    {
+      name: 'DevDates',
+      position: 'Developer',
+      headquarters: 'Los Angeles',
+      description: 'Making the world a better place',
+      imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
+      techstack: '['react', 'angular', 'mongodb']'
+    
+    }
+    ]`,
+    tech: ['react', 'angular', 'mongodb', 'nodejs']}
+
     console.log('this.props', this.props)
     // this.props.setUserProfileInformation( {name:'kitty'})
+    // var techParse = JSON.parse(data.tech)
+    for (var i =0; i<data.tech.length; i++){
+      this.props.addtechskill(data.tech[i])
+    }
+    this.props.setUserProfileInformation(data)
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
     console.log('COMP DID MOUNT', jwtDecode(localStorage.getItem('token')).email);
     let email = jwtDecode(localStorage.getItem('token')).email;
@@ -27,12 +61,10 @@ class Profile extends React.Component {
       context.setState({
         loading: false
       })
-      console.log(this.props)
-      this.props.setUserProfileInformation( {name:'kitty'})
+      
     }).catch(err => {
       console.log('axios error=', err);
     })
-    console.log('AFTER BITCH');
   }
 
   render() {
