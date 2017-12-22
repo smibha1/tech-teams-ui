@@ -15,7 +15,7 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '/../client/dist/index.html'));
 });
 
-const port = 3001;
+const port = 3003;
 app.listen(port, () => {
   console.log(`Server Starts on ${port}`);
 });

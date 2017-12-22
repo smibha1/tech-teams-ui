@@ -4,19 +4,8 @@ import ProjectTeam from '../../components/ProjectProfile/ProjectTeam';
 
 function mapStateToProps(state) {
   return {
-<<<<<<< HEAD
     projectTeam: state.projectTeam,
   }
-=======
-    teammembers: [
-      { name: 'Paul Rudd', position: 'Product Owner', image: 'http://bit.ly/2BHEVD8' },
-      { name: 'Gilfoyle Dunn', position: 'Scrum Master', image: 'http://www.piedpiper.com/app/themes/pied-piper/dist/images/gilfoyle.png' },
-    ],
-    openPositions: [
-      { position: 'Open UI/UX Position' },
-    ],
-  };
->>>>>>> [style]
 }
 
 export default connect(mapStateToProps)(ProjectTeam);

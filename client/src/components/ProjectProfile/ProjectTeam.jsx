@@ -33,7 +33,7 @@ class ProjectTeam extends React.Component {
           (element, index) => <ProjectTeamMember member={element} key={index} />)
         }
         <br />
-        {this.props.openPositions.map(
+        {/* {this.props.openPositions.map(
           (element, index) => <OpenPositions element={element} key={index} />)
         } */}
         <br />
