@@ -10,44 +10,39 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
 
-
   }
 
-  // componentWillMount() {
-
-  // }
-
   componentDidMount() {
+    let data = {
+      name: 'Shaniqua Anastasia',
+      imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
+      title: 'Developer',
+      location: 'Los Angeles, CA',
+      description: 'I love Agile and stuff!',
+      availability: 'true',
+      projects: `[ {
+        name: 'Cat Hoarders United',
+        position: 'Developer',
+        headquarters: 'Los Angeles',
+        description: 'Let\'s get all the cats together!',
+        imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
+        techstack: '['react', 'angular', 'mongodb']'
+      },
+      {
+        name: 'DevDates',
+        position: 'Developer',
+        headquarters: 'Los Angeles',
+        description: 'Making the world a better place',
+        imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
+        techstack: '['react', 'angular', 'mongodb']'
 
-    var data = {name: 'Shaniqua Anastasia',
-    imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
-    title: 'Developer',
-    location: 'Los Angeles, CA',
-    description: 'I love Agile and stuff!',
-    availability: 'true',
-    projects: `[ {
-      name: 'Cat Hoarders United',
-      position: 'Developer',
-      headquarters: 'Los Angeles',
-      description: 'Let\'s get all the cats together!',
-      imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
-      techstack: '['react', 'angular', 'mongodb']'
-    },
-    {
-      name: 'DevDates',
-      position: 'Developer',
-      headquarters: 'Los Angeles',
-      description: 'Making the world a better place',
-      imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png'
-      techstack: '['react', 'angular', 'mongodb']'
-
+      }
+      ]`,
+      tech: ['react', 'angular', 'mongodb', 'nodejs']
     }
-    ]`,
-    tech: ['react', 'okay', 'mongodb', 'nodejs']}
 
-    
     // var techParse = JSON.parse(data.tech)
-    for (var i =0; i<data.tech.length; i++){
+    for (var i = 0; i < data.tech.length; i++) {
       this.props.addtechskill(data.tech[i])
     }
     this.props.addusername(data.name)
@@ -58,25 +53,18 @@ class Profile extends React.Component {
     this.props.addusertitle(data.title)
     this.props.addusertitle(data.title)
 
-    console.log('this.props.location from profile page', this.props.location)
-    
-    console.log('this.props', this.props)
-    // this.props.setUserProfileInformation(data)
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
-    console.log('COMP DID MOUNT', jwtDecode(localStorage.getItem('token')).email);
-    let email = jwtDecode(localStorage.getItem('token')).email;
-    let context = this;
-    // if somethings in store
-      // do nothing
-    // else
-    // axios({
-    //   url: 'http://localhost:3000/profile',
-    //   method: 'get'
-    // }).then(data => {
-    //   console.log('IN AXIOS, data=', data);
-    // }).catch(err => {
-    //   console.log('axios error=', err);
-    // })
+
+    if (localStorage.getItem('token') !== 'null') {
+      axios({url: 'http://localhost:3000/profile', method: 'get'}).then(data => {
+        console.log('IN AXIOS, data=', data);
+      }).catch(err => {
+        console.log('axios error=', err);
+      })
+    } else {
+      this.props.history.push('/login');
+    }
+
   }
 
   render() {
