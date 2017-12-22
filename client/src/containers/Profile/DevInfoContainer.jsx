@@ -11,11 +11,11 @@ import addUserDescriptionAction from '../../actions/Profile/addUserDescriptionAc
 
 function mapStateToProps(state) {
   return {
-    devName: state.name,
-    devPicture: state.imageurl,
-    devPosition: state.title,
-    devLocation: state.location,
-    devDesc: state.description,
+    devName: state.devInfo.name,
+    devPicture: state.devInfo.imageurl,
+    devPosition: state.devInfo.title,
+    devLocation: state.devInfo.location,
+    devDesc: state.devInfo.description,
   };
 }
 
@@ -24,7 +24,7 @@ function matchDispatchToProps(dispatch) {
     updateDevInfo: updateDevInfoAction,
     addusername: addUserNameAction,
     adduserlocation: addUserLocationAction,
-    adduserimageurl: addUserImageurlAction,
+    adduserimagdevInfo: addUserImageurlAction,
     addusertitle: addUserTitleAction,
     adduserdescription: addUserDescriptionAction,
     adduseravailability: addUserAvailabilityAction, }, dispatch);

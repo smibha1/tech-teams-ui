@@ -21,7 +21,7 @@ class DevInfoEdit extends React.Component {
   }
 
   updateName(event) {
-    this.setState({ devName: event.target.value });
+    this.setState({ devName: event.target.value }, () => console.log(this.state.devName));
   }
 
   updatePosition(event) {
@@ -37,7 +37,8 @@ class DevInfoEdit extends React.Component {
   }
 
   updateDevInfo() {
-    this.props.info.updateDevInfo(this.state);
+    this.props.update(this.state);
+    console.log(this.state);
   }
 
   render() {

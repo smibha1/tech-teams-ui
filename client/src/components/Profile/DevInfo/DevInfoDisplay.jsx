@@ -3,19 +3,14 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 const DevInfoDisplay = props => {
-  return (<div id="profileInfo-container">
-    <h2>Here is the dev info</h2>
-  console.log('this prop is here', this.props)
-    {
-      console.log("FROM DEVINFO PROPS=", props)
-      // <img id="profileImg" src={this.props.userPicture} alt={this.props.userName} height="200"/>
-      // <br/>
-      // <div id="profileUsername">{this.props.userName}</div>
-      // <br/> {this.props.userPosition} || {this.props.userLocation} <br/>
-      // <div id="divider">{this.props.userDescription}</div>
-      // {this.props.userAvailability}
-    }
-  </div>)
+  return (
+    <div id="profileInfo-container">
+      <img id="profileImg" src={props.info.devPicture} alt={props.info.devName} height="150"/>
+      <div id="profileUsername">{props.info.devName}</div>
+        {props.info.devPosition} || {props.info.devLocation} <br/>
+        {props.info.devDesc}      
+    </div>
+  )
 }
 
 export default DevInfoDisplay;

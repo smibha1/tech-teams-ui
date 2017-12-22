@@ -1,10 +1,8 @@
-export default function (state = {
-  currentProjs: [{
+export default function (state = [{
     projName: 'Cat Hoarders United',
     projRole: 'Dev',
     projDesc: 'Let\'s get all the cats together!',
-  }],
-}, action) {
+  }], action) {
   switch (action.type) {
     case 'UPDATE_PROF_CURRENT_PROJECTS':
       return action.payload;

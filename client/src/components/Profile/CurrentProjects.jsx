@@ -7,15 +7,30 @@ import axios from 'axios';
 class CurrentProjects extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentProjects: this.props.currentProjects,
+    }
 
     this.selectProject = this.selectProject.bind(this);
+  }
+
+  componentDidMount() {
+    console.log('CURRENT PROJ CDM: ', this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('CURRENT PROJ CWRP: ', nextProps);
+    const { currentProjects } = nextProps;
+    this.setState({
+      currentProjects,
+    })
   }
 
   selectProject(element) {
     // PROB DON'T NEED THE BELOW VARIABLE FOR THIS, BUT KEEP JUST IN CASE
     // const grabDiv = document.getElementById(`prof-completed-${element.projName}`).getAttribute('index');
-    this.props.updateProjectProfilePage(element.projName);
-    this.props.history.push(`/project/${element.projName}`)
+    this.props.updateProjectProfilePage(element.project);
+    this.props.history.push(`/project/${element.project}`)
   }
 
   render() {
@@ -24,15 +39,15 @@ class CurrentProjects extends React.Component {
         Current Projects <br />
         <div id="newdivider"> </div>
         {
-          this.props.currentProjects.currentProjs.map((element, index) => (
+          this.state.currentProjects.map((element, index) => (
             <div
             key={index}
-            id={`prof-completed-${element.projName}`}
+            id={`prof-completed-${element.project}`}
             index={index}
             onClick={() => this.selectProject(element)}
             >
-              {element.projName} || {element.projRole} <br />
-              {element.projDesc}
+              {element.project} || {element.title} <br />
+              {element.projectdescription}
             </div>
           ))
         }

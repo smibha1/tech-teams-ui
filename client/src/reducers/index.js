@@ -23,7 +23,7 @@ import addUserLocationReducer from './Profile/addUserLocation';
 import addUserImageurlReducer from './Profile/addUserImageurl';
 import addUserAvailabilityReducer from './Profile/addUserAvailability';
 import addUserTitleReducer from './Profile/addUserTitle';
-import updateBasicProfileReducer from './Questions/updateBasicProfile';
+// import updateBasicProfileReducer from './Questions/updateBasicProfile';
 import updateProjectProfilePageReducer from './Profile/updateProjectProfilePage';
 
 const allReducers = combineReducers({
