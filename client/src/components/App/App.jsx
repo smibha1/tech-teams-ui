@@ -30,7 +30,7 @@ class App extends React.Component {
             </Switch>
             <Route path="/signup/questions" component={Questions} />
             <Route path='/username/profile' component={MainProfile} />
-            <Route path="/project/:id" component={ProjectProfile} />
+            <Route path="/username/project/:id" component={ProjectProfile} />
             <Route path="/usersearch" component={SearchUsersResults} />
           </div>
         </MuiThemeProvider>

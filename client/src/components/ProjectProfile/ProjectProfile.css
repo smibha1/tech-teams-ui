@@ -1,0 +1,85 @@
+.teammember {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  margin-left: 1%;
+  margin-right: 20px;
+}
+
+.btn-edit {
+  float: right;
+}
+
+#projectEntireProject-contatiner{
+    background: url("https://ak4.picdn.net/shutterstock/videos/2455784/thumb/1.jpg") no-repeat top left fixed;
+    position:relative;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#projectTeam-contatiner{
+  text-align:center;
+  width:80%;
+  margin:auto;
+  margin-top:50px;
+}
+
+#projectTeam-innercontainer{
+  width:80%;
+  
+  text-align:left;
+}
+
+#individualTeamMember-contatiner, #openPosition-container{
+width:80%;
+}
+
+#projectlink-container, #projectSocialMedia-innercontainer {
+  width:80%;
+  margin:auto;
+  
+}
+
+#openPositonText{
+ height:50px;
+}
+
+#projectText{
+  font-size: 30px;
+  margin-left:auto;
+  margin-top:30px;
+}
+
+#projectProfileBasicInfo-innerContainer, #projectSocialMedia-innercontainer, #projectTeam-contatiner{
+ width:80%;
+ margin:auto;
+ background: white;
+ border:solid;
+ border-radius: 30px;
+ border-color: rgba(250, 246, 252, 0.933);
+ box-shadow: 1px 2px 8px 2px  rgb(178, 158, 194);
+ /* text-align: center; */
+ margin-top: 30px;
+
+ padding: 10px 10px 10px 10px;
+ background-color: white;
+ 
+}
+
+#projectProfileBasicInfo-container {
+  padding-top:40px;
+}
+
+.icon{
+  width:50px
+
+}
+
+#projectSocialMedia-innercontainer{
+  text-align:center;
+  margin-top:50px;
+  
+}

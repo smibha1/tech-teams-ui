@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectTeamMember from './ProjectTeamMember';
 import OpenPositions from './OpenPositions';
+import CreatePosition from '../CreatePosition/CreatePosition';
 
 class ProjectTeam extends React.Component {
   constructor(props) {
@@ -24,23 +25,24 @@ class ProjectTeam extends React.Component {
 
   render() {
     return (
-      <div>
-        Meet the Team: 
+      <div id="projectTeam-contatiner" >
+        <span id="projectText"> Meet the Team </span>
+        <div id="newdivider"> </div>
 
         {this.state.projectTeam.map(
           (element, index) => <ProjectTeamMember member={element} key={index} />)
         }
         <br />
-        Open Position:
-        {/* {this.props.openPositions.map(
+        {this.props.openPositions.map(
           (element, index) => <OpenPositions element={element} key={index} />)
         } */}
         <br />
         <div className="add-position" onClick={this.addPos}>
-          <img src="http://bit.ly/2BbiNQk" alt="Add Position" height="75px" />
+          <CreatePosition/>
           <span> Add position </span>
+          {/* <img src="http://bit.ly/2BbiNQk" alt="Add Position" height="75px" /> */}
         </div>
-      </div>
+        </div>
     );
   }
 }

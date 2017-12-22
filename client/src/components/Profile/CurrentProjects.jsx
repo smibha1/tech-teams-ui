@@ -25,7 +25,7 @@ class CurrentProjects extends React.Component {
     // PROB DON'T NEED THE BELOW VARIABLE FOR THIS, BUT KEEP JUST IN CASE
     // const grabDiv = document.getElementById(`prof-completed-${element.projName}`).getAttribute('index');
     this.props.updateProjectProfilePage(element.project);
-    this.props.history.push(`/project/${element.project}`)
+    this.props.history.push(`/username/project/${element.project}`)
   }
 
   render() {

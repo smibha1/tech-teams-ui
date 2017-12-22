@@ -15,10 +15,12 @@ class OpenPositions extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src="http://bit.ly/2ktZP0O" alt={this.props.element.position} height="75px" />
-        {this.props.element.position}
-        <button onClick={this.toggleEditMode}> Edit </button>
+      <div id="openPosition-container">
+        <i class="fa fa-question-circle fa-5x" alt={this.props.element.position} aria-hidden="true"></i>
+        <span id="openPositonText" > {this.props.element.position} </span>
+        <button onClick={this.toggleEditMode}> 
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+         </button>
       </div>
     );
   }

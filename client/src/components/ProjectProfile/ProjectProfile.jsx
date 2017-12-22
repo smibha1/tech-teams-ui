@@ -59,18 +59,25 @@ class ProjectProfile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="projectEntireProject-contatiner">
+      <div id="projectEntireProject-innerContainer">
         <ProjectInfo /> <br />
-        <span> Check us out! </span>
+    <div id="projectSocialMedia-innercontainer">
+        <span id="projectText"> Check us out! </span>
+        <div id="newdivider"></div>
+        
         {
           this.state.linkEditMode ? null :
           <button onClick={this.toggleEditLink}>
-            Edit
+            <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
         }
         <br />
+       
         {this.state.linkEditMode ? <EditLinks changeParent={this.exitEditMode} /> : <ProjectLinks />} <br />
+        </div>
         <ProjectTeam />
+        </div>
       </div>
 
     );

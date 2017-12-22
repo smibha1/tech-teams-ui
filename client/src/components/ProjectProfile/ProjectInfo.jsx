@@ -71,7 +71,8 @@ class ProjectInfo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="projectProfileBasicInfo-container">
+      <div id ="projectProfileBasicInfo-innerContainer">
         <img src={this.props.projectImage} alt={this.props.projectName} height="100" />
         <h1> {this.props.projectName} </h1>
         <RIEInput
@@ -84,7 +85,9 @@ class ProjectInfo extends React.Component {
           {this.state.blurbEditOff ? 'Edit' : 'Save'}
         </button>
         <br />
-        <button onClick={this.toggleAllOtherEdit}> Edit </button> <br />
+        <button onClick={this.toggleAllOtherEdit}> 
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button> <br />
         Headquarters:
         <RIEInput
           value={this.state.location}
@@ -99,7 +102,7 @@ class ProjectInfo extends React.Component {
           propName="description"
           isDisabled={this.state.editModeOff}
         /> */}
-
+        </div>
       </div>
     );
   }

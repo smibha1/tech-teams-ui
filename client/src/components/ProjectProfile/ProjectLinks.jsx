@@ -54,9 +54,11 @@ class ProjectLinks extends React.Component {
 
   render() {
     return (
-      <div>
-        <span className="icon">
-          <img onClick={this.redirectLinkedIn} src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="LinkedIn" height="50" />
+      <div id="projectlink-container">
+      <div class="d-flex justify-content-around">
+        <span className="icon"> {this.state.linkedin ?
+          <img onClick={this.redirectLinkedIn} src="http://www.freeiconspng.com/uploads/linkedin-icon-19.png" alt="LinkedIn" height="50" /> :
+          null}
         </span>
 
         <span className="icon">
@@ -67,9 +69,16 @@ class ProjectLinks extends React.Component {
           <img onClick={this.redirectGithub} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="LinkedIn" height="50" />
         </span>
 
+<<<<<<< HEAD
         <span className="icon">
           <img onClick={this.redirectTrello} src="https://cdn1.iconfinder.com/data/icons/designer-skills/128/trello-128.png" alt="LinkedIn" height="50" />
+=======
+        <span className="icon"> {this.state.trello ?
+          <img onClick={this.redirectTrello} src="http://icons.iconarchive.com/icons/alecive/flatwoken/512/Apps-Trello-icon.png" alt="LinkedIn" height="50" /> :
+          null}
+>>>>>>> [style]
         </span>
+        </div>
       </div>
     );
   }

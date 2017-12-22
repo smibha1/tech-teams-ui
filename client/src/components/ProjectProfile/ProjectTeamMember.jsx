@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProjectTeamMember.css';
+import './ProjectProfile.css';
 
 class ProjectTeamMember extends React.Component {
   constructor(props) {
@@ -21,9 +21,9 @@ class ProjectTeamMember extends React.Component {
 
   render() {
     return (
-      <div>
-        <img className="teammember" src={this.props.member.image} alt={this.props.member.user} />
-        <span> {this.props.member.user} </span>
+      <div id="individualTeamMember-contatiner">
+        <img className="teammember" src={this.props.member.image} alt={this.props.member.name} />
+        <span> {this.props.member.name} </span>
         {this.state.editMode ?
           <button
             onClick={this.removeMember}
@@ -31,7 +31,9 @@ class ProjectTeamMember extends React.Component {
           </button> : null
         }
 
-        <button className="btn-edit" onClick={this.toggleEdit}> Edit </button>
+        <button className="btn-edit" onClick={this.toggleEdit}> 
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
       </div>
     );
   }
