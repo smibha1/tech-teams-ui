@@ -9,6 +9,9 @@ import addUserImageurlAction from '../../actions/Profile/addUserImageurlAction';
 import addUserAvailabilityAction from '../../actions/Profile/addUserAvailabilityAction';
 import addUserTitleAction from '../../actions/Profile/addUserTitleAction';
 import addUserDescriptionAction from '../../actions/Profile/addUserDescriptionAction';
+import updateDevInfoAction from '../../actions/Profile/updateDevInfoAction';
+import updateCurrentProjectsAction from '../../actions/Profile/updateCurrentProjectsAction';
+
 
 function mapStateToProps(state) {
   return {
@@ -25,6 +28,7 @@ function mapStateToProps(state) {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({ 
+    updateDevInfo: updateDevInfoAction,
     setUserProfileInformation: setUserProfileInformationAction, 
     addtechskill: addTechSkillAction,
     addusername: addUserNameAction,
@@ -33,6 +37,7 @@ function matchDispatchToProps(dispatch) {
     addusertitle: addUserTitleAction,
     adduserdescription: addUserDescriptionAction,
     adduseravailability: addUserAvailabilityAction,
+    updateCurrentProjects: updateCurrentProjectsAction
   }, dispatch);
 }
 

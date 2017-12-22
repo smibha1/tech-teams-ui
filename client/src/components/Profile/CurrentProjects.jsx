@@ -1,35 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button, Icon, Collapsible, CollapsibleItem} from 'react-materialize'
+import { Link, Router, Route, Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 class CurrentProjects extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentProjects: this.props.currentProjects,
+    }
 
     this.selectProject = this.selectProject.bind(this);
   }
 
+  componentDidMount() {
+    console.log('CURRENT PROJ CDM: ', this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('CURRENT PROJ CWRP: ', nextProps);
+    const { currentProjects } = nextProps;
+    this.setState({
+      currentProjects,
+    })
+  }
+
   selectProject(element) {
-    const grabDiv = document.getElementById(`prof-completed-${element.projName}`).getAttribute('index');
-    console.log('CLICKED ON CURRENT PROJECTS NO.', grabDiv);
+    // PROB DON'T NEED THE BELOW VARIABLE FOR THIS, BUT KEEP JUST IN CASE
+    // const grabDiv = document.getElementById(`prof-completed-${element.projName}`).getAttribute('index');
+    this.props.updateProjectProfilePage(element.project);
+    this.props.history.push(`/project/${element.project}`)
   }
 
   render() {
     return (
       <div id="currentProjects-container">
-        Completed Projects <br />
-        
+        Current Projects <br />
         <div id="newdivider"> </div>
         {
-          this.props.currentProjects.currentProjs.map((element, index) => (
+          this.state.currentProjects.map((element, index) => (
             <div
-              key={index}
-              id={`prof-completed-${element.projName}`}
-              index={index}
-              onClick={() => this.selectProject(element)}
+            key={index}
+            id={`prof-completed-${element.project}`}
+            index={index}
+            onClick={() => this.selectProject(element)}
             >
-              {element.projName} || {element.projRole} <br />
-              {element.projDesc}
+              {element.project} || {element.title} <br />
+              {element.projectdescription}
             </div>
           ))
         }

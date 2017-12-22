@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class ProjectLinks extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class ProjectLinks extends React.Component {
       slack: this.props.links.slack,
       github: this.props.links.github,
       trello: this.props.links.trello,
+      random: 0,
     };
 
     this.redirectLinkedIn = this.redirectLinkedIn.bind(this);
@@ -15,6 +17,23 @@ class ProjectLinks extends React.Component {
     this.redirectGithub = this.redirectGithub.bind(this);
     this.redirectTrello = this.redirectTrello.bind(this);
   }
+
+  componentWillMount() {
+    console.log('CWM in project links this.props= ', this.props);
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    console.log('CWRP in project links this.props= ', nextProps);
+    const { linkedin, slack, github, trello } = nextProps.links;
+    this.setState({
+      linkedin,
+      slack,
+      github,
+      trello,
+    })
+  }
+
+
 
   redirectLinkedIn() {
     window.open(this.state.linkedin);
@@ -34,6 +53,7 @@ class ProjectLinks extends React.Component {
 
 
   render() {
+    console.log('ProjectLinks this.props= ', this.props)
     return (
       <div>
         <span className="icon"> {this.state.linkedin ?

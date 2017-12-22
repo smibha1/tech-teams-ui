@@ -9,6 +9,10 @@ class ProjectTeam extends React.Component {
       placeholder: '',
     };
   }
+  
+  componentDidMount() {
+    console.log('when do iget hit?? the last component')
+  }
 
   addPos() {
     console.log('CLICKED');

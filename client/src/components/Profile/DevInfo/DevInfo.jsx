@@ -8,9 +8,26 @@ class DevInfo extends React.Component {
     super(props);
     this.state = {
       editMode: false,
+      devName: null,
+      devPicture: null,
+      devPosition: null,
+      devLocation: null,
+      devDesc: null,
     };
 
     this.toggleEditMode = this.toggleEditMode.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('DEV INFO CWRP: ', nextProps);
+    const { devName, devPicture, devPosition, devLocation, devDesc } = nextProps;
+    this.setState({
+      devName,
+      devPicture,
+      devPosition,
+      devLocation,
+      devDesc,
+    })
   }
 
   toggleEditMode() {
@@ -18,13 +35,14 @@ class DevInfo extends React.Component {
   }
 
   render() {
-    console.log('this is the probs in devinfp', this.props)
     return (
       <div id="profileUsername-container"  >
+        {this.state.editMode ? <EditMode info={this.state} update={this.props.updateDevInfo}/> : <Display info={this.state} />}
         <button onClick={this.toggleEditMode}> 
           <i className="fa fa-pencil" aria-hidden="true"></i>
         </button>
-        {this.state.editMode ? <EditMode info={this.props} /> : <Display info={this.props} />}
+        <div id="divider"></div>
+        
       </div>
     );
   }
