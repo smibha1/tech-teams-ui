@@ -42,12 +42,12 @@ class Profile extends React.Component {
     tech: ['react', 'angular', 'mongodb', 'nodejs']}
 
     console.log('this.props', this.props)
-    // this.props.setUserProfileInformation( {name:'kitty'})
+
     // var techParse = JSON.parse(data.tech)
     for (var i =0; i<data.tech.length; i++){
       this.props.addtechskill(data.tech[i])
     }
-    this.props.setUserProfileInformation(data)
+    // this.props.setUserProfileInformation(data)
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
     console.log('COMP DID MOUNT', jwtDecode(localStorage.getItem('token')).email);
     let email = jwtDecode(localStorage.getItem('token')).email;
