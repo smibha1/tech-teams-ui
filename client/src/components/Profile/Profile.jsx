@@ -13,7 +13,6 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    // var techParse = JSON.parse(data.tech)
 
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
 
@@ -27,8 +26,12 @@ class Profile extends React.Component {
           title: infoObj.title,
           location: infoObj.location,
           description: infoObj.description,
-          availability: infoObj.availability
+          availability: infoObj.availability,
         })
+        JSON.parse(infoObj.tech).forEach(chip => {
+            this.props.addtechskill(chip);
+          })
+
         this.props.updateCurrentProjects(data.data.positions)
       }).catch(err => {
         console.log('axios error=', err);
