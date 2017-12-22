@@ -12,9 +12,7 @@ width:100%;
 }
 
 
-
 #profileUsername-container, #completedProjects-container, #currentProjects-container, #technicalSkills-container {
-  
   margin-left:center;
   text-align: center;
   width: 70%;
@@ -23,7 +21,7 @@ width:100%;
 }
 
 #profileUsername-container {
-  margin-top :-50px;
+  margin-top: -50px;
 }
 
 #profileUsername {

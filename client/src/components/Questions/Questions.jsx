@@ -52,16 +52,6 @@ class Questions extends React.Component {
       swal({title: 'Oops!', text: 'Please fill everything out!', type: 'error', timer: 1000, showConfirmButton: false});
     } else {
       console.log('sweet alert else', this.state.radioSelection)
-      this.props.updateBasicProfile({
-        username: username,
-        email:email,
-        password:password,
-        email: this.props.email,
-        userName: this.props.username,
-        userLocation: location,
-        userDescription: aboutMe,
-        userAvailability: JSON.stringify(available),
-      })
       newUser.position = this.state.radioSelection;
       axios({method: 'post', url: 'http://localhost:3000/signup', data: newUser}).then(res => {
         if (res.status === 200) {
