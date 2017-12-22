@@ -17,7 +17,7 @@ class TechnicalSkills extends React.Component {
       editMode: !this.state.editMode
     });
     // if( this.state.editMode){
-      console.log('{this.props.techskills}', this.props.techskills)
+      console.log('{this.props.tech}', this.props)
       // axios({
       //   url: 'http://localhost:3000/',// i don't know what to put here
       //   method: 'post',
@@ -39,12 +39,10 @@ class TechnicalSkills extends React.Component {
   }
 
   handleRequestAdd (chip) {
-    console.log('hello', chip)
     this.props.addtechskill(chip)
   }
 
   handleRequestDelete (deletedChip) {
-    console.log('delete', deletedChip)
     this.props.deletetechskill(deletedChip);
   }
 
@@ -59,7 +57,7 @@ class TechnicalSkills extends React.Component {
       <br/>
       <div id="newdivider"></div>
     <ChipInput
-      value={this.props.techskills}
+      value={this.props.tech}
       onBeforeRequestAdd={(chip) => this.onBeforeRequestAdd(chip)}
       onRequestAdd={(chip) => this.handleRequestAdd(chip)}
       onRequestDelete={(deletedChip) => this.handleRequestDelete(deletedChip)}
@@ -79,7 +77,7 @@ class TechnicalSkills extends React.Component {
 
 TechnicalSkills.propTypes = {
   addOnBlur: PropTypes.bool,
-  techskills: PropTypes.oneOfType([
+  tech: PropTypes.oneOfType([
     PropTypes.array,
   ]),
 }

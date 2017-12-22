@@ -1,25 +1,13 @@
-export default function (state = {name: 'Shaniqua Anastasia',
-imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
-title: 'Developer',
-location: 'Los Angeles, CA',
-description: 'I love Agile and stuff!',
-availability: 'true',
-projects: `[ {
-  name: 'Cat Hoarders United',
-  position: 'Developer',
-  description: 'Let\'s get all the cats together!',
-},
-{
-  name: 'DevDates',
-  position: 'Developer',
-  description: 'Making the world a better place',
-}
-]`,
-tech: `[ React, Angular, MongoDB, NodeJS]`
-}, action) {
+export default function (state = {}, action) {
   switch (action.type) {
     case 'SET_USER_PROFILE_INFORMATION':
-      return action.payload;
+    var newTechState = action.payload.tech;
+    // console.log('newtechstate', newTechState)
+    // newTechState.push(...JSON.parse(action.payload.tech))
+    // console.log('thenewtechstate', newTechstate)
+    //   return {tech: newTechState};
+    console.log('userprofile', newTechState)
+    return action.payload;
   }
   return state;
 }
