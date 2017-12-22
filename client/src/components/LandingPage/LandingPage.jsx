@@ -24,7 +24,7 @@ class LandingPage extends React.Component {
 
   render() {
     return (<div>
-      <script src="/scripts/LandingPageScripts.js"></script>
+      <script src={require('./scripts/LandingPageScripts.js')}></script>
       <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top sticky-navigation">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="ion-grid icon-sm"></span>
