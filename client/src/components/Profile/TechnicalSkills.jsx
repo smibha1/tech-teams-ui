@@ -11,6 +11,20 @@ class TechnicalSkills extends React.Component {
     this.toggleEdit = this.toggleEdit.bind(this);
   }
 
+  componentWillMount() {
+    console.log('CWM in tech skills', this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log('nextProps= ', nextProps);
+  }
+
+  componentDidMount() {
+    console.log('when do i get hit')
+  }
+
+
+
   toggleEdit(e) {
     e.preventDefault();
     this.setState({
@@ -47,6 +61,7 @@ class TechnicalSkills extends React.Component {
   }
 
   render () {
+    console.log('TECHSKILLS this.props= ', this.props)
     return (
       <div id="technicalSkills-container">
       Technical Skills

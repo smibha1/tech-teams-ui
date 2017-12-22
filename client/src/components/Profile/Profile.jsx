@@ -13,8 +13,12 @@ class Profile extends React.Component {
 
   }
 
+  // componentWillMount() {
+
+  // }
 
   componentDidMount() {
+
     var data = {name: 'Shaniqua Anastasia',
     imageurl: 'https://png.icons8.com/metro/540/edit-user-male.png',
     title: 'Developer',
@@ -39,15 +43,25 @@ class Profile extends React.Component {
 
     }
     ]`,
-    tech: ['react', 'angular', 'mongodb', 'nodejs']}
+    tech: ['react', 'okay', 'mongodb', 'nodejs']}
 
-    console.log('this.props', this.props)
-    // this.props.setUserProfileInformation( {name:'kitty'})
+    
     // var techParse = JSON.parse(data.tech)
     for (var i =0; i<data.tech.length; i++){
       this.props.addtechskill(data.tech[i])
     }
-    this.props.setUserProfileInformation(data)
+    this.props.addusername(data.name)
+    this.props.adduserlocation(data.location)
+    this.props.adduserimageurl(data.imageurl)
+    this.props.adduserdescription(data.description)
+    this.props.adduseravailability(data.availability)
+    this.props.addusertitle(data.title)
+    this.props.addusertitle(data.title)
+
+    console.log('this.props.location from profile page', this.props.location)
+    
+    console.log('this.props', this.props)
+    // this.props.setUserProfileInformation(data)
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
     console.log('COMP DID MOUNT', jwtDecode(localStorage.getItem('token')).email);
     let email = jwtDecode(localStorage.getItem('token')).email;
@@ -55,17 +69,18 @@ class Profile extends React.Component {
     // if somethings in store
       // do nothing
     // else
-    axios({
-      url: 'http://localhost:3000/profile',
-      method: 'get'
-    }).then(data => {
-      console.log('IN AXIOS, data=', data);
-    }).catch(err => {
-      console.log('axios error=', err);
-    })
+    // axios({
+    //   url: 'http://localhost:3000/profile',
+    //   method: 'get'
+    // }).then(data => {
+    //   console.log('IN AXIOS, data=', data);
+    // }).catch(err => {
+    //   console.log('axios error=', err);
+    // })
   }
 
   render() {
+    console.log('*********this.props= ', this.props)
     return (<div id="profilePage-container">
       <div id="profilePage-background"></div>
       <DevInfoContainer/>

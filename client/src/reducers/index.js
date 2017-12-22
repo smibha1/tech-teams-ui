@@ -18,11 +18,21 @@ import updateLinksReducer from './ProjectProfile/updateLinks';
 import updateProjectBlurbReducer from './ProjectProfile/updateProjectBlurb';
 import updateAllOthersReducer from './ProjectProfile/updateAllOthers';
 import setUserProfileInformation from './Profile/setUserProfileInformation';
+import addUserNameReducer from './Profile/addUserName';
+import addUserLocationReducer from './Profile/addUserLocation';
+import addUserImageurlReducer from './Profile/addUserImageurl';
+import addUserAvailabilityReducer from './Profile/addUserAvailability';
+import addUserTitleReducer from './Profile/addUserTitle';
 
 const allReducers = combineReducers({
 
   alluserinfo: setUserProfileInformation,
   userInfo: updateSignup,
+  name:addUserNameReducer,
+  location:addUserLocationReducer,
+  imageurl:addUserImageurlReducer,
+  availability:addUserAvailabilityReducer ,
+  title:addUserTitleReducer,
   tech: saveNewSkillReducer,
   devInfo: updateDevInfoReducer,
   currentProjects: updateCurrentProjectsReducer,
