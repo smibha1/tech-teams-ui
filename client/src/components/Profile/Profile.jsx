@@ -12,6 +12,8 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
+    console.log('this.props', this.props)
+    // this.props.setUserProfileInformation( {name:'kitty'})
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
     console.log('COMP DID MOUNT', jwtDecode(localStorage.getItem('token')).email);
     let email = jwtDecode(localStorage.getItem('token')).email;
@@ -25,6 +27,8 @@ class Profile extends React.Component {
       context.setState({
         loading: false
       })
+      console.log(this.props)
+      this.props.setUserProfileInformation( {name:'kitty'})
     }).catch(err => {
       console.log('axios error=', err);
     })

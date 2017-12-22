@@ -16,6 +16,21 @@ class TechnicalSkills extends React.Component {
     this.setState({
       editMode: !this.state.editMode
     });
+    // if( this.state.editMode){
+      console.log('{this.props.techskills}', this.props.techskills)
+      // axios({
+      //   url: 'http://localhost:3000/',// i don't know what to put here
+      //   method: 'post',
+      //   data: JSON.stringify(''),
+      // }).then(data => {
+      //   console.log('IN AXIOS, data=', data);
+      //   context.setState({
+      
+      //   })
+      // }).catch(err => {
+      //   console.log('axios error=', err);
+      // })
+    // }
     //This is where the post request gets added 
   }
 

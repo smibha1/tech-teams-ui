@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Button, Icon, Collapsible, CollapsibleItem} from 'react-materialize'
 
 class CurrentProjects extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class CurrentProjects extends React.Component {
     return (
       <div id="currentProjects-container">
         Completed Projects <br />
+        
         <div id="newdivider"> </div>
         {
           this.props.currentProjects.currentProjs.map((element, index) => (
