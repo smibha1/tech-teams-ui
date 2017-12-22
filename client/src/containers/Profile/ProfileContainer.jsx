@@ -32,7 +32,7 @@ function matchDispatchToProps(dispatch) {
     adduserimageurl: addUserImageurlAction,
     addusertitle: addUserTitleAction,
     adduserdescription: addUserDescriptionAction,
-    adduseravailabilty: addUserAvailabilityAction,
+    adduseravailability: addUserAvailabilityAction,
   }, dispatch);
 }
 
