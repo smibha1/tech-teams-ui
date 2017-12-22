@@ -7,7 +7,12 @@ const DevInfoDisplay = props => {
     <h2>Here is the dev info</h2>
   console.log('this prop is here', this.props)
     {
+<<<<<<< Updated upstream
       // <img id="profileImg" src={this.props.profi} alt={this.props.userName} height="200"/>
+=======
+      console.log("FROM DEVINFO PROPS=", props)
+      // <img id="profileImg" src={this.props.userPicture} alt={this.props.userName} height="200"/>
+>>>>>>> Stashed changes
       // <br/>
       // <div id="profileUsername">{this.props.userName}</div>
       // <br/> {this.props.userPosition} || {this.props.userLocation} <br/>

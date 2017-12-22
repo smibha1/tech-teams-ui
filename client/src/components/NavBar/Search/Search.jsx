@@ -18,25 +18,25 @@ class Search extends React.Component {
 
     console.log('CLICKED SEARCH SUBMIT', this.props);
     let query = $("#query").val();
-    // axios post
-      // get something
-      // use action to put into store
 
     if(query) {
       console.log('Tryna search for=', query);
-      this.props.history.push('searchresults')
-    } else {
-      // swal({
-      //   title: 'Uh oh!',
-      //   text: 'Please input something to search!',
-      //   timer: 1500,
-      //   type: 'error',
-      //   showConfirmButton: false
-      // })
-      console.log('Enter something to search yo');
-
+      axios({method: 'post', url: 'http://localhost:3000/projectsearch', data: {query: query}})
+        .then(res => {
+          console.log("DB RESPONSE TO SEARCH=", res);
+          // this.props.history.push('searchresults')
+        })
+        .catch(err => {
+          swal({
+            title: 'Uh oh',
+            type: 'error',
+            text: err,
+            timer: 1500,
+            showConfirmButton: false
+          })
+        })
     }
-
+    $('#query').val('');
   }
 
   render () {
@@ -52,17 +52,3 @@ class Search extends React.Component {
 }
 
 export default Search;
-
-
-
-
-
-// const Search = props => (
-  // <form className="form-inline mr-left mt-2 my-lg-0">
-  //   <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-  //   <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-  //     <span className="fa fa-search" aria-hidden="true" />
-  //   </button>
-  // </form>
-// );
-// export default Search;

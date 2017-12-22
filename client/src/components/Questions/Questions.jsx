@@ -29,7 +29,6 @@ class Questions extends React.Component {
     const available = this.state.isAvailable;
     const other = $('#otherText').val();
     let tech = JSON.stringify([]);
-    console.log('hi', $('#location').val(), aboutMe, available, other, tech);
 
     const newUser = {
       email: this.props.email,
@@ -41,8 +40,11 @@ class Questions extends React.Component {
       tech: tech
     };
 
+<<<<<<< Updated upstream
   
     let username = this.props.email.split('@')[0];
+=======
+>>>>>>> Stashed changes
     let email = this.props.email;
     let password = this.props.password;
 
@@ -52,16 +54,6 @@ class Questions extends React.Component {
     if (!(location && aboutMe && this.state.radioSelection)) {
       swal({title: 'Oops!', text: 'Please fill everything out!', type: 'error', timer: 1000, showConfirmButton: false});
     } else {
-      this.props.updateBasicProfile({
-        username: username,
-        email:email,
-        password:password,
-        email: this.props.email,
-        userName: this.props.username,
-        userLocation: location,
-        userDescription: aboutMe,
-        userAvailability: JSON.stringify(available),
-      })
       newUser.title = this.state.radioSelection;
       axios({method: 'post', url: 'http://localhost:3000/signup', data: newUser}).then(res => {
         if (res.status === 200) {
