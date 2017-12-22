@@ -24,6 +24,7 @@ class Signup extends React.Component {
         title: 'Email is available!',
         type: 'success',
         timer: 1000,
+        showConfirmButton: false
       }).then(() => {
         this.props.updateSingup(name, email, password);
         this.props.history.push('/signup/questions');

@@ -15,11 +15,15 @@ class NavBar extends React.Component {
     };
   }
 
-  handleLogout() {
+  handleLogout(e) {
+    e.preventDefault();
+    console.log("CLICKED LOGOUT!", this.props);
     localStorage.setItem('token', null);
-    swal({title: 'Logged out!', type: 'success', timer: 1000, showConfirmButton: false}).then(() => {
-      this.setState({number: 0});
-    });
+    this.props.history.push('/');
+
+    // swal({title: 'Logged out!', type: 'success', timer: 1000, showConfirmButton: false}).then(() => {
+    //   this.setState({number: 0});
+    // });
   }
 
   render() {
@@ -41,7 +45,7 @@ class NavBar extends React.Component {
             <Alerts/>
 
             <li id="profile-container" className="nav-item dropdown">
-              <a className="nav-link dropdown-menu-right mt-4 mt-lg-0" href="www.google.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className="nav-link dropdown-menu-right mt-4 mt-lg-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div className="inset mt-2 mt-lg-0">
                   <img src="https://i.pinimg.com/736x/b1/88/31/b18831f96720e907c4769168687d7fd1--cat-lovers-adorable-animals.jpg" alt="Profilepic"/>
                 </div>
@@ -55,7 +59,7 @@ class NavBar extends React.Component {
                 <Projects/>
 
                 <div className="dropdown-divider"/>
-                <a className="dropdown-item" href="www.google.com" onClick={this.handleLogout.bind(this)}>
+                <a className="dropdown-item" onClick={this.handleLogout.bind(this)}>
                   <i className="fa fa-sign-out" aria-hidden="true"/>
                   Log Out
                 </a>
